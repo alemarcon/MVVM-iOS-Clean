@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  MVVM-Clean
+
+  Created by Alessandro Marcon on 04/08/2020.
+  Copyright © 2020 Alessandro Marcon. All rights reserved.
+*/
+
+"splash_message" = "MVVM Clean App";
+"login_title" = "Ready for login?";
+"login_subtitle" = "Type \"admin\" as username and \"pass123!\" as password to login";
+"login" = "LOGIN";
+"login_error_message" = "Hey, you entered wrong username or password. Check it and try again!";
+"alert_error_title" = "Warning!";
+"empty_credential" = "Please, fill the informations and try again!";
+"wrong_password" = "Password, should be min 8 chars long";
+"welcome_message" = "COVID19 summary data";
+"last_summary_update" = "Last update %@";
+"generic_error_message" = "An error as accourred. Please, try again!";
+"generic_net_error_message" = "Here, you should get the server network error code %@.";
+"generic_localized_net_error_message" = "This will be the localized message from the server.";
+"nil_data" = "Data is nil";
+"nil_data_msg" = "No data found on server";
+"new_confirmed_cases" = "New confirmed cases";
+"total_cases" = "Total cases";
+"new_deaths_cases" = "New deaths cases";
+"total_deaths" = "Total deaths cases";
+"new_recovered" = "New recovered cases";
+"total_recovered" = "Total recovered cases";
+"summary_mapper_error" = "SummaryModelMapper or HTTP response is nil and DTO could not be mapped.";
+"countries_label" = "Countries";
+"country_mapper_error" = "CountryModelMapper or http response is nil and DTO could not be mapped.";
+"new_cases" = "New cases: %@";
+"new_recovered" = "New recovered cases: %@";
+"new_deaths" = "New deaths cases: %@";
+"total_cases" = "Total cases: %@";
+"total_recovered" = "Total recovered cases: %@";
+"total_deaths" = "Total deaths cases: %@";

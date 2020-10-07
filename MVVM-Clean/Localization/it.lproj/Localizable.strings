@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  MVVM-Clean
+
+  Created by Alessandro Marcon on 04/08/2020.
+  Copyright © 2020 Alessandro Marcon. All rights reserved.
+*/
+
+"splash_message" = "MVVM Clean App";
+"login_title" = "Pronto per la login?";
+"login_subtitle" = "Inserisci \"admin\" come username e \"pass123!\" come password per entrare";
+"login" = "ENTRA";
+"login_error_message" = "Sembra che tu abbia inserito username o password errate. Controlla e prova di nuovo!";
+"alert_error_title" = "Attenzione!";
+"empty_credential" = "Inserisci le credenziali e prova di nuovo";
+"wrong_password" = "La password deve contenere almeno 8 caratteri";
+"welcome_message" = "COVID19 dati di riepilogo";
+"last_summary_update" = "Ultimo aggiornamento %@";
+"generic_error_message" = "Si è verificato un errore per favore, riprova!";
+"generic_net_error_message" = "Qui, dovresti recuperare l'errore di rete del server codice %@.";
+"generic_localized_net_error_message" = "Questo sarà il messaggio localizzato del server.";
+"nil_data" = "Data è nil";
+"nil_data_msg" = "Nessun dato ricevuto dal server";
+"new_confirmed_cases" = "Nuovi casi confermati";
+"total_cases" = "Casi totali";
+"new_deaths_cases" = "Nuovi casi di morte";
+"total_deaths" = "Morti totali";
+"new_recovered" = "Nuovi ricoveri";
+"total_recovered" = "Ricoveri totali";
+"summary_mapper_error" = "SummaryModelMapper o la risposta HTTP è nil e il DTO non può essere mappato.";
+"countries_label" = "Paesi";
+"country_mapper_error" = "CountryModelMapper o la risposta HTTP è nil e il DTO non può essere mappato.";
+"new_cases" = "Nuovi casi: %@";
+"new_recovered" = "Nuovi ricoveri: %@";
+"new_deaths" = "Nuove morti: %@";
+"total_cases" = "Casi totali: %@";
+"total_recovered" = "Ricoveri totali: %@";
+"total_deaths" = "Morti totali: %@";

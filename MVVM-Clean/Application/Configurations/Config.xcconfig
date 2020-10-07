@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  MVVM-Clean
+//
+//  Created by Alessandro Marcon on 30/08/2020.
+//  Copyright © 2020 Alessandro Marcon. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_BASE_URL = https:/$()/api.covid19api.com
+NETWORK_REQUEST_HOURS_DELTA = 24
