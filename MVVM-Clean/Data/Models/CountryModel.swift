@@ -11,41 +11,41 @@ import Foundation
 class CountryModel: NSObject, NSCoding {
     
     var countryName: String
-    var newConfirmed: Int32
-    var totalConfirmed: Int32
-    var newDeaths: Int32
-    var totalDeaths: Int32
-    var newRecovered: Int32
-    var totalRecovered: Int32
+    var newConfirmed: String
+    var totalConfirmed: String
+    var newDeaths: String
+    var totalDeaths: String
+    var newRecovered: String
+    var totalRecovered: String
     
     override init() {
         countryName = ""
-        newConfirmed = 0
-        totalConfirmed = 0
-        newDeaths = 0
-        totalDeaths = 0
-        newRecovered = 0
-        totalRecovered = 0
+        newConfirmed = ""
+        totalConfirmed = ""
+        newDeaths = ""
+        totalDeaths = ""
+        newRecovered = ""
+        totalRecovered = ""
     }
     
-    init(countryName: String, newConfirmed: Int32?, totalConfirmed: Int32?, newDeaths: Int32?, totalDeaths: Int32?, newRecovered: Int32?, totalRecovered: Int32?) {
+    init(countryName: String, newConfirmed: String?, totalConfirmed: String?, newDeaths: String?, totalDeaths: String?, newRecovered: String?, totalRecovered: String?) {
         self.countryName = countryName
-        self.newConfirmed = newConfirmed ?? 0
-        self.totalConfirmed = totalConfirmed ?? 0
-        self.newDeaths = newDeaths ?? 0
-        self.totalDeaths = totalDeaths ?? 0
-        self.newRecovered = newRecovered ?? 0
-        self.totalRecovered = totalRecovered ?? 0
+        self.newConfirmed = newConfirmed ?? ""
+        self.totalConfirmed = totalConfirmed ?? ""
+        self.newDeaths = newDeaths ?? ""
+        self.totalDeaths = totalDeaths ?? ""
+        self.newRecovered = newRecovered ?? ""
+        self.totalRecovered = totalRecovered ?? ""
     }
     
     required convenience init(coder: NSCoder) {
         let countryName = coder.decodeObject(forKey: "countryName") as! String
-        let newConfirmed = coder.decodeInt32(forKey: "newConfirmed")
-        let totalConfirmed = coder.decodeInt32(forKey: "totalConfirmed")
-        let newDeaths = coder.decodeInt32(forKey: "newDeaths")
-        let totalDeaths = coder.decodeInt32(forKey: "totalDeaths")
-        let newRecovered = coder.decodeInt32(forKey: "newRecovered")
-        let totalRecovered = coder.decodeInt32(forKey: "totalRecovered")
+        let newConfirmed = coder.decodeObject(forKey: "newConfirmed") as! String
+        let totalConfirmed = coder.decodeObject(forKey: "totalConfirmed") as! String
+        let newDeaths = coder.decodeObject(forKey: "newDeaths") as! String
+        let totalDeaths = coder.decodeObject(forKey: "totalDeaths") as! String
+        let newRecovered = coder.decodeObject(forKey: "newRecovered") as! String
+        let totalRecovered = coder.decodeObject(forKey: "totalRecovered") as! String
         
         self.init(countryName: countryName, newConfirmed: newConfirmed, totalConfirmed: totalConfirmed, newDeaths: newDeaths, totalDeaths: totalDeaths, newRecovered: newRecovered, totalRecovered: totalRecovered)
     }

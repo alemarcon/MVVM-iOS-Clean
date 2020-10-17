@@ -15,21 +15,19 @@ class ViewModelAssembly: Assembly {
         
         container.register(SplashScreenViewModelDelegate.self) { resolver in
             let splashViewModel = SplashScreenViewModel()
-            guard let sessionRepository = resolver.resolve(SessionRepositoryDelegate.self) else {
-                fatalError("Assembler was unable to resolve SessionRepositoryDelegate")
+            
+            guard let profileUseCase = resolver.resolve(ProfileUseCaseDelegate.self) else {
+                fatalError("Assembler was unable to resolve ProfileUseCaseDelegate")
             }
-            splashViewModel.sessionRepository = sessionRepository
+            splashViewModel.profileUseCase = profileUseCase
+            splashViewModel.profileUseCase?.responseDelegate = splashViewModel
+            
             return splashViewModel
         }.inObjectScope(.transient)
         
         // Login View Model
         container.register(LoginViewModelDelegate.self) { resolver in
             let loginViewModel = LoginViewModel()
-            
-            guard let sessionRepository = resolver.resolve(SessionRepositoryDelegate.self) else {
-                fatalError("Assembler was unable to resolve SessionRepositoryDelegate")
-            }
-            loginViewModel.sessionRepository = sessionRepository
             
             guard let loginUseCase = resolver.resolve(LoginUseCaseDelegate.self) else {
                 fatalError("Assembler was unable to resolve LoginUseCaseDelegate")
@@ -62,6 +60,18 @@ class ViewModelAssembly: Assembly {
             countryViewModel.countryUseCase?.responseDelegate = countryViewModel
             
             return countryViewModel
+        }.inObjectScope(.transient)
+        
+        container.register(ProfileViewModelDelegate.self) { resolver in
+            let profileViewModel = ProfileViewModel()
+            
+            guard let profileUseCase = resolver.resolve(ProfileUseCaseDelegate.self) else {
+                fatalError("Assembler was unable to resolve ProfileUseCaseDelegate")
+            }
+            profileViewModel.profileUseCase = profileUseCase
+            profileViewModel.profileUseCase?.responseDelegate = profileViewModel
+            
+            return profileViewModel
         }.inObjectScope(.transient)
         
     }

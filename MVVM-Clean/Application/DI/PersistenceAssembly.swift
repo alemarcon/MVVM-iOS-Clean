@@ -23,6 +23,11 @@ class PersistenceAssembly: Assembly {
             return request
         }.inObjectScope(.transient)
         
+        container.register(ProfileLocalProtocolData.self) { resolver in
+            let profile = ProfileLocalData()
+            return profile
+        }.inObjectScope(.transient)
+        
     }
     
 }

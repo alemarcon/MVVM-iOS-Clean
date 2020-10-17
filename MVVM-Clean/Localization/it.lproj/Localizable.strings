@@ -30,9 +30,11 @@
 "summary_mapper_error" = "SummaryModelMapper o la risposta HTTP è nil e il DTO non può essere mappato.";
 "countries_label" = "Paesi";
 "country_mapper_error" = "CountryModelMapper o la risposta HTTP è nil e il DTO non può essere mappato.";
-"new_cases" = "Nuovi casi: %@";
-"new_recovered" = "Nuovi ricoveri: %@";
-"new_deaths" = "Nuove morti: %@";
-"total_cases" = "Casi totali: %@";
-"total_recovered" = "Ricoveri totali: %@";
-"total_deaths" = "Morti totali: %@";
+"new_cases_cell" = "Nuovi casi: %@";
+"new_recovered_cell" = "Nuovi ricoveri: %@";
+"new_deaths_cell" = "Nuove morti: %@";
+"total_cases_cell" = "Casi totali: %@";
+"total_recovered_cell" = "Ricoveri totali: %@";
+"total_deaths_cell" = "Morti totali: %@";
+"no_local_user_found" = "Non è stato trovato l'utente nei dati locali";
+"unable_logout" = "Impossibile cancellare i dati utente. Operazione fallita. Per favore, prova più tardi.";

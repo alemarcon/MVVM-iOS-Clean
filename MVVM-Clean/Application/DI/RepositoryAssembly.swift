@@ -13,18 +13,25 @@ class RepositoryAssembly: Assembly {
     
     func assemble(container: Container) {
         
-        container.register(SessionRepositoryDelegate.self) { resolver in
-            return SessionRepository()
+        container.register(ProfileRepositoryDelegate.self) { resolver in
+            let profileRepository = ProfileRepository()
+            
+            guard let profileProtocol = resolver.resolve(ProfileLocalProtocolData.self) else {
+                fatalError("Assembler was unable to resolve ProfileLocalProtocolData")
+            }
+            profileRepository.profileLocalData = profileProtocol
+            
+            return profileRepository
         }.inObjectScope(.transient)
         
         container.register(LoginRepositoryDelegate.self) { resolver in
             let loginRepo = LoginRepository()
+            guard let profileProtocol = resolver.resolve(ProfileLocalProtocolData.self) else {
+                fatalError("Assembler was unable to resolve ProfileLocalProtocolData")
+            }
+            loginRepo.profileProtocol = profileProtocol
+            
             return loginRepo
-        }.inObjectScope(.transient)
-        
-        container.register(LogoutRepositoryDelegate.self) { resolver in
-            let logoutRepo = LogoutRepository()
-            return logoutRepo
         }.inObjectScope(.transient)
         
         container.register(SummaryRepositoryDelegate.self) { resolver in

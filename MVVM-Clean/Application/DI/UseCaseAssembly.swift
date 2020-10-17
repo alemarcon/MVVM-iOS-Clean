@@ -23,13 +23,13 @@ class UseCaseAssembly: Assembly {
             return loginUseCase
         }.inObjectScope(.transient)
         
-        container.register(LogoutUseCaseDelegate.self) { resolver in
-            let logoutUseCase = LogoutUseCase()
-            guard let logoutRepository = resolver.resolve(LogoutRepositoryDelegate.self) else {
-                fatalError("Assembler was unable to resolve LogoutRepositoryDelegate")
+        container.register(ProfileUseCaseDelegate.self) { resolver in
+            let profileUseCase = ProfileUseCase()
+            guard let profileRepository = resolver.resolve(ProfileRepositoryDelegate.self) else {
+                fatalError("Assembler was unable to resolve ProfileRepositoryDelegate")
             }
-            logoutUseCase.logoutRepository = logoutRepository
-            return logoutUseCase
+            profileUseCase.profileRepository = profileRepository
+            return profileUseCase
         }.inObjectScope(.transient)
         
         

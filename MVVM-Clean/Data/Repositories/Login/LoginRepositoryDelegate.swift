@@ -10,6 +10,8 @@ import Foundation
 
 protocol LoginRepositoryDelegate {
     
+    var profileProtocol: ProfileLocalProtocolData? { get set }
+    
     /// Execute login request and get
     /// - Parameters:
     ///   - username: The username string

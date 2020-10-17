@@ -10,4 +10,4 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 API_BASE_URL = https:/$()/api.covid19api.com
-NETWORK_REQUEST_HOURS_DELTA = 24
+NETWORK_REQUEST_HOURS_DELTA = 12

@@ -10,6 +10,8 @@ import Foundation
 
 class LoginRepository: LoginRepositoryDelegate {
     
+    var profileProtocol: ProfileLocalProtocolData?
+    
     private let USERNAME = "admin"
     private let PASSWORD = "pass123!"
 
@@ -18,6 +20,8 @@ class LoginRepository: LoginRepositoryDelegate {
         if( username == USERNAME && password == PASSWORD ) {
             let userModel = UserModel()
             userModel.username = USERNAME
+            profileProtocol?.saveLocalUserData(currentUser: userModel)
+            
             success(userModel)
         } else {
             let error = CustomError()

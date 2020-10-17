@@ -19,11 +19,10 @@ enum LoginViewModelStatus {
 protocol LoginViewModelDelegate: LoginViewModelInputDelegate, LoginViewModelOutputDelegate { }
 
 class LoginViewModel: LoginViewModelDelegate {
-    
+
     var error: CustomError?
     var loginUseCase: LoginUseCaseDelegate?
     var status: Observable<LoginViewModelStatus> = Observable(.none)
-    var sessionRepository: SessionRepositoryDelegate?
     
     func executeLogin(username: String, password: String) {
         print("Execute login")
@@ -39,14 +38,10 @@ class LoginViewModel: LoginViewModelDelegate {
 extension LoginViewModel: LoginUseCaseResponseDelegate {
     
     func onLoginSuccess(user: UserModel) {
-        sessionRepository?.isUserSignedIn = true
-        sessionRepository?.currentUsername = user.username
         status.value = .loginSuccess
     }
     
     func onLoginFailure(error: CustomError) {
-        sessionRepository?.isUserSignedIn = false
-        sessionRepository?.currentUsername = ""
         self.error = error
         status.value = .loginError
     }

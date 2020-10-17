@@ -12,13 +12,34 @@ class CountryModelMapper: CountryModelMapperDelegate {
     
     func mapToCountryModel(country: Country) -> CountryModel {
         let countryModel = CountryModel()
+        
+        let nf = NumberFormatter()
+        nf.numberStyle = .decimal
+        
         countryModel.countryName = country.country ?? "Unknow"
-        countryModel.newConfirmed = country.newConfirmed ?? 0
-        countryModel.totalConfirmed = country.totalConfirmed ?? 0
-        countryModel.newRecovered = country.newRecovered ?? 0
-        countryModel.totalRecovered = country.totalRecovered ?? 0
-        countryModel.newDeaths = country.newDeaths ?? 0
-        countryModel.totalDeaths = country.totalDeaths ?? 0
+        if let newConfirmed = country.newConfirmed {
+            countryModel.newConfirmed = nf.string(from: NSNumber(value: newConfirmed)) ?? "0"
+        }
+        
+        if let totalConfirmed = country.totalConfirmed {
+            countryModel.totalConfirmed = nf.string(from: NSNumber(value: totalConfirmed)) ?? "0"
+        }
+        
+        if let newRecovered = country.newRecovered {
+            countryModel.newRecovered = nf.string(from: NSNumber(value: newRecovered)) ?? "0"
+        }
+        
+        if let totalRecovered = country.totalRecovered {
+            countryModel.totalRecovered = nf.string(from: NSNumber(value: totalRecovered)) ?? "0"
+        }
+        
+        if let newDeath = country.newDeaths {
+            countryModel.newDeaths = nf.string(from: NSNumber(value: newDeath)) ?? "0"
+        }
+        
+        if let totalDeath = country.totalDeaths {
+            countryModel.totalDeaths = nf.string(from: NSNumber(value: totalDeath)) ?? "0"
+        }
         
         return countryModel
     }

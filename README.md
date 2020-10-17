@@ -60,3 +60,9 @@ These are the libraries used in project with github url and a very short descrip
  Swinject | https://github.com/Swinject/Swinject | Dependency injection framework
  Alamofire | https://github.com/Alamofire/Alamofire | An easy-to-use HTTP networking library
  Bond | https://github.com/SwiftBond/Bond | Swinf binding Framework, easy-to-use, type-safe and multi-paradigma
+
+ # External resource
+
+Covid-19 data are collected by [COVID-19 API](https://covid19api.com/)
+
+The users Icons is made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

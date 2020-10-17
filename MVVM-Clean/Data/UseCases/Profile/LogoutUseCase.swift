@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LogoutUseCase: NSObject, LogoutUseCaseDelegate {
+class SessionUseCase: NSObject, SessionUseCaseDelegate {
     
     var responseDelegate: LogoutUseCaseResponseDelegate?
     var logoutRepository: LogoutRepositoryDelegate?

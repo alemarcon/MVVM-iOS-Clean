@@ -27,7 +27,6 @@ class SummaryViewController: BaseViewController {
     @IBOutlet var totalRecoveredValueLabel: UILabel!
     @IBOutlet var countriesButton: UIBarButtonItem!
     
-    var sessionRepository: SessionRepositoryDelegate?
     var mainViewModel: SummaryCovidViewModelDelegate?
     
     override func viewDidLoad() {
@@ -80,14 +79,7 @@ class SummaryViewController: BaseViewController {
         let lastUpdate = NSLocalizedString("last_summary_update", comment: "")
         lastUpdateLabel.text = String.localizedStringWithFormat(lastUpdate, "\(withData.lastUpdate)")
 
-        if let confirmed = Int(withData.newConfirmedCases) {
-            let nf = NumberFormatter()
-            nf.numberStyle = .decimal
-            
-            newConfirmedCasesValueLabel.text = nf.string(from: NSNumber(integerLiteral: confirmed))
-        }
-        
-//        newConfirmedCasesValueLabel.text = withData.newConfirmedCases
+        newConfirmedCasesValueLabel.text = withData.newConfirmedCases
         totalCasesValueLabel.text = withData.totalConfirmedCases
         newDeathValueLabel.text = withData.newDeath
         totalDeathsValueLabel.text = withData.totalDeaths
@@ -95,16 +87,10 @@ class SummaryViewController: BaseViewController {
         totalRecoveredValueLabel.text = withData.totalRecovered
     }
     
-    private func backToLoginViewController() {
-        if let loginViewController = Assembler.sharedAssembler.resolver.resolve(LoginViewController.self) {
-            let nvc: UINavigationController = UINavigationController(rootViewController: loginViewController)
-            nvc.setNavigationBarHidden(true, animated: false)
-            UIApplication.shared.keyWindow?.rootViewController = nvc
+    @IBAction func showProfileViewController(_ sender: UIBarButtonItem) {
+        if let profileViewController = Assembler.sharedAssembler.resolver.resolve(ProfileViewController.self) {
+            self.navigationController?.pushViewController(profileViewController, animated: true)
         }
-    }
-    
-    @IBAction func refreshSummaryData(_ sender: UIBarButtonItem) {
-        loadSummaryData()
     }
     
     private func loadSummaryData() {

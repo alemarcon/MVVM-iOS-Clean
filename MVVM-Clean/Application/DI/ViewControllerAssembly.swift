@@ -16,6 +16,7 @@ class ViewControllerAssembly: Assembly {
         case login_vc
         case main_vc
         case country_list_vc
+        case profile_vc
     }
     
     func assemble(container: Container) {
@@ -52,10 +53,6 @@ class ViewControllerAssembly: Assembly {
             guard let controller: SummaryViewController = UIStoryboard(.Main).instantiateViewController(withIdentifier: ViewControllerIds.main_vc.rawValue) as? SummaryViewController else {
                 fatalError("Assembler was unable to resolve MainViewController")
             }
-            guard let sessionRepository = r.resolve(SessionRepositoryDelegate.self) else {
-                fatalError("Assembler was unable to resolve SessionRepositoryDelegate")
-            }
-            controller.sessionRepository = sessionRepository
             
             guard let mainViewModel = r.resolve(SummaryCovidViewModelDelegate.self) else {
                 fatalError("Assembler was unable to resolve MainViewModelDelegate")
@@ -74,6 +71,20 @@ class ViewControllerAssembly: Assembly {
                 fatalError("Assembler was unable to resolve CountryCovidViewModelDelegate")
             }
             controller.countryViewModel = countryViewModel
+            
+            return controller
+        }.inObjectScope(.transient)
+        
+        // Profile View Controller
+        container.register(ProfileViewController.self) { r in
+            guard let controller: ProfileViewController = UIStoryboard(.Main).instantiateViewController(withIdentifier: ViewControllerIds.profile_vc.rawValue) as? ProfileViewController else {
+                fatalError("Assembler was unable to resolve ProfileViewController")
+            }
+            
+            guard let profileViewModel = r.resolve(ProfileViewModelDelegate.self) else {
+                fatalError("Assembler was unable to resolve ProfileViewModelDelegate")
+            }
+            controller.profileViewModel = profileViewModel
             
             return controller
         }.inObjectScope(.transient)

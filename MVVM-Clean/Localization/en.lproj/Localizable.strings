@@ -30,9 +30,11 @@
 "summary_mapper_error" = "SummaryModelMapper or HTTP response is nil and DTO could not be mapped.";
 "countries_label" = "Countries";
 "country_mapper_error" = "CountryModelMapper or http response is nil and DTO could not be mapped.";
-"new_cases" = "New cases: %@";
-"new_recovered" = "New recovered cases: %@";
-"new_deaths" = "New deaths cases: %@";
-"total_cases" = "Total cases: %@";
-"total_recovered" = "Total recovered cases: %@";
-"total_deaths" = "Total deaths cases: %@";
+"new_cases_cell" = "New cases: %@";
+"new_recovered_cell" = "New recovered cases: %@";
+"new_deaths_cell" = "New deaths cases: %@";
+"total_cases_cell" = "Total cases: %@";
+"total_recovered_cell" = "Total recovered cases: %@";
+"total_deaths_cell" = "Total deaths cases: %@";
+"no_local_user_found" = "No user data found in local storage";
+"unable_logout" = "Unable to delete user data. Operation failed. Please, try again later.";

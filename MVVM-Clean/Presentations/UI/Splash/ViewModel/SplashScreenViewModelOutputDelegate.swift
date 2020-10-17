@@ -11,6 +11,5 @@ import Bond
 
 protocol SplashScreenViewModelOutputDelegate {
     var status: Observable<SplashScreenViewModelStatus> { get }
-    var isUserLoggedIn: Bool { get }
-    var sessionRepository: SessionRepositoryDelegate? { get }
+    var profileUseCase: ProfileUseCaseDelegate? { get }
 }

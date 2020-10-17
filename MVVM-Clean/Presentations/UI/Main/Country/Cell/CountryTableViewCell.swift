@@ -43,22 +43,22 @@ class CountryTableViewCell: UITableViewCell {
     func bind(country: CountryModel) {
         countryNameLabel.text = country.countryName
         
-        let newCasesLocalized = NSLocalizedString("new_cases", comment: "")
+        let newCasesLocalized = NSLocalizedString("new_cases_cell", comment: "")
         newCasesLabel.text = String.localizedStringWithFormat(newCasesLocalized, "\(country.newConfirmed)")
         
-        let newRecoveredLocalized = NSLocalizedString("new_recovered", comment: "")
+        let newRecoveredLocalized = NSLocalizedString("new_recovered_cell", comment: "")
         newRecoveredCasesLabel.text = String.localizedStringWithFormat(newRecoveredLocalized, "\(country.newRecovered)")
         
-        let newDeathLocalized = NSLocalizedString("new_deaths", comment: "")
+        let newDeathLocalized = NSLocalizedString("new_deaths_cell", comment: "")
         newDeathsCasesLabel.text = String.localizedStringWithFormat(newDeathLocalized, "\(country.newDeaths)")
         
-        let totalCasesLocalized = NSLocalizedString("total_cases", comment: "")
+        let totalCasesLocalized = NSLocalizedString("total_cases_cell", comment: "")
         totalCasesLabel.text = String.localizedStringWithFormat(totalCasesLocalized, "\(country.totalConfirmed)")
         
-        let totalRecoveredLocalized = NSLocalizedString("total_recovered", comment: "")
+        let totalRecoveredLocalized = NSLocalizedString("total_recovered_cell", comment: "")
         totalRecoveredLabel.text = String.localizedStringWithFormat(totalRecoveredLocalized, "\(country.totalRecovered)")
         
-        let totalDeathLocalized = NSLocalizedString("total_deaths", comment: "")
+        let totalDeathLocalized = NSLocalizedString("total_deaths_cell", comment: "")
         totalDeathsCasesLabel.text = String.localizedStringWithFormat(totalDeathLocalized, "\(country.totalDeaths)")
         
         self.isUserInteractionEnabled = false

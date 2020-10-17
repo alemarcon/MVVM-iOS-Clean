@@ -11,6 +11,5 @@ import Bond
 
 protocol LoginViewModelOutputDelegate {
     var status: Observable<LoginViewModelStatus> { get }
-    var sessionRepository: SessionRepositoryDelegate? { get }
     var error: CustomError? { get }
 }

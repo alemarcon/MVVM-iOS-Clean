@@ -16,28 +16,31 @@ class SummayModelMapper: SummaryModelMapperDelegate {
     func mapToSummaryModel(summary: Summary) -> SummaryModel {
         let summaryModel = SummaryModel()
         
+        let nf = NumberFormatter()
+        nf.numberStyle = .decimal
+        
         if let newConfirmedCasesValue = summary.global?.newConfirmed {
-            summaryModel.newConfirmedCases = String(newConfirmedCasesValue)
+            summaryModel.newConfirmedCases = nf.string(from: NSNumber(value: newConfirmedCasesValue)) ?? "0"
         }
         
         if let confirmedTotalCasesValue = summary.global?.totalConfirmed {
-            summaryModel.totalConfirmedCases = String(confirmedTotalCasesValue)
+            summaryModel.totalConfirmedCases = nf.string(from: NSNumber(value: confirmedTotalCasesValue)) ?? "0"
         }
         
         if let newDeathValue = summary.global?.newDeaths {
-            summaryModel.newDeath = String(newDeathValue)
+            summaryModel.newDeath = nf.string(from: NSNumber(value: newDeathValue)) ?? "0"
         }
         
         if let totalDeathsValue = summary.global?.totalDeaths {
-            summaryModel.totalDeaths = String(totalDeathsValue)
+            summaryModel.totalDeaths = nf.string(from: NSNumber(value: totalDeathsValue)) ?? "0"
         }
         
         if let newRecoveredValue = summary.global?.newRecovered {
-            summaryModel.newRecoveredCases = String(newRecoveredValue)
+            summaryModel.newRecoveredCases = nf.string(from: NSNumber(value: newRecoveredValue)) ?? "0"
         }
         
         if let totalRecoveredValue = summary.global?.totalRecovered {
-            summaryModel.totalRecovered = String(totalRecoveredValue)
+            summaryModel.totalRecovered = nf.string(from: NSNumber(value: totalRecoveredValue)) ?? "0"
         }
         
         return summaryModel

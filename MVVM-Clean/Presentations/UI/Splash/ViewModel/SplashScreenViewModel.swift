@@ -19,21 +19,23 @@ protocol SplashScreenViewModelDelegate: SplashScreenViewModelInputDelegate, Spla
 
 class SplashScreenViewModel: SplashScreenViewModelDelegate {
         
-    var sessionRepository: SessionRepositoryDelegate?
-    
+    var profileUseCase: ProfileUseCaseDelegate?
     var status: Observable<SplashScreenViewModelStatus> = Observable(.none)
     
-    var isUserLoggedIn: Bool {
-        get {
-            return sessionRepository?.isUserSignedIn ?? false
-        }
+    func checkUserState() {
+        profileUseCase?.getCurrentUserData()
+    }
+}
+
+extension SplashScreenViewModel: ProfileUseCaseResponseDelegate {
+    
+    func gettingUserDataSuccess(currentUser: UserModel) {
+        self.status.value = .loggedIn
     }
     
-    func checkUserState() {
-        if( isUserLoggedIn ) {
-            status.value = .loggedIn
-        } else {
-            status.value = .notLoggedIn
-        }
+    func gettingUserDataFailure(error: CustomError) {
+        self.status.value = .notLoggedIn
     }
+    
+    
 }
