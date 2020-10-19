@@ -8,7 +8,9 @@
 
 import Foundation
 
-// MARK: - Global
+/**
+ Global DTO model mapped from API JSON data
+ */
 struct Global: Codable {
     let newConfirmed: Int32?
     let totalConfirmed: Int32?

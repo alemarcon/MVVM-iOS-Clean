@@ -11,17 +11,30 @@ import Foundation
 protocol ProfileRepositoryDelegate {
     
     var profileLocalData: ProfileLocalProtocolData? { get set }
-    
+
     /// Save user data
-    /// - Parameter user: Current user model object
+    /// - Parameters:
+    ///   - user: Current user model object
+    ///   - success: Event fired in success case
+    ///   - failure: Event fired in failure case
     func saveCurrentUserData(user: UserModel, success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void)
     
     /// Delete data of current user
+    /// - Parameters:
+    ///   - success: Event fired in success case
+    ///   - failure: Event fired in failure case
     func deleteCurrentUserData(success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void)
     
     /// Retrive current user data
+    /// - Parameters:
+    ///   - success: Event fired in success case
+    ///   - failure: Event fired in failure case
     func getCurrentUserData(success: @escaping (UserModel) -> Void, failure: @escaping (CustomError) -> Void)
     
+    /// Check if users is signed in
+    /// - Parameters:
+    ///   - success: Event fired in success case
+    ///   - failure: Event fired in failure case
     func isUserSignedIn(success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void)
     
 }

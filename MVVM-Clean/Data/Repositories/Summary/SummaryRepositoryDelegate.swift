@@ -21,7 +21,7 @@ protocol SummaryRepositoryDelegate {
     
     //MARK: - Methods
     
-    /// Get COVID19 summary data
+    /// Get COVID19 summary data. Implementation could get data or from HTTP network call, or if present, from local data.
     /// - Parameters:
     ///   - success: Success event
     ///   - failure: Failure event

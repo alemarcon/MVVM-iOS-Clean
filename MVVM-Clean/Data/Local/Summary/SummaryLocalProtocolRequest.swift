@@ -11,10 +11,10 @@ import Foundation
 /// Protocol
 protocol SummaryLocalProtocolRequest {
     
-    /// <#Description#>
+    /// Get summary data from locale storage. If there is no data, nil will be returned
     func getLocalSummaryData() -> SummaryModel?
     
-    /// <#Description#>
-    /// - Parameter data: <#data description#>
+    /// Save summary data in local storage.
+    /// - Parameter data: SummaryModel data to save locally
     func saveLocalSummary(data: SummaryModel)
 }

@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ This is the implementation of ProfileLocalProtocolData. For simplicity, we use UserDefaults instead of a real datatabase.
+ Here, we are going to implement the methods that will be used to locally save and retrieve user data.
+ */
 class ProfileLocalData: ProfileLocalProtocolData {
     
     func getLocalUserData() -> UserModel? {

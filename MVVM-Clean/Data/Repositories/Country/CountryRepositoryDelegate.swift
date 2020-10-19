@@ -19,20 +19,20 @@ protocol CountryRepositoryDelegate {
     
     //MARK: - Methods
     
-    /// <#Description#>
+    /// Used to get all countries data.
     /// - Parameters:
-    ///   - success: <#success description#>
-    ///   - failure: <#failure description#>
+    ///   - success: Event fired in success case
+    ///   - failure: Event fired in failure case
     func getCountriesData(success: @escaping ([CountryModel])->Void, failure: @escaping (CustomError)->Void)
     
-    /// <#Description#>
+    /// Used to get country data filtered by various data.
     /// - Parameters:
-    ///   - countrySlug: <#countrySlug description#>
-    ///   - status: <#status description#>
-    ///   - from: <#from description#>
-    ///   - to: <#to description#>
-    ///   - success: <#success description#>
-    ///   - failure: <#failure description#>
+    ///   - countrySlug: Country slug
+    ///   - status: Covid status
+    ///   - from: Date from
+    ///   - to: Date to
+    ///   - success: Event fired in success case
+    ///   - failure: Event fired in failure case
     func getCountryData(by countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping ([CountryModel])->Void, failure: @escaping (CustomError)->Void)
     
 }

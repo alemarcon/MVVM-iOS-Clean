@@ -8,7 +8,9 @@
 
 import Foundation
 
-// MARK: - Country
+/**
+ Country DTO model mapped from API JSON data
+ */
 struct Country: Codable {
     let country: String?
     let countryCode: String?

@@ -8,7 +8,9 @@
 
 import Foundation
 
-// MARK: - Summary
+/**
+ Summary DTO model retrieved from API JSON data.
+ */
 struct Summary: Codable {
     let message: String?
     let global: Global?

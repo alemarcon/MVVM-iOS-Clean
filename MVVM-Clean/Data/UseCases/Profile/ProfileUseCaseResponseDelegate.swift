@@ -30,6 +30,9 @@ protocol ProfileUseCaseResponseDelegate: AnyObject {
     
 }
 
+/**
+ This is the default implementation of ProfileUseCaseResponseDelegate. It avoids having to implement all methods even when not needed.
+ */
 extension ProfileUseCaseResponseDelegate {
     func onLogoutSuccess() {}
     func onLogoutFailure(error: CustomError) {}

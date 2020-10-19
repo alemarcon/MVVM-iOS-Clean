@@ -11,11 +11,11 @@ import Foundation
 /// Protocol
 protocol ProfileLocalProtocolData {
     
-    /// <#Description#>
-    func getLocalUserData() ->UserModel?
+    /// Get local user data. If there is no data, nil will be returned.
+    func getLocalUserData() -> UserModel?
     
-    /// <#Description#>
-    /// - Parameter currentUser: <#currentUser description#>
+    /// Save current user data locally.
+    /// - Parameter currentUser: The current UserModel data to save
     func saveLocalUserData(currentUser: UserModel)
     
     /// Delete local user data

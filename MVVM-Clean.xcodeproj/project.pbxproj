@@ -122,7 +122,6 @@
 		2DD6D41224FBEA4C008EE378 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D41124FBEA4C008EE378 /* NetworkConstant.swift */; };
 		2DD6D41824FBF01E008EE378 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D41724FBF01E008EE378 /* Configurations.swift */; };
 		2DD6D42324FBF3D0008EE378 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D42224FBF3D0008EE378 /* TransactionModel.swift */; };
-		2DD6D42724FBF55C008EE378 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D42624FBF55C008EE378 /* BaseResponse.swift */; };
 		AB4B9F3BDAE7DF9B21410C4B /* Pods_MVVM_Clean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468FC146B1518ECCEC4847ED /* Pods_MVVM_Clean.framework */; };
 		BB0B740F1BFB1EE6B06BCF29 /* Pods_MVVM_CleanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4A030BF9347454A47F5AA4 /* Pods_MVVM_CleanTests.framework */; };
 /* End PBXBuildFile section */
@@ -241,7 +240,6 @@
 		2DD6D41724FBF01E008EE378 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		2DD6D41924FBF068008EE378 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		2DD6D42224FBF3D0008EE378 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
-		2DD6D42624FBF55C008EE378 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		468FC146B1518ECCEC4847ED /* Pods_MVVM_Clean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Clean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4A030BF9347454A47F5AA4 /* Pods_MVVM_CleanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_CleanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636D264085D29723AEFFE35E /* Pods-MVVM-Clean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Clean.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-Clean/Pods-MVVM-Clean.debug.xcconfig"; sourceTree = "<group>"; };
@@ -840,7 +838,6 @@
 		2DD6D40124FBDD04008EE378 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6D42624FBF55C008EE378 /* BaseResponse.swift */,
 				2DD4B68E2528AE240065B563 /* Summary.swift */,
 				2DD4B6912528AE490065B563 /* Country.swift */,
 				2DD4B6942528AEC00065B563 /* Global.swift */,
@@ -1142,7 +1139,6 @@
 				2D1E505D253B02F300D00EC6 /* ProfileLocalProtocolData.swift in Sources */,
 				2DD4B68C2528AACF0065B563 /* SummaryRouter.swift in Sources */,
 				2DD4B6A32528B2B40065B563 /* SummaryRepositoryDelegate.swift in Sources */,
-				2DD6D42724FBF55C008EE378 /* BaseResponse.swift in Sources */,
 				2D1E504C253AFD9900D00EC6 /* ProfileViewModelOutputDelegate.swift in Sources */,
 				2DB7075B24D94FAF003B2151 /* UseCaseAssembly.swift in Sources */,
 				2DD4B6892528AA6B0065B563 /* SummaryNetworkRequest.swift in Sources */,

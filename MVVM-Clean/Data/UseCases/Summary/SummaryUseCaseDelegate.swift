@@ -14,6 +14,7 @@ protocol SummaryUseCaseDelegate {
     var responseDelegate: SummaryUseCaseResponseDelegate? { get set }
     var summaryRepository: SummaryRepositoryDelegate? { get set }
     
+    /// Get summary data
     func getSummaryData()
     
 }

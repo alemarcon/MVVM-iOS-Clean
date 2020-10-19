@@ -14,14 +14,15 @@ protocol CountryUseCaseDelegate {
     var responseDelegate: CountryUseCaseResponseDelegate? { get set }
     var countryRepository: CountryRepositoryDelegate? { get set }
     
-    /// <#Description#>
+    /// Get country data based on various parameters
     /// - Parameters:
-    ///   - countrySlug: <#countrySlug description#>
-    ///   - covidStatus: <#covidStatus description#>
-    ///   - dateFrom: <#dateFrom description#>
-    ///   - dateTo: <#dateTo description#>
+    ///   - countrySlug: Country slug
+    ///   - covidStatus: Covid status
+    ///   - dateFrom: Date from
+    ///   - dateTo: Date to
     func getCountryData(by countrySlug: String, covidStatus: Covid19Status, dateFrom: String, dateTo: String)
     
+    /// Get all countries data
     func getCountryList()
     
 }

@@ -9,9 +9,13 @@
 import Foundation
 
 protocol LoginUseCaseResponseDelegate: AnyObject {
-
+    
+    /// Event fired on login process successed
+    /// - Parameter user: The UserModel object corresponding to current user logged in
     func onLoginSuccess(user: UserModel)
     
+    /// Event fired in case of login failed.
+    /// - Parameter error: The error object
     func onLoginFailure(error: CustomError)
     
 }

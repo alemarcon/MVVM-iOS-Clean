@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ The implementation of SummaryModelMapperDelegate. Here we are going to map the Summary DTO field to SummaryModel. In this way we can map only the field we need.
+ */
 class SummayModelMapper: SummaryModelMapperDelegate {
     
     /// Map a single summary DTO object to a SummaryModel object

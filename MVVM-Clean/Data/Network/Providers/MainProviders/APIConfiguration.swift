@@ -8,7 +8,9 @@
 
 import Foundation
 import Alamofire
-
+/**
+ This is the base protocol used to configure all API router object
+ */
 protocol APIConfiguration: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }

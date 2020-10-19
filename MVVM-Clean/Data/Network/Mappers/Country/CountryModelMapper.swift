@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ The implementation of CountryModelMapperDelegate. Here we are going to map the Country DTO field to CountryModel. In this way we can map only the field we need.
+ */
 class CountryModelMapper: CountryModelMapperDelegate {
     
     func mapToCountryModel(country: Country) -> CountryModel {

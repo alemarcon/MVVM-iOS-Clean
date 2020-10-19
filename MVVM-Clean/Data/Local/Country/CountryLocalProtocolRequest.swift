@@ -11,10 +11,10 @@ import Foundation
 /// Protocol
 protocol CountryLocalProtocolRequest {
     
-    /// <#Description#>
+    /// Get country data saved locally. If there is no data, nil will be returned.
     func getLocalCountryData() ->[CountryModel]?
     
-    /// <#Description#>
-    /// - Parameter data: <#data description#>
+    /// Save CountryModel data array locally.
+    /// - Parameter data: The CountryModel array to save locally
     func saveLocalCountries(data: [CountryModel])
 }
