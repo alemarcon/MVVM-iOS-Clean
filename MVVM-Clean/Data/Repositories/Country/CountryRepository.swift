@@ -16,8 +16,16 @@ class CountryRepository: CountryRepositoryDelegate {
     
     func getCountriesData(success: @escaping ([CountryModel]) -> Void, failure: @escaping (CustomError) -> Void) {
         
-        if let localCountriesData = countryLocal?.getLocalCountryData() {
-            success(localCountriesData)
+        if let localCountriesData = countryLocal?.getLocalCountryDataDTO() {
+            if let localCountries = countryMapper?.mapToCountryModelArray(countries: localCountriesData) {
+                success(localCountries)
+            } else {
+                LOGE("No local countries data found")
+                let customError = CustomError()
+                customError.errorMessage = "No local countries data found"
+                customError.localizedErrorMessage = NSLocalizedString("country_mapper_error", comment: "")
+                failure(customError)
+            }
         } else {
             LOGE("CountryLocalProtocolRequest returned nil object")
             let customError = CustomError()

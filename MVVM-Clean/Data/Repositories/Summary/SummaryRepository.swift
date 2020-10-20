@@ -21,11 +21,11 @@ class SummaryRepository: SummaryRepositoryDelegate {
     func getSummaryData(success: @escaping (SummaryModel) -> Void, failure: @escaping (CustomError) -> Void) {
         var needDataFromNetwork = true
         
-        let localSummaryData = summaryLocal?.getLocalSummaryData()
+        let localSummaryDTO = summaryLocal?.getLocalSummaryDataDTO()
         
-        if( localSummaryData != nil ) {
+        if( localSummaryDTO != nil ) {
             LOGD("Local summary data found!")
-            needDataFromNetwork = CustomDateUtils.checkForNetworkUpdate(lastUpdate: localSummaryData!.lastUpdate)
+            needDataFromNetwork = CustomDateUtils.checkForNetworkUpdate(lastUpdate: localSummaryDTO!.date ?? "")
         }
         // This is a flag that force collecting data from network if a unit test is running.
         // In case of test, data are collected on a JSON file and not really on network
@@ -39,13 +39,12 @@ class SummaryRepository: SummaryRepositoryDelegate {
             LOGD("Local summary data is nil or older than delta, new network update needed")
             covidNetwork?.getSummaryData( success: { (response: Summary ) in
                 LOGI("Data received")
+                
+                self.summaryLocal?.saveLocalSummaryDTO(data: response)
+                
                 if let summmary = self.summaryMapper?.mapToSummaryModel(summary: response) {
-                    self.summaryLocal?.saveLocalSummary(data: summmary)
-                    
                     if let countries = response.countries {
-                        if let countriesModel = self.countryMapper?.mapToCountryModelArray(countries: countries) {
-                            self.countryLocal?.saveLocalCountries(data: countriesModel)
-                        }
+                        self.countryLocal?.saveLocalCountryDataDTO(data: countries)
                     }
                     
                     success(summmary)
@@ -61,9 +60,9 @@ class SummaryRepository: SummaryRepositoryDelegate {
                 failure(error)
             })
         } else {
-            if let localData = localSummaryData {
+            if let localData = localSummaryDTO, let summaryModel = self.summaryMapper?.mapToSummaryModel(summary: localData) {
                 LOGD("Success sent with localData")
-                success(localData)
+                success(summaryModel)
             }
         }
     }

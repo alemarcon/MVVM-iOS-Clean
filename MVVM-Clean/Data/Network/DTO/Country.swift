@@ -35,4 +35,22 @@ struct Country: Codable {
         case totalRecovered = "TotalRecovered"
         case date = "Date"
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        country = try values.decodeIfPresent(String.self, forKey: .country)
+        countryCode = try values.decodeIfPresent(String.self, forKey: .countryCode)
+        slug = try values.decodeIfPresent(String.self, forKey: .slug)
+        newConfirmed = try values.decodeIfPresent(Int32.self, forKey: .newConfirmed)
+        
+        totalConfirmed = try values.decodeIfPresent(Int32.self, forKey: .totalConfirmed)
+        newDeaths = try values.decodeIfPresent(Int32.self, forKey: .newDeaths)
+        totalDeaths = try values.decodeIfPresent(Int32.self, forKey: .totalDeaths)
+        newRecovered = try values.decodeIfPresent(Int32.self, forKey: .newRecovered)
+        
+        totalRecovered = try values.decodeIfPresent(Int32.self, forKey: .totalRecovered)
+        date = try values.decodeIfPresent(String.self, forKey: .date)
+        
+    }
 }

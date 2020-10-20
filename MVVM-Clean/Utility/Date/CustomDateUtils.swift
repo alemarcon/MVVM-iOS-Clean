@@ -48,15 +48,23 @@ class CustomDateUtils: NSObject {
         return formatter.string(from: Date())
     }
     
-    /// Check if last HTTP call is older than delta values and get responde back
-    /// - Parameter lastUpdate: Last update data value
-    /// - Returns: TRUE if new HTTP call is neede, FALSE otherwise
-    public static func checkForNetworkUpdate(lastUpdate: Date) -> Bool {
+    /// Check delta from last network data and the custom delta
+    /// - Parameter lastUpdate: Last update received from network
+    /// - Returns: TRUE if a new HTTP request is needed, FALSE otherwise
+    public static func checkForNetworkUpdate(lastUpdate: String) -> Bool {
+        
         var networkUpdateNeeded = true
         let actualCalendar = Calendar.current
         let currentDate = CustomDateUtils.currentDate()
         
-        let dataComponents = actualCalendar.dateComponents([.hour, .day], from: lastUpdate, to: currentDate)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        guard let lastUpdateDate = formatter.date(from: lastUpdate) else {
+            return true
+        }
+
+        let dataComponents = actualCalendar.dateComponents([.hour, .day], from: lastUpdateDate, to: currentDate)
         
         if( dataComponents.hour ?? 0 <= API.networkHoursDelta && dataComponents.day ?? 0 == 0 ) {
             LOGD("Local summary data was saved \(dataComponents.hour ?? 0) hours ago. Configured delta is \(API.networkHoursDelta) hours. No network call needed")

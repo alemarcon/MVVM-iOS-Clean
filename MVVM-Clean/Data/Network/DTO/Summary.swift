@@ -23,4 +23,12 @@ struct Summary: Codable {
         case countries = "Countries"
         case date = "Date"
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        message = try values.decodeIfPresent(String.self, forKey: .message)
+        global = try values.decodeIfPresent(Global.self, forKey: .global)
+        countries = try values.decodeIfPresent([Country].self, forKey: .countries)
+        date = try values.decodeIfPresent(String.self, forKey: .date)
+    }
 }

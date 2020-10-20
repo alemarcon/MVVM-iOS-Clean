@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserModel {
+struct UserModel {
     var username: String
     
     init() {

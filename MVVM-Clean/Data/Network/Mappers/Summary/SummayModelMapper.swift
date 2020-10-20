@@ -17,7 +17,7 @@ class SummayModelMapper: SummaryModelMapperDelegate {
     /// - Parameter summary: Summary DTO object to map
     /// - Returns: SummaryModel mapped from Summary DTO
     func mapToSummaryModel(summary: Summary) -> SummaryModel {
-        let summaryModel = SummaryModel()
+        var summaryModel = SummaryModel()
         
         let nf = NumberFormatter()
         nf.numberStyle = .decimal

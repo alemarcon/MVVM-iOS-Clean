@@ -14,7 +14,7 @@ import Foundation
 class CountryModelMapper: CountryModelMapperDelegate {
     
     func mapToCountryModel(country: Country) -> CountryModel {
-        let countryModel = CountryModel()
+        var countryModel = CountryModel()
         
         let nf = NumberFormatter()
         nf.numberStyle = .decimal

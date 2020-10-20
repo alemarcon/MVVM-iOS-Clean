@@ -14,27 +14,35 @@ import Foundation
  */
 class CountryLocalRequest: CountryLocalProtocolRequest {
     
-    private let COUNTRY = "country_codable_object"
+    private let COUNTRY_DTO = "country_codable_object_dto"
     
-    func getLocalCountryData() -> [CountryModel]? {
+    func saveLocalCountryDataDTO(data: [Country]) {
+        LOGFSTART()
         let userDefaults = UserDefaults.standard
-        guard let decoded  = userDefaults.object(forKey: COUNTRY) as? Data else {
-            return nil
-        }
         
-        guard let country = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [CountryModel] else {
-            return nil
+        do {
+            let encoder = JSONEncoder()
+            let encoded = try encoder.encode(data)
+            userDefaults.set(encoded, forKey: COUNTRY_DTO)
+            userDefaults.synchronize()
+        } catch (let error){
+            LOGE(error.localizedDescription)
         }
-        
-        return country
     }
     
-    func saveLocalCountries(data: [CountryModel]) {
+    func getLocalCountryDataDTO() -> [Country]? {
+        LOGFSTART()
         let userDefaults = UserDefaults.standard
-        
-        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: data)
-        userDefaults.set(encodedData, forKey: COUNTRY)
-        userDefaults.synchronize()
+        do {
+            if let countryDTO = userDefaults.object(forKey: COUNTRY_DTO) as? Data {
+                let decoder = JSONDecoder()
+                let loadedCountries = try decoder.decode([Country].self, from: countryDTO)
+                return loadedCountries
+            }
+        } catch (let error) {
+            LOGE(error.localizedDescription)
+        }
+        return nil
     }
     
 }

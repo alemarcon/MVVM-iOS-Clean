@@ -27,4 +27,15 @@ struct Global: Codable {
         case newRecovered = "NewRecovered"
         case totalRecovered = "TotalRecovered"
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        newConfirmed = try values.decodeIfPresent(Int32.self, forKey: .newConfirmed)
+        totalConfirmed = try values.decodeIfPresent(Int32.self, forKey: .totalConfirmed)
+        newDeaths = try values.decodeIfPresent(Int32.self, forKey: .newDeaths)
+        totalDeaths = try values.decodeIfPresent(Int32.self, forKey: .totalDeaths)
+        newRecovered = try values.decodeIfPresent(Int32.self, forKey: .newRecovered)
+        totalRecovered = try values.decodeIfPresent(Int32.self, forKey: .totalRecovered)
+    }
 }

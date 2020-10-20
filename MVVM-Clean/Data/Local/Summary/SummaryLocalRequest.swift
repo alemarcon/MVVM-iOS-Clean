@@ -13,27 +13,41 @@ import Foundation
  */
 class SummaryLocalRequest: SummaryLocalProtocolRequest {
     
-    private let SUMMARY = "summary_codable_object"
+    private let SUMMARY_DTO = "summary_codable_object_sto"
     
-    func getLocalSummaryData() -> SummaryModel? {
+    /// Save DTO Summary object to UserDefaults
+    /// - Parameter data: Summary data to save locally
+    /// - Throws:
+    func saveLocalSummaryDTO(data: Summary) {
+        LOGFSTART()
         let userDefaults = UserDefaults.standard
-        guard let decoded  = userDefaults.object(forKey: SUMMARY) as? Data else {
-            return nil
-        }
         
-        guard let summary = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? SummaryModel else {
-            return nil
+        do {
+            let encoder = JSONEncoder()
+            let encoded = try encoder.encode(data)
+            userDefaults.set(encoded, forKey: SUMMARY_DTO)
+            userDefaults.synchronize()
+        } catch (let error){
+            LOGE(error.localizedDescription)
         }
-        
-        return summary
     }
     
-    func saveLocalSummary(data: SummaryModel) {
+    /// Get local summary DTO model from UserDefaults. If no data is stored, nil will be returned
+    /// - Throws:
+    /// - Returns: Summary object if is present, nil otherwise
+    func getLocalSummaryDataDTO() -> Summary? {
+        LOGFSTART()
         let userDefaults = UserDefaults.standard
-        
-        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: data)
-        userDefaults.set(encodedData, forKey: SUMMARY)
-        userDefaults.synchronize()
+        do {
+            if let summaryDTO = userDefaults.object(forKey: SUMMARY_DTO) as? Data {
+                let decoder = JSONDecoder()
+                let loadedSummary = try decoder.decode(Summary.self, from: summaryDTO)
+                return loadedSummary
+            }
+        } catch (let error) {
+            LOGE(error.localizedDescription)
+        }
+        return nil
     }
     
 }

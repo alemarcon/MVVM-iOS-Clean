@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TransactionModel {
+struct TransactionModel {
     var username: String
     
     init() {
