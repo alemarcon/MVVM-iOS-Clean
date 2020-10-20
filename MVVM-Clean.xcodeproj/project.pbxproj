@@ -59,7 +59,6 @@
 		2DB7071424D94548003B2151 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7071324D94548003B2151 /* SceneDelegate.swift */; };
 		2DB7071B24D9454A003B2151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DB7071A24D9454A003B2151 /* Assets.xcassets */; };
 		2DB7071E24D9454A003B2151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB7071C24D9454A003B2151 /* LaunchScreen.storyboard */; };
-		2DB7072924D9454A003B2151 /* MVVM_CleanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7072824D9454A003B2151 /* MVVM_CleanTests.swift */; };
 		2DB7073724D94A67003B2151 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB7073624D94A67003B2151 /* Auth.storyboard */; };
 		2DB7073A24D94A8E003B2151 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7073924D94A8E003B2151 /* LoginViewController.swift */; };
 		2DB7073D24D94ACB003B2151 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB7073C24D94ACB003B2151 /* Splash.storyboard */; };
@@ -181,7 +180,6 @@
 		2DB7071D24D9454A003B2151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DB7071F24D9454A003B2151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DB7072424D9454A003B2151 /* MVVM-CleanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-CleanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DB7072824D9454A003B2151 /* MVVM_CleanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_CleanTests.swift; sourceTree = "<group>"; };
 		2DB7072A24D9454A003B2151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DB7073624D94A67003B2151 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		2DB7073924D94A8E003B2151 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -552,7 +550,6 @@
 			children = (
 				2D0ABD2B253EF59B00A89F60 /* FilesSupport */,
 				2D0ABD24253EF2B600A89F60 /* SummaryTest */,
-				2DB7072824D9454A003B2151 /* MVVM_CleanTests.swift */,
 				2DB7072A24D9454A003B2151 /* Info.plist */,
 			);
 			path = "MVVM-CleanTests";
@@ -1187,7 +1184,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DD4B6932528AE490065B563 /* Country.swift in Sources */,
-				2DB7072924D9454A003B2151 /* MVVM_CleanTests.swift in Sources */,
 				2DD4B6902528AE240065B563 /* Summary.swift in Sources */,
 				2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */,
 				2DD4B6962528AEC00065B563 /* Global.swift in Sources */,
