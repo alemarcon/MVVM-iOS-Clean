@@ -14,8 +14,14 @@ class NetworkAssembly: Assembly {
     func assemble(container: Container) {
         
         container.register(SummaryNetworkProtocolRequest.self) { resolver in
-            let request = SummaryNetworkReqeust()
-            return request
+            
+            if( Assembler.type == .SummaryTest ) {
+                let summaryDataReuqest = SummaryDataRequestTest()
+                return summaryDataReuqest
+            } else {
+                return SummaryNetworkReqeust()
+            }
+
         }.inObjectScope(.transient)
         
         container.register(CountryNetworkProtocolRequest.self) { resolver in

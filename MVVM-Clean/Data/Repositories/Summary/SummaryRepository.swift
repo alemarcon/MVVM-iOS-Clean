@@ -16,6 +16,8 @@ class SummaryRepository: SummaryRepositoryDelegate {
     var summaryMapper: SummaryModelMapperDelegate?
     var countryMapper: CountryModelMapperDelegate?
     
+    var isRunningFromTest: Bool?
+    
     func getSummaryData(success: @escaping (SummaryModel) -> Void, failure: @escaping (CustomError) -> Void) {
         var needDataFromNetwork = true
         
@@ -24,6 +26,13 @@ class SummaryRepository: SummaryRepositoryDelegate {
         if( localSummaryData != nil ) {
             LOGD("Local summary data found!")
             needDataFromNetwork = CustomDateUtils.checkForNetworkUpdate(lastUpdate: localSummaryData!.lastUpdate)
+        }
+        // This is a flag that force collecting data from network if a unit test is running.
+        // In case of test, data are collected on a JSON file and not really on network
+        if let _isRunningFromTest = isRunningFromTest {
+            if( _isRunningFromTest ) {
+                needDataFromNetwork = true
+            }
         }
         
         if( needDataFromNetwork ) {

@@ -19,6 +19,9 @@ protocol SummaryRepositoryDelegate {
     var summaryMapper: SummaryModelMapperDelegate? { get set }
     var countryMapper: CountryModelMapperDelegate? { get set }
     
+    //MARK: - Test variable
+    var isRunningFromTest: Bool? { get set }
+    
     //MARK: - Methods
     
     /// Get COVID19 summary data. Implementation could get data or from HTTP network call, or if present, from local data.

@@ -32,5 +32,6 @@ extension Assembler {
 
 enum AssemblerType {
     case Default
+    case SummaryTest
 }
 
