@@ -15,11 +15,12 @@ This is a clean iOS project structured as follow:
 - Alamofire for easy and fast network request
 - Localized, just 2 languages for demo porpouse
 - Storyboard for interfaces
+- Unit Test
 
 You can use this project as a template to start building your new iOS app.
 
 # What's inside.
-This is a simple demo project that implement MVVM Clean architecture and repository pattern. It's a COVID-19 dashboard with a very simple (and fake) login view. It collect data from remote or local repository. The local repository, just to keep the app simple, stores the data in UserDefaults but, in a real project, if you need to save a large amount of data, it would be better to use a database like Realm, SQL Lite or Core Data.
+This is a simple demo project that implement MVVM Clean architecture and repository pattern. It's a COVID-19 dashboard with a very simple (and fake) login view. It collect data from remote or local repository. The local repository, just to keep the app simple, stores the data in UserDefaults but, in a real project, if you need to save a large amount of data, it would be better to use a database like Realm, SQL Lite or Core Data. It include also a Unit test as sample to show how to integrate test on this architecture.
 
 #### ATTENTION!
 COVID-19 data is real and collected by https://covid19api.com/ but the application is not intended to be a medical tool. COVID-19 api are free and here are used just to show how to execute network request and parse them.
