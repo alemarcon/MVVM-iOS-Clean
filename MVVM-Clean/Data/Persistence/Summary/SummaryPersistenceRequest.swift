@@ -1,5 +1,5 @@
 //
-//  SummaryLocalRequest.swift
+//  SummaryPersistenceRequest.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 03/10/2020.
@@ -11,7 +11,7 @@ import Foundation
  This is the implementation of SummaryLocalProtocolRequest. For simplicity, we use UserDefaults instead of a real datatabase.
  Here, we are going to implement the methods that will be used to locally save and retrieve summary data.
  */
-class SummaryLocalRequest: SummaryLocalProtocolRequest {
+class SummaryPersistenceRequest: SummaryPersistenceProtocolRequest {
     
     private let SUMMARY_DTO = "summary_codable_object_sto"
     

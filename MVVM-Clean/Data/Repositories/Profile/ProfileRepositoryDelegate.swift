@@ -10,7 +10,7 @@ import Foundation
 
 protocol ProfileRepositoryDelegate {
     
-    var profileLocalData: ProfileLocalProtocolData? { get set }
+    var profileLocalData: ProfilePersistenceProtocolData? { get set }
 
     /// Save user data
     /// - Parameters:

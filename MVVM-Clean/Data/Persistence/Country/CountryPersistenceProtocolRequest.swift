@@ -1,5 +1,5 @@
 //
-//  CountryLocalProtocolRequest.swift
+//  CountryPersistenceProtocolRequest.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 04/10/2020.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Protocol
-protocol CountryLocalProtocolRequest {
+protocol CountryPersistenceProtocolRequest {
     
     /// Save CountryModel data array locally.
     /// - Parameter data: The Country dto array to save locally

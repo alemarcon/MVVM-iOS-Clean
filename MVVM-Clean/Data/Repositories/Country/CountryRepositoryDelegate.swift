@@ -11,7 +11,7 @@ import Foundation
 protocol CountryRepositoryDelegate {
     
     //MARK: - Data object
-    var countryLocal: CountryLocalProtocolRequest? { get set }
+    var countryLocal: CountryPersistenceProtocolRequest? { get set }
     var countryNetwork: CountryNetworkProtocolRequest? { get set }
     
     //MARK: - Mappers

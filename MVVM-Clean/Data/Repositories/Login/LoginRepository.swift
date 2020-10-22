@@ -10,7 +10,7 @@ import Foundation
 
 class LoginRepository: LoginRepositoryDelegate {
     
-    var profileProtocol: ProfileLocalProtocolData?
+    var profileProtocol: ProfilePersistenceProtocolData?
     
     private let USERNAME = "admin"
     private let PASSWORD = "pass123!"

@@ -1,5 +1,5 @@
 //
-//  CountryLocalRequest.swift
+//  CountryPersistenceRequest.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 04/10/2020.
@@ -12,7 +12,7 @@ import Foundation
  This is the implementation of CountryLocalProtocolRequest. For simplicity, we use UserDefaults instead of a real datatabase.
  Here, we are going to implement the methods that will be used to locally save and retrieve country data.
  */
-class CountryLocalRequest: CountryLocalProtocolRequest {
+class CountryPersistenceRequest: CountryPersistenceProtocolRequest {
     
     private let COUNTRY_DTO = "country_codable_object_dto"
     

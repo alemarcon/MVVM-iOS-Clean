@@ -1,5 +1,5 @@
 //
-//  ProfileLocalProtocolRequest.swift
+//  ProfilePersistenceProtocolData.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 17/10/2020.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Protocol
-protocol ProfileLocalProtocolData {
+protocol ProfilePersistenceProtocolData {
     
     /// Get local user data. If there is no data, nil will be returned.
     func getLocalUserData() -> UserModel?

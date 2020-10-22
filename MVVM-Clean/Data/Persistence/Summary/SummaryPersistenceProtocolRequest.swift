@@ -1,5 +1,5 @@
 //
-//  SummaryLocalProtocolRequest.swift
+//  SummaryPersistenceProtocolRequest.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 03/10/2020.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Protocol
-protocol SummaryLocalProtocolRequest {
+protocol SummaryPersistenceProtocolRequest {
     
     /// Save summary data in local storage.
     /// - Parameter data: Summary dto data to save locally

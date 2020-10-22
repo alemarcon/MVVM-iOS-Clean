@@ -11,7 +11,7 @@ import Foundation
 class CountryRepository: CountryRepositoryDelegate {
     
     var countryNetwork: CountryNetworkProtocolRequest?
-    var countryLocal: CountryLocalProtocolRequest?
+    var countryLocal: CountryPersistenceProtocolRequest?
     var countryMapper: CountryModelMapperDelegate?
     
     func getCountriesData(success: @escaping ([CountryModel]) -> Void, failure: @escaping (CustomError) -> Void) {

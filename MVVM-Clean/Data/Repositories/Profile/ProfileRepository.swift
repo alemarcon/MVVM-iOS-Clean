@@ -10,7 +10,7 @@ import Foundation
 
 class ProfileRepository: ProfileRepositoryDelegate {
 
-    var profileLocalData: ProfileLocalProtocolData?
+    var profileLocalData: ProfilePersistenceProtocolData?
     
     func saveCurrentUserData(user: UserModel, success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void) {
         LOGD("Saving current user")

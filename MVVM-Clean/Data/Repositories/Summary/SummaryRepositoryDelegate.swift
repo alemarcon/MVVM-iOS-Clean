@@ -12,8 +12,8 @@ protocol SummaryRepositoryDelegate {
     
     //MARK: - Data object
     var covidNetwork: SummaryNetworkProtocolRequest? { get set }
-    var summaryLocal: SummaryLocalProtocolRequest? { get set }
-    var countryLocal: CountryLocalProtocolRequest? { get set }
+    var summaryLocal: SummaryPersistenceProtocolRequest? { get set }
+    var countryLocal: CountryPersistenceProtocolRequest? { get set }
     
     //MARK: - Mapper objects
     var summaryMapper: SummaryModelMapperDelegate? { get set }

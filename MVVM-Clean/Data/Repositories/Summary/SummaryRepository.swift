@@ -11,8 +11,8 @@ import Foundation
 class SummaryRepository: SummaryRepositoryDelegate {
     
     var covidNetwork: SummaryNetworkProtocolRequest?
-    var summaryLocal: SummaryLocalProtocolRequest?
-    var countryLocal: CountryLocalProtocolRequest?
+    var summaryLocal: SummaryPersistenceProtocolRequest?
+    var countryLocal: CountryPersistenceProtocolRequest?
     var summaryMapper: SummaryModelMapperDelegate?
     var countryMapper: CountryModelMapperDelegate?
     

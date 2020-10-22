@@ -60,7 +60,7 @@ These are the libraries used in project with github url and a very short descrip
  -------- | --- | -----------
  Swinject | https://github.com/Swinject/Swinject | Dependency injection framework
  Alamofire | https://github.com/Alamofire/Alamofire | An easy-to-use HTTP networking library
- Bond | https://github.com/SwiftBond/Bond | Swinf binding Framework, easy-to-use, type-safe and multi-paradigma
+ Bond | https://github.com/SwiftBond/Bond | Swift binding Framework, easy-to-use, type-safe and multi-paradigma
 
  # External resource
 

@@ -16,7 +16,7 @@ class RepositoryAssembly: Assembly {
         container.register(ProfileRepositoryDelegate.self) { resolver in
             let profileRepository = ProfileRepository()
             
-            guard let profileProtocol = resolver.resolve(ProfileLocalProtocolData.self) else {
+            guard let profileProtocol = resolver.resolve(ProfilePersistenceProtocolData.self) else {
                 fatalError("Assembler was unable to resolve ProfileLocalProtocolData")
             }
             profileRepository.profileLocalData = profileProtocol
@@ -26,7 +26,7 @@ class RepositoryAssembly: Assembly {
         
         container.register(LoginRepositoryDelegate.self) { resolver in
             let loginRepo = LoginRepository()
-            guard let profileProtocol = resolver.resolve(ProfileLocalProtocolData.self) else {
+            guard let profileProtocol = resolver.resolve(ProfilePersistenceProtocolData.self) else {
                 fatalError("Assembler was unable to resolve ProfileLocalProtocolData")
             }
             loginRepo.profileProtocol = profileProtocol
@@ -47,12 +47,12 @@ class RepositoryAssembly: Assembly {
             }
             covidRepo.summaryMapper = summaryMapper
             
-            guard let summaryLocal = resolver.resolve(SummaryLocalProtocolRequest.self) else {
+            guard let summaryLocal = resolver.resolve(SummaryPersistenceProtocolRequest.self) else {
                 fatalError("Assembler was unable to resolve SummaryLocalProtocolRequest")
             }
             covidRepo.summaryLocal = summaryLocal
             
-            guard let countryLocal = resolver.resolve(CountryLocalProtocolRequest.self) else {
+            guard let countryLocal = resolver.resolve(CountryPersistenceProtocolRequest.self) else {
                 fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
             }
             covidRepo.countryLocal = countryLocal
@@ -68,7 +68,7 @@ class RepositoryAssembly: Assembly {
         container.register(CountryRepositoryDelegate.self) { resolver in
             let countryRepo = CountryRepository()
             
-            guard let countryLocalData = resolver.resolve(CountryLocalProtocolRequest.self) else {
+            guard let countryLocalData = resolver.resolve(CountryPersistenceProtocolRequest.self) else {
                 fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
             }
             countryRepo.countryLocal = countryLocalData

@@ -10,7 +10,7 @@ import Foundation
 
 protocol LoginRepositoryDelegate {
     
-    var profileProtocol: ProfileLocalProtocolData? { get set }
+    var profileProtocol: ProfilePersistenceProtocolData? { get set }
     
     /// Execute login request and get
     /// - Parameters:
