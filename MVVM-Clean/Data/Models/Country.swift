@@ -1,5 +1,5 @@
 //
-//  CountryModel.swift
+//  Country.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 04/10/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CountryModel {
+struct Country {
     
     var countryName: String
     var newConfirmed: String

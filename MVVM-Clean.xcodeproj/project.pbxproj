@@ -26,9 +26,8 @@
 		2D14B73C25290EE20079C7C3 /* SummaryPersistenceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D14B73B25290EE20079C7C3 /* SummaryPersistenceRequest.swift */; };
 		2D14B73E252911AB0079C7C3 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D14B73D252911AB0079C7C3 /* NetworkAssembly.swift */; };
 		2D14B7402529122D0079C7C3 /* PersistenceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D14B73F2529122D0079C7C3 /* PersistenceAssembly.swift */; };
-		2D1DE739252A632B0039E298 /* CountryModelMapperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE738252A632B0039E298 /* CountryModelMapperDelegate.swift */; };
-		2D1DE73B252A637E0039E298 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE73A252A637E0039E298 /* CountryModel.swift */; };
-		2D1DE73D252A66D20039E298 /* CountryModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE73C252A66D20039E298 /* CountryModelMapper.swift */; };
+		2D1DE73B252A637E0039E298 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE73A252A637E0039E298 /* Country.swift */; };
+		2D1DE73D252A66D20039E298 /* CountryDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE73C252A66D20039E298 /* CountryDTOMapper.swift */; };
 		2D1DE740252A6C340039E298 /* CountryPersistenceProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE73F252A6C340039E298 /* CountryPersistenceProtocolRequest.swift */; };
 		2D1DE742252A6C800039E298 /* CountryPersistenceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE741252A6C800039E298 /* CountryPersistenceRequest.swift */; };
 		2D1DE745252A6E4D0039E298 /* CountryRepositoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1DE744252A6E4D0039E298 /* CountryRepositoryDelegate.swift */; };
@@ -80,7 +79,7 @@
 		2DB7077524D97DE3003B2151 /* LoginViewModelOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7077424D97DE3003B2151 /* LoginViewModelOutputDelegate.swift */; };
 		2DB7077824D98743003B2151 /* LoginRepositoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7077724D98743003B2151 /* LoginRepositoryDelegate.swift */; };
 		2DB7077B24D987F6003B2151 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7077A24D987F6003B2151 /* CustomError.swift */; };
-		2DB7077D24D98825003B2151 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7077C24D98825003B2151 /* UserModel.swift */; };
+		2DB7077D24D98825003B2151 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7077C24D98825003B2151 /* User.swift */; };
 		2DB7077F24D9944F003B2151 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7077E24D9944F003B2151 /* LoginRepository.swift */; };
 		2DB7078324D9A5A3003B2151 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7078224D9A5A3003B2151 /* LoginUseCase.swift */; };
 		2DB7078524D9A5BD003B2151 /* LoginUseCaseResponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7078424D9A5BD003B2151 /* LoginUseCaseResponseDelegate.swift */; };
@@ -90,26 +89,23 @@
 		2DD4B6862528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6852528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift */; };
 		2DD4B6892528AA6B0065B563 /* SummaryNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6882528AA6B0065B563 /* SummaryNetworkRequest.swift */; };
 		2DD4B68C2528AACF0065B563 /* SummaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B68B2528AACF0065B563 /* SummaryRouter.swift */; };
-		2DD4B68F2528AE240065B563 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B68E2528AE240065B563 /* Summary.swift */; };
-		2DD4B6902528AE240065B563 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B68E2528AE240065B563 /* Summary.swift */; };
-		2DD4B6922528AE490065B563 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6912528AE490065B563 /* Country.swift */; };
-		2DD4B6932528AE490065B563 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6912528AE490065B563 /* Country.swift */; };
-		2DD4B6952528AEC00065B563 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6942528AEC00065B563 /* Global.swift */; };
-		2DD4B6962528AEC00065B563 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6942528AEC00065B563 /* Global.swift */; };
+		2DD4B68F2528AE240065B563 /* SummaryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B68E2528AE240065B563 /* SummaryDTO.swift */; };
+		2DD4B6902528AE240065B563 /* SummaryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B68E2528AE240065B563 /* SummaryDTO.swift */; };
+		2DD4B6922528AE490065B563 /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6912528AE490065B563 /* CountryDTO.swift */; };
+		2DD4B6932528AE490065B563 /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6912528AE490065B563 /* CountryDTO.swift */; };
+		2DD4B6952528AEC00065B563 /* GlobalDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6942528AEC00065B563 /* GlobalDTO.swift */; };
+		2DD4B6962528AEC00065B563 /* GlobalDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6942528AEC00065B563 /* GlobalDTO.swift */; };
 		2DD4B6992528AFA20065B563 /* SummaryUseCaseResponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6982528AFA20065B563 /* SummaryUseCaseResponseDelegate.swift */; };
-		2DD4B69C2528AFDA0065B563 /* SummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B69B2528AFDA0065B563 /* SummaryModel.swift */; };
+		2DD4B69C2528AFDA0065B563 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B69B2528AFDA0065B563 /* Summary.swift */; };
 		2DD4B69F2528B1D60065B563 /* SummaryUseCaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B69E2528B1D60065B563 /* SummaryUseCaseDelegate.swift */; };
 		2DD4B6A32528B2B40065B563 /* SummaryRepositoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6A22528B2B40065B563 /* SummaryRepositoryDelegate.swift */; };
 		2DD4B6A62528B2BE0065B563 /* SummaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6A52528B2BE0065B563 /* SummaryRepository.swift */; };
-		2DD4B6AA2528B4E20065B563 /* SummayModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6A92528B4E20065B563 /* SummayModelMapper.swift */; };
-		2DD4B6AD2528B9E50065B563 /* MapperAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6AC2528B9E50065B563 /* MapperAssembly.swift */; };
-		2DD4B6B02528BA390065B563 /* SummaryModelMapperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6AF2528BA390065B563 /* SummaryModelMapperDelegate.swift */; };
+		2DD4B6AA2528B4E20065B563 /* SummaryDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6A92528B4E20065B563 /* SummaryDTOMapper.swift */; };
 		2DD4B6B32528BB670065B563 /* SummaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6B22528BB670065B563 /* SummaryUseCase.swift */; };
 		2DD6D40E24FBE198008EE378 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D40D24FBE198008EE378 /* APIConfiguration.swift */; };
 		2DD6D41024FBE286008EE378 /* NetworkRequestPerfomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D40F24FBE286008EE378 /* NetworkRequestPerfomer.swift */; };
 		2DD6D41224FBEA4C008EE378 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D41124FBEA4C008EE378 /* NetworkConstant.swift */; };
 		2DD6D41824FBF01E008EE378 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D41724FBF01E008EE378 /* Configurations.swift */; };
-		2DD6D42324FBF3D0008EE378 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6D42224FBF3D0008EE378 /* TransactionModel.swift */; };
 		AB4B9F3BDAE7DF9B21410C4B /* Pods_MVVM_Clean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468FC146B1518ECCEC4847ED /* Pods_MVVM_Clean.framework */; };
 		BB0B740F1BFB1EE6B06BCF29 /* Pods_MVVM_CleanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4A030BF9347454A47F5AA4 /* Pods_MVVM_CleanTests.framework */; };
 /* End PBXBuildFile section */
@@ -144,9 +140,8 @@
 		2D14B73B25290EE20079C7C3 /* SummaryPersistenceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPersistenceRequest.swift; sourceTree = "<group>"; };
 		2D14B73D252911AB0079C7C3 /* NetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		2D14B73F2529122D0079C7C3 /* PersistenceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAssembly.swift; sourceTree = "<group>"; };
-		2D1DE738252A632B0039E298 /* CountryModelMapperDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModelMapperDelegate.swift; sourceTree = "<group>"; };
-		2D1DE73A252A637E0039E298 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
-		2D1DE73C252A66D20039E298 /* CountryModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModelMapper.swift; sourceTree = "<group>"; };
+		2D1DE73A252A637E0039E298 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		2D1DE73C252A66D20039E298 /* CountryDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTOMapper.swift; sourceTree = "<group>"; };
 		2D1DE73F252A6C340039E298 /* CountryPersistenceProtocolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPersistenceProtocolRequest.swift; sourceTree = "<group>"; };
 		2D1DE741252A6C800039E298 /* CountryPersistenceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPersistenceRequest.swift; sourceTree = "<group>"; };
 		2D1DE744252A6E4D0039E298 /* CountryRepositoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepositoryDelegate.swift; sourceTree = "<group>"; };
@@ -203,7 +198,7 @@
 		2DB7077424D97DE3003B2151 /* LoginViewModelOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelOutputDelegate.swift; sourceTree = "<group>"; };
 		2DB7077724D98743003B2151 /* LoginRepositoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryDelegate.swift; sourceTree = "<group>"; };
 		2DB7077A24D987F6003B2151 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		2DB7077C24D98825003B2151 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		2DB7077C24D98825003B2151 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2DB7077E24D9944F003B2151 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		2DB7078224D9A5A3003B2151 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		2DB7078424D9A5BD003B2151 /* LoginUseCaseResponseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseResponseDelegate.swift; sourceTree = "<group>"; };
@@ -213,24 +208,21 @@
 		2DD4B6852528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryNetworkProtocolRequest.swift; sourceTree = "<group>"; };
 		2DD4B6882528AA6B0065B563 /* SummaryNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryNetworkRequest.swift; sourceTree = "<group>"; };
 		2DD4B68B2528AACF0065B563 /* SummaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRouter.swift; sourceTree = "<group>"; };
-		2DD4B68E2528AE240065B563 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
-		2DD4B6912528AE490065B563 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		2DD4B6942528AEC00065B563 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		2DD4B68E2528AE240065B563 /* SummaryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDTO.swift; sourceTree = "<group>"; };
+		2DD4B6912528AE490065B563 /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
+		2DD4B6942528AEC00065B563 /* GlobalDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDTO.swift; sourceTree = "<group>"; };
 		2DD4B6982528AFA20065B563 /* SummaryUseCaseResponseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryUseCaseResponseDelegate.swift; sourceTree = "<group>"; };
-		2DD4B69B2528AFDA0065B563 /* SummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryModel.swift; sourceTree = "<group>"; };
+		2DD4B69B2528AFDA0065B563 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		2DD4B69E2528B1D60065B563 /* SummaryUseCaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryUseCaseDelegate.swift; sourceTree = "<group>"; };
 		2DD4B6A22528B2B40065B563 /* SummaryRepositoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRepositoryDelegate.swift; sourceTree = "<group>"; };
 		2DD4B6A52528B2BE0065B563 /* SummaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRepository.swift; sourceTree = "<group>"; };
-		2DD4B6A92528B4E20065B563 /* SummayModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummayModelMapper.swift; sourceTree = "<group>"; };
-		2DD4B6AC2528B9E50065B563 /* MapperAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperAssembly.swift; sourceTree = "<group>"; };
-		2DD4B6AF2528BA390065B563 /* SummaryModelMapperDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryModelMapperDelegate.swift; sourceTree = "<group>"; };
+		2DD4B6A92528B4E20065B563 /* SummaryDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDTOMapper.swift; sourceTree = "<group>"; };
 		2DD4B6B22528BB670065B563 /* SummaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryUseCase.swift; sourceTree = "<group>"; };
 		2DD6D40D24FBE198008EE378 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		2DD6D40F24FBE286008EE378 /* NetworkRequestPerfomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestPerfomer.swift; sourceTree = "<group>"; };
 		2DD6D41124FBEA4C008EE378 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		2DD6D41724FBF01E008EE378 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		2DD6D41924FBF068008EE378 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		2DD6D42224FBF3D0008EE378 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		468FC146B1518ECCEC4847ED /* Pods_MVVM_Clean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Clean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4A030BF9347454A47F5AA4 /* Pods_MVVM_CleanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_CleanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636D264085D29723AEFFE35E /* Pods-MVVM-Clean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Clean.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-Clean/Pods-MVVM-Clean.debug.xcconfig"; sourceTree = "<group>"; };
@@ -355,8 +347,7 @@
 		2D1DE737252A63090039E298 /* Country */ = {
 			isa = PBXGroup;
 			children = (
-				2D1DE738252A632B0039E298 /* CountryModelMapperDelegate.swift */,
-				2D1DE73C252A66D20039E298 /* CountryModelMapper.swift */,
+				2D1DE73C252A66D20039E298 /* CountryDTOMapper.swift */,
 			);
 			path = Country;
 			sourceTree = "<group>";
@@ -653,7 +644,6 @@
 				2DB7075624D94F9A003B2151 /* ViewModelAssembly.swift */,
 				2DB7075824D94FA6003B2151 /* RepositoryAssembly.swift */,
 				2DB7075A24D94FAF003B2151 /* UseCaseAssembly.swift */,
-				2DD4B6AC2528B9E50065B563 /* MapperAssembly.swift */,
 				2D14B73D252911AB0079C7C3 /* NetworkAssembly.swift */,
 				2D14B73F2529122D0079C7C3 /* PersistenceAssembly.swift */,
 			);
@@ -760,10 +750,9 @@
 			isa = PBXGroup;
 			children = (
 				2DB7077A24D987F6003B2151 /* CustomError.swift */,
-				2DB7077C24D98825003B2151 /* UserModel.swift */,
-				2DD6D42224FBF3D0008EE378 /* TransactionModel.swift */,
-				2DD4B69B2528AFDA0065B563 /* SummaryModel.swift */,
-				2D1DE73A252A637E0039E298 /* CountryModel.swift */,
+				2DB7077C24D98825003B2151 /* User.swift */,
+				2DD4B69B2528AFDA0065B563 /* Summary.swift */,
+				2D1DE73A252A637E0039E298 /* Country.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -837,8 +826,7 @@
 		2DD4B6A82528B4C00065B563 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				2DD4B6A92528B4E20065B563 /* SummayModelMapper.swift */,
-				2DD4B6AF2528BA390065B563 /* SummaryModelMapperDelegate.swift */,
+				2DD4B6A92528B4E20065B563 /* SummaryDTOMapper.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -856,9 +844,9 @@
 		2DD6D40124FBDD04008EE378 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				2DD4B68E2528AE240065B563 /* Summary.swift */,
-				2DD4B6912528AE490065B563 /* Country.swift */,
-				2DD4B6942528AEC00065B563 /* Global.swift */,
+				2DD4B68E2528AE240065B563 /* SummaryDTO.swift */,
+				2DD4B6912528AE490065B563 /* CountryDTO.swift */,
+				2DD4B6942528AEC00065B563 /* GlobalDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -1091,24 +1079,23 @@
 				2DB7073A24D94A8E003B2151 /* LoginViewController.swift in Sources */,
 				2DB7078724D9A5CD003B2151 /* LoginUseCaseDelegate.swift in Sources */,
 				2D2E0A9824DA0C8200874A97 /* SummaryCovidViewModelInputDelegate.swift in Sources */,
-				2D1DE73D252A66D20039E298 /* CountryModelMapper.swift in Sources */,
+				2D1DE73D252A66D20039E298 /* CountryDTOMapper.swift in Sources */,
 				2D14A921252CF3D00056FF76 /* CountryNetworkRequest.swift in Sources */,
 				2D14B73A25290E750079C7C3 /* SummaryPersistenceProtocolRequest.swift in Sources */,
 				2D2E0A7224D9F0AB00874A97 /* UIViewController+Extensions.swift in Sources */,
-				2DB7077D24D98825003B2151 /* UserModel.swift in Sources */,
+				2DB7077D24D98825003B2151 /* User.swift in Sources */,
 				2D2E0A9624DA0C3B00874A97 /* SummaryCovidViewModel.swift in Sources */,
 				2DB7076924D95547003B2151 /* ProfileRepository.swift in Sources */,
 				2DD4B69F2528B1D60065B563 /* SummaryUseCaseDelegate.swift in Sources */,
-				2DD4B6952528AEC00065B563 /* Global.swift in Sources */,
+				2DD4B6952528AEC00065B563 /* GlobalDTO.swift in Sources */,
 				2D14B73E252911AB0079C7C3 /* NetworkAssembly.swift in Sources */,
 				2D1DE742252A6C800039E298 /* CountryPersistenceRequest.swift in Sources */,
 				2D2E0A7E24D9F69000874A97 /* BaseViewController.swift in Sources */,
 				2D14A918252CF2FE0056FF76 /* CountryUseCaseDelegate.swift in Sources */,
 				2D2E0A9A24DA0C9C00874A97 /* SummaryCovidViewModelOutputDelegate.swift in Sources */,
-				2DD4B6B02528BA390065B563 /* SummaryModelMapperDelegate.swift in Sources */,
 				2DD4B6822528A8770065B563 /* CustomDateUtils.swift in Sources */,
 				2D2E0A7A24D9F46000874A97 /* LoadingView.swift in Sources */,
-				2DD4B68F2528AE240065B563 /* Summary.swift in Sources */,
+				2DD4B68F2528AE240065B563 /* SummaryDTO.swift in Sources */,
 				2D2E0A8F24DA09D100874A97 /* ProfileUseCase.swift in Sources */,
 				2D14A924252D03B20056FF76 /* CountryCovidViewModel.swift in Sources */,
 				2DB7071224D94548003B2151 /* AppDelegate.swift in Sources */,
@@ -1121,16 +1108,13 @@
 				2DB7075E24D95070003B2151 /* UIStoryboad+Extensions.swift in Sources */,
 				2D1DE747252A6F480039E298 /* CountryRepository.swift in Sources */,
 				2DB7077524D97DE3003B2151 /* LoginViewModelOutputDelegate.swift in Sources */,
-				2DD4B6AD2528B9E50065B563 /* MapperAssembly.swift in Sources */,
-				2D1DE739252A632B0039E298 /* CountryModelMapperDelegate.swift in Sources */,
 				2D14B7402529122D0079C7C3 /* PersistenceAssembly.swift in Sources */,
 				2DD4B6B32528BB670065B563 /* SummaryUseCase.swift in Sources */,
 				2D2E0A9124DA09E300874A97 /* ProfileUseCaseDelegate.swift in Sources */,
 				2D1E5044253AFD4600D00EC6 /* ProfileViewController.swift in Sources */,
-				2DD6D42324FBF3D0008EE378 /* TransactionModel.swift in Sources */,
-				2DD4B6AA2528B4E20065B563 /* SummayModelMapper.swift in Sources */,
+				2DD4B6AA2528B4E20065B563 /* SummaryDTOMapper.swift in Sources */,
 				2DB7077824D98743003B2151 /* LoginRepositoryDelegate.swift in Sources */,
-				2D1DE73B252A637E0039E298 /* CountryModel.swift in Sources */,
+				2D1DE73B252A637E0039E298 /* Country.swift in Sources */,
 				2DB7075924D94FA6003B2151 /* RepositoryAssembly.swift in Sources */,
 				2DB7077024D95ED7003B2151 /* SplashScreenViewModelOutputDelegate.swift in Sources */,
 				2DB7075524D94F90003B2151 /* ViewControllerAssembly.swift in Sources */,
@@ -1154,7 +1138,7 @@
 				2D14A926252D03D00056FF76 /* CountryCovidViewModelInputDelegate.swift in Sources */,
 				2DD4B6A62528B2BE0065B563 /* SummaryRepository.swift in Sources */,
 				2DB7076E24D95EC9003B2151 /* SplashScreenViewModelInputDelegate.swift in Sources */,
-				2DD4B6922528AE490065B563 /* Country.swift in Sources */,
+				2DD4B6922528AE490065B563 /* CountryDTO.swift in Sources */,
 				2D1E505D253B02F300D00EC6 /* ProfilePersistenceProtocolData.swift in Sources */,
 				2DD4B68C2528AACF0065B563 /* SummaryRouter.swift in Sources */,
 				2D0ABD34253EF79400A89F60 /* SummaryDataRequestTest.swift in Sources */,
@@ -1170,7 +1154,7 @@
 				2DD6D41224FBEA4C008EE378 /* NetworkConstant.swift in Sources */,
 				2D14B73C25290EE20079C7C3 /* SummaryPersistenceRequest.swift in Sources */,
 				2DB7077324D97DD6003B2151 /* LoginViewModelInputDelegate.swift in Sources */,
-				2DD4B69C2528AFDA0065B563 /* SummaryModel.swift in Sources */,
+				2DD4B69C2528AFDA0065B563 /* Summary.swift in Sources */,
 				2DD4B67E2528A7F00065B563 /* CustomConsoleLog.swift in Sources */,
 				2D14A928252D03FD0056FF76 /* CountryCovidViewModelOutputDelegate.swift in Sources */,
 				2D1DE740252A6C340039E298 /* CountryPersistenceProtocolRequest.swift in Sources */,
@@ -1183,10 +1167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD4B6932528AE490065B563 /* Country.swift in Sources */,
-				2DD4B6902528AE240065B563 /* Summary.swift in Sources */,
+				2DD4B6932528AE490065B563 /* CountryDTO.swift in Sources */,
+				2DD4B6902528AE240065B563 /* SummaryDTO.swift in Sources */,
 				2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */,
-				2DD4B6962528AEC00065B563 /* Global.swift in Sources */,
+				2DD4B6962528AEC00065B563 /* GlobalDTO.swift in Sources */,
 				2D0ABD26253EF3FA00A89F60 /* SummaryIntegrationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1352,7 +1336,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcon.MVVM-Clean";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1372,7 +1356,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcon.MVVM-Clean";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

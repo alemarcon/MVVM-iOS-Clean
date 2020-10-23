@@ -12,7 +12,7 @@ protocol SummaryUseCaseResponseDelegate: AnyObject {
     
     /// Called on success received summary data
     /// - Parameter summary: Summary data model
-    func onSummaryDataReceived(summary: SummaryModel)
+    func onSummaryDataReceived(summary: Summary)
     
     /// Called on summary data failure event
     /// - Parameter error: CustomError object

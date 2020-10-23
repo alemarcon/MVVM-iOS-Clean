@@ -1,5 +1,5 @@
 //
-//  Summary.swift
+//  SummaryDTO.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 03/10/2020.
@@ -11,10 +11,10 @@ import Foundation
 /**
  Summary DTO model retrieved from API JSON data.
  */
-struct Summary: Codable {
+struct SummaryDTO: Codable {
     let message: String?
-    let global: Global?
-    let countries: [Country]?
+    let global: GlobalDTO?
+    let countries: [CountryDTO]?
     let date: String?
 
     enum CodingKeys: String, CodingKey {
@@ -27,8 +27,8 @@ struct Summary: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         message = try values.decodeIfPresent(String.self, forKey: .message)
-        global = try values.decodeIfPresent(Global.self, forKey: .global)
-        countries = try values.decodeIfPresent([Country].self, forKey: .countries)
+        global = try values.decodeIfPresent(GlobalDTO.self, forKey: .global)
+        countries = try values.decodeIfPresent([CountryDTO].self, forKey: .countries)
         date = try values.decodeIfPresent(String.self, forKey: .date)
     }
 }

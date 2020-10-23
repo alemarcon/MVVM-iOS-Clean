@@ -40,7 +40,7 @@ class CountryTableViewCell: UITableViewCell {
         totalDeathsCasesLabel.text = ""
     }
     
-    func bind(country: CountryModel) {
+    func bind(country: Country) {
         countryNameLabel.text = country.countryName
         
         let newCasesLocalized = NSLocalizedString("new_cases_cell", comment: "")

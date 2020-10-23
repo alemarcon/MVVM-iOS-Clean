@@ -13,8 +13,8 @@ protocol SummaryPersistenceProtocolRequest {
     
     /// Save summary data in local storage.
     /// - Parameter data: Summary dto data to save locally
-    func saveLocalSummaryDTO(data: Summary)
+    func saveLocalSummaryDTO(data: SummaryDTO)
     
     /// Get Summary data from locale storage. If there is no data, nil will be returned
-    func getLocalSummaryDataDTO() -> Summary?
+    func getLocalSummaryDataDTO() -> SummaryDTO?
 }

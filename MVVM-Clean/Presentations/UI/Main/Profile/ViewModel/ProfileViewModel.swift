@@ -25,7 +25,7 @@ enum ProfileViewModelStatus {
 protocol ProfileViewModelDelegate: ProfileViewModelInputDelegate, ProfileViewModelOutputDelegate { }
 
 class ProfileViewModel: ProfileViewModelDelegate {
-    var currentUser: UserModel?
+    var currentUser: User?
     var profileUseCase: ProfileUseCaseDelegate?
     var status: Observable<ProfileViewModelStatus> = Observable(.none)
     var error: CustomError?
@@ -58,7 +58,7 @@ extension ProfileViewModel: ProfileUseCaseResponseDelegate {
     }
     
     //MARK: - Userdata response
-    func gettingUserDataSuccess(currentUser: UserModel) {
+    func gettingUserDataSuccess(currentUser: User) {
         self.currentUser = currentUser
         status.value = .gettingUserDataSuccess
     }

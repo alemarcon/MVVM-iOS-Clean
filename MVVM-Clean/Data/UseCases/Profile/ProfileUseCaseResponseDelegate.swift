@@ -22,7 +22,7 @@ protocol ProfileUseCaseResponseDelegate: AnyObject {
     //MARK: - User data response delegate
     
     /// Event called on success during getting user data operation
-    func gettingUserDataSuccess(currentUser: UserModel)
+    func gettingUserDataSuccess(currentUser: User)
     
     /// Event called on error during getting user data operation
     /// - Parameter error: The error occurred
@@ -36,6 +36,6 @@ protocol ProfileUseCaseResponseDelegate: AnyObject {
 extension ProfileUseCaseResponseDelegate {
     func onLogoutSuccess() {}
     func onLogoutFailure(error: CustomError) {}
-    func gettingUserDataSuccess(currentUser: UserModel) {}
+    func gettingUserDataSuccess(currentUser: User) {}
     func gettingUserDataFailure(error: CustomError) {}
 }

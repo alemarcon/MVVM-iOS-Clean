@@ -37,7 +37,7 @@ class LoginViewModel: LoginViewModelDelegate {
 // MARK: - Login Use Case Response Delegate
 extension LoginViewModel: LoginUseCaseResponseDelegate {
     
-    func onLoginSuccess(user: UserModel) {
+    func onLoginSuccess(user: User) {
         status.value = .loginSuccess
     }
     

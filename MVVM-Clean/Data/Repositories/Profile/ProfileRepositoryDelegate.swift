@@ -17,7 +17,7 @@ protocol ProfileRepositoryDelegate {
     ///   - user: Current user model object
     ///   - success: Event fired in success case
     ///   - failure: Event fired in failure case
-    func saveCurrentUserData(user: UserModel, success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void)
+    func saveCurrentUserData(user: User, success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void)
     
     /// Delete data of current user
     /// - Parameters:
@@ -29,7 +29,7 @@ protocol ProfileRepositoryDelegate {
     /// - Parameters:
     ///   - success: Event fired in success case
     ///   - failure: Event fired in failure case
-    func getCurrentUserData(success: @escaping (UserModel) -> Void, failure: @escaping (CustomError) -> Void)
+    func getCurrentUserData(success: @escaping (User) -> Void, failure: @escaping (CustomError) -> Void)
     
     /// Check if users is signed in
     /// - Parameters:

@@ -18,7 +18,7 @@ class SummaryPersistenceRequest: SummaryPersistenceProtocolRequest {
     /// Save DTO Summary object to UserDefaults
     /// - Parameter data: Summary data to save locally
     /// - Throws:
-    func saveLocalSummaryDTO(data: Summary) {
+    func saveLocalSummaryDTO(data: SummaryDTO) {
         LOGFSTART()
         let userDefaults = UserDefaults.standard
         
@@ -35,13 +35,13 @@ class SummaryPersistenceRequest: SummaryPersistenceProtocolRequest {
     /// Get local summary DTO model from UserDefaults. If no data is stored, nil will be returned
     /// - Throws:
     /// - Returns: Summary object if is present, nil otherwise
-    func getLocalSummaryDataDTO() -> Summary? {
+    func getLocalSummaryDataDTO() -> SummaryDTO? {
         LOGFSTART()
         let userDefaults = UserDefaults.standard
         do {
             if let summaryDTO = userDefaults.object(forKey: SUMMARY_DTO) as? Data {
                 let decoder = JSONDecoder()
-                let loadedSummary = try decoder.decode(Summary.self, from: summaryDTO)
+                let loadedSummary = try decoder.decode(SummaryDTO.self, from: summaryDTO)
                 return loadedSummary
             }
         } catch (let error) {

@@ -16,7 +16,7 @@ class CountryPersistenceRequest: CountryPersistenceProtocolRequest {
     
     private let COUNTRY_DTO = "country_codable_object_dto"
     
-    func saveLocalCountryDataDTO(data: [Country]) {
+    func saveLocalCountryDataDTO(data: [CountryDTO]) {
         LOGFSTART()
         let userDefaults = UserDefaults.standard
         
@@ -30,13 +30,13 @@ class CountryPersistenceRequest: CountryPersistenceProtocolRequest {
         }
     }
     
-    func getLocalCountryDataDTO() -> [Country]? {
+    func getLocalCountryDataDTO() -> [CountryDTO]? {
         LOGFSTART()
         let userDefaults = UserDefaults.standard
         do {
             if let countryDTO = userDefaults.object(forKey: COUNTRY_DTO) as? Data {
                 let decoder = JSONDecoder()
-                let loadedCountries = try decoder.decode([Country].self, from: countryDTO)
+                let loadedCountries = try decoder.decode([CountryDTO].self, from: countryDTO)
                 return loadedCountries
             }
         } catch (let error) {

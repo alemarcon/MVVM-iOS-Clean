@@ -18,5 +18,5 @@ protocol LoginRepositoryDelegate {
     ///   - password: The password string
     ///   - success: success event of login
     ///   - failure: failure event of login
-    func login(username: String, password: String, success: @escaping (UserModel)->Void, failure: @escaping (CustomError)->Void)
+    func login(username: String, password: String, success: @escaping (User)->Void, failure: @escaping (CustomError)->Void)
 }

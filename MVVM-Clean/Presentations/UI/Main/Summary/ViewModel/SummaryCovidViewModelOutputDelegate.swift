@@ -12,5 +12,5 @@ import Bond
 protocol SummaryCovidViewModelOutputDelegate {
     var status: Observable<SummaryCovidViewModelStatus> { get }
     var error: CustomError? { get }
-    var summary: SummaryModel? { get set }
+    var summary: Summary? { get set }
 }

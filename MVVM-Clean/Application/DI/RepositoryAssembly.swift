@@ -42,11 +42,6 @@ class RepositoryAssembly: Assembly {
             }
             covidRepo.covidNetwork = summaryNetwork
             
-            guard let summaryMapper = resolver.resolve(SummaryModelMapperDelegate.self) else {
-                fatalError("Assembler was unable to resolve SummaryModelMapperDelegate")
-            }
-            covidRepo.summaryMapper = summaryMapper
-            
             guard let summaryLocal = resolver.resolve(SummaryPersistenceProtocolRequest.self) else {
                 fatalError("Assembler was unable to resolve SummaryLocalProtocolRequest")
             }
@@ -56,11 +51,6 @@ class RepositoryAssembly: Assembly {
                 fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
             }
             covidRepo.countryLocal = countryLocal
-            
-            guard let countryMapper = resolver.resolve(CountryModelMapperDelegate.self) else {
-                fatalError("Assembler was unable to resolve CountryModelMapperDelegate")
-            }
-            covidRepo.countryMapper = countryMapper
             
             return covidRepo
         }.inObjectScope(.transient)
@@ -72,11 +62,6 @@ class RepositoryAssembly: Assembly {
                 fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
             }
             countryRepo.countryLocal = countryLocalData
-            
-            guard let countryMapper = resolver.resolve(CountryModelMapperDelegate.self) else {
-                fatalError("Assembler was unable to resolve CountryModelMapperDelegate")
-            }
-            countryRepo.countryMapper = countryMapper
             
             guard let countryNetwork = resolver.resolve(CountryNetworkProtocolRequest.self) else {
                 fatalError("Assembler was unable to resolve CountryNetworkProtocolRequest")

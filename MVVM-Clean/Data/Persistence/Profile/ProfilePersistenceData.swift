@@ -14,19 +14,19 @@ import Foundation
  */
 class ProfilePersistenceData: ProfilePersistenceProtocolData {
     
-    func getLocalUserData() -> UserModel? {
+    func getLocalUserData() -> User? {
         LOGD("Getting local user data")
-        var currentUser: UserModel?
+        var currentUser: User?
         
         if let currentUsername = UserDefaults.standard.string(forKey: "current_user_username") {
-            currentUser = UserModel()
+            currentUser = User()
             currentUser!.username = currentUsername
         }
         
         return currentUser
     }
     
-    func saveLocalUserData(currentUser: UserModel) {
+    func saveLocalUserData(currentUser: User) {
         LOGD("Saving local user data")
         UserDefaults.standard.set(currentUser.username, forKey: "current_user_username")
     }

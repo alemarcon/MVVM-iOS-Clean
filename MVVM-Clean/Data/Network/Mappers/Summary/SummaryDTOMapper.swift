@@ -1,5 +1,5 @@
 //
-//  SummayModelMapper.swift
+//  SummaryDTOMapper.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 03/10/2020.
@@ -8,16 +8,13 @@
 
 import Foundation
 
-/**
- The implementation of SummaryModelMapperDelegate. Here we are going to map the Summary DTO field to SummaryModel. In this way we can map only the field we need.
- */
-class SummayModelMapper: SummaryModelMapperDelegate {
+struct SummaryDTOMapper {
     
-    /// Map a single summary DTO object to a SummaryModel object
-    /// - Parameter summary: Summary DTO object to map
-    /// - Returns: SummaryModel mapped from Summary DTO
-    func mapToSummaryModel(summary: Summary) -> SummaryModel {
-        var summaryModel = SummaryModel()
+    /// Map a single Summary DTO object in a single SummaryModel object
+    /// - Parameter summary: Summary DTO to map
+    /// - Returns: SummaryModel mapped from DTO
+    static func map(summary: SummaryDTO) -> Summary {
+        var summaryModel = Summary()
         
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
@@ -49,16 +46,17 @@ class SummayModelMapper: SummaryModelMapperDelegate {
         return summaryModel
     }
     
-    /// Map a summary DTO array object to a SummaryModel array object
-    /// - Parameter summaries: <#summaries description#>
-    /// - Returns: <#description#>
-    func mapToSummaryModelArray(summaries: [Summary]) -> [SummaryModel] {
-        var summariesModel = [SummaryModel]()
+    /// Map a Summary DTO object array in a SummaryModel object array
+    /// - Parameter summaries: Summary DTO array to map
+    /// - Returns: SummaryModel object array mapped from DTO
+    static func map(array summaries: [SummaryDTO]) -> [Summary] {
+        var summariesModel = [Summary]()
         
         summaries.forEach { (summary) in
-            summariesModel.append( mapToSummaryModel(summary: summary) )
+            summariesModel.append( map(summary: summary) )
         }
         
         return summariesModel
     }
+    
 }

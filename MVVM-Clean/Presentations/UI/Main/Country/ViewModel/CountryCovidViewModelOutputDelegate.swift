@@ -12,5 +12,5 @@ import Bond
 protocol CountryCovidViewModelOutputDelegate {
     var status: Observable<CountryCovidViewModelStatus> { get }
     var error: CustomError? { get }
-    var countries: [CountryModel]? { get set }
+    var countries: [Country]? { get set }
 }

@@ -23,7 +23,7 @@ class SummaryCovidViewModel: SummaryCovidViewModelDelegate {
     
     var summaryUseCase: SummaryUseCaseDelegate?
     var status: Observable<SummaryCovidViewModelStatus> = Observable(.none)
-    var summary: SummaryModel?
+    var summary: Summary?
     var error: CustomError?
 
     func summaryData() {
@@ -37,7 +37,7 @@ class SummaryCovidViewModel: SummaryCovidViewModelDelegate {
 // MARK: - Logout Use Case Response Delegate
 extension SummaryCovidViewModel: SummaryUseCaseResponseDelegate {
     
-    func onSummaryDataReceived(summary: SummaryModel) {
+    func onSummaryDataReceived(summary: Summary) {
         LOGI("Summary data received")
         self.summary = summary
         status.value = .summaryDataSuccess

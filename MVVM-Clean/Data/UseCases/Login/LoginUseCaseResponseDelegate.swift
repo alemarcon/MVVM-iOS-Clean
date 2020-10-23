@@ -12,7 +12,7 @@ protocol LoginUseCaseResponseDelegate: AnyObject {
     
     /// Event fired on login process successed
     /// - Parameter user: The UserModel object corresponding to current user logged in
-    func onLoginSuccess(user: UserModel)
+    func onLoginSuccess(user: User)
     
     /// Event fired in case of login failed.
     /// - Parameter error: The error object

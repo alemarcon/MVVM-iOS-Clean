@@ -14,16 +14,13 @@ protocol CountryRepositoryDelegate {
     var countryLocal: CountryPersistenceProtocolRequest? { get set }
     var countryNetwork: CountryNetworkProtocolRequest? { get set }
     
-    //MARK: - Mappers
-    var countryMapper: CountryModelMapperDelegate? { get set }
-    
     //MARK: - Methods
     
     /// Used to get all countries data.
     /// - Parameters:
     ///   - success: Event fired in success case
     ///   - failure: Event fired in failure case
-    func getCountriesData(success: @escaping ([CountryModel])->Void, failure: @escaping (CustomError)->Void)
+    func getCountriesData(success: @escaping ([Country])->Void, failure: @escaping (CustomError)->Void)
     
     /// Used to get country data filtered by various data.
     /// - Parameters:
@@ -33,6 +30,6 @@ protocol CountryRepositoryDelegate {
     ///   - to: Date to
     ///   - success: Event fired in success case
     ///   - failure: Event fired in failure case
-    func getCountryData(by countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping ([CountryModel])->Void, failure: @escaping (CustomError)->Void)
+    func getCountryData(by countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping ([Country])->Void, failure: @escaping (CustomError)->Void)
     
 }

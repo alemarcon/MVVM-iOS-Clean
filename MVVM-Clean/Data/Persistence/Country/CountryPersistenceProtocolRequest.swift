@@ -13,8 +13,8 @@ protocol CountryPersistenceProtocolRequest {
     
     /// Save CountryModel data array locally.
     /// - Parameter data: The Country dto array to save locally
-    func saveLocalCountryDataDTO(data: [Country])
+    func saveLocalCountryDataDTO(data: [CountryDTO])
     
     /// Get country data saved locally. If there is no data, nil will be returned.
-    func getLocalCountryDataDTO() -> [Country]?
+    func getLocalCountryDataDTO() -> [CountryDTO]?
 }

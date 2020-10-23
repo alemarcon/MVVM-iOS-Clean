@@ -15,10 +15,10 @@ class LoginRepository: LoginRepositoryDelegate {
     private let USERNAME = "admin"
     private let PASSWORD = "pass123!"
 
-    func login(username: String, password: String, success: @escaping (UserModel) -> Void, failure: @escaping (CustomError) -> Void) {
+    func login(username: String, password: String, success: @escaping (User) -> Void, failure: @escaping (CustomError) -> Void) {
         // Move here your network request instead of this code
         if( username == USERNAME && password == PASSWORD ) {
-            var userModel = UserModel()
+            var userModel = User()
             userModel.username = USERNAME
             profileProtocol?.saveLocalUserData(currentUser: userModel)
             

@@ -1,5 +1,5 @@
 //
-//  CountryModelMapper.swift
+//  CountryDTOMapper.swift
 //  MVVM-Clean
 //
 //  Created by Alessandro Marcon on 04/10/2020.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-/**
- The implementation of CountryModelMapperDelegate. Here we are going to map the Country DTO field to CountryModel. In this way we can map only the field we need.
- */
-class CountryModelMapper: CountryModelMapperDelegate {
+struct CountryDTOMapper {
     
-    func mapToCountryModel(country: Country) -> CountryModel {
-        var countryModel = CountryModel()
+    /// Map a single Country DTO object in a single CountryModel object
+    /// - Parameter country: <#country description#>
+    /// - Returns: <#description#>
+    static func map(country: CountryDTO) -> Country {
+        var countryModel = Country()
         
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
@@ -47,13 +47,17 @@ class CountryModelMapper: CountryModelMapperDelegate {
         return countryModel
     }
     
-    func mapToCountryModelArray(countries: [Country]) -> [CountryModel] {
-        var countriesModel = [CountryModel]()
+    /// Map a Country DTO object array in a CountryModel object array
+    /// - Parameter countries: <#countries description#>
+    /// - Returns: <#description#>
+    static func map(countries: [CountryDTO]) -> [Country] {
+        var countriesModel = [Country]()
         
         countries.forEach { (country) in
-            countriesModel.append( mapToCountryModel(country: country) )
+            countriesModel.append( map(country: country) )
         }
         
         return countriesModel
     }
+    
 }

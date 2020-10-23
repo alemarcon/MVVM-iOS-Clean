@@ -75,7 +75,7 @@ class SummaryViewController: BaseViewController {
         loadSummaryData()
     }
     
-    private func updateSummary(withData: SummaryModel) {
+    private func updateSummary(withData: Summary) {
         let lastUpdate = NSLocalizedString("last_summary_update", comment: "")
         lastUpdateLabel.text = String.localizedStringWithFormat(lastUpdate, "\(withData.lastUpdate)")
 

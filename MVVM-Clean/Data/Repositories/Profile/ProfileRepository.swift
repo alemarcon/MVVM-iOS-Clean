@@ -12,7 +12,7 @@ class ProfileRepository: ProfileRepositoryDelegate {
 
     var profileLocalData: ProfilePersistenceProtocolData?
     
-    func saveCurrentUserData(user: UserModel, success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void) {
+    func saveCurrentUserData(user: User, success: @escaping (Bool) -> Void, failure: @escaping (CustomError) -> Void) {
         LOGD("Saving current user")
         profileLocalData?.saveLocalUserData(currentUser: user)
         success(true)
@@ -24,7 +24,7 @@ class ProfileRepository: ProfileRepositoryDelegate {
         success(true)
     }
     
-    func getCurrentUserData(success: @escaping (UserModel) -> Void, failure: @escaping (CustomError) -> Void) {
+    func getCurrentUserData(success: @escaping (User) -> Void, failure: @escaping (CustomError) -> Void) {
         LOGD("Get current user")
         if let currentUser = profileLocalData?.getLocalUserData() {
             success(currentUser)

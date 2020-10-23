@@ -24,7 +24,7 @@ class CountryCovidViewModel: CountryCovidViewModelDelegate {
     var countryUseCase: CountryUseCaseDelegate?
     var status: Observable<CountryCovidViewModelStatus> = Observable(.none)
     var error: CustomError?
-    var countries: [CountryModel]?
+    var countries: [Country]?
     
     func getCountryList() {
         LOGI("Begin recover country list data")
@@ -36,7 +36,7 @@ class CountryCovidViewModel: CountryCovidViewModelDelegate {
 
 extension CountryCovidViewModel: CountryUseCaseResponseDelegate {
     
-    func onCountryDataReceived(countries: [CountryModel]) {
+    func onCountryDataReceived(countries: [Country]) {
         LOGI("Country data received")
         self.countries = countries
         status.value = .countriesDataSuccess

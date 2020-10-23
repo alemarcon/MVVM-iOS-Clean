@@ -12,7 +12,7 @@ protocol CountryUseCaseResponseDelegate: AnyObject {
     
     /// Called on success received summary data
     /// - Parameter summary: Summary data model
-    func onCountryDataReceived(countries: [CountryModel])
+    func onCountryDataReceived(countries: [Country])
     
     /// Called on summary data failure event
     /// - Parameter error: CustomError object

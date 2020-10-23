@@ -16,7 +16,7 @@ class SummaryDataRequestTest: SummaryNetworkProtocolRequest {
         let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
         
         let decoder: JSONDecoder = JSONDecoder.init()
-        let summary: Summary = try! decoder.decode(Summary.self, from: data)
+        let summary: SummaryDTO = try! decoder.decode(SummaryDTO.self, from: data)
         success(summary as! T)
     }
     

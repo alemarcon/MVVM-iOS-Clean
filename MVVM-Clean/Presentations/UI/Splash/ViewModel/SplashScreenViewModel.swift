@@ -29,7 +29,7 @@ class SplashScreenViewModel: SplashScreenViewModelDelegate {
 
 extension SplashScreenViewModel: ProfileUseCaseResponseDelegate {
     
-    func gettingUserDataSuccess(currentUser: UserModel) {
+    func gettingUserDataSuccess(currentUser: User) {
         self.status.value = .loggedIn
     }
     

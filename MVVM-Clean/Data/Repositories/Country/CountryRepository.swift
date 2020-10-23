@@ -12,20 +12,12 @@ class CountryRepository: CountryRepositoryDelegate {
     
     var countryNetwork: CountryNetworkProtocolRequest?
     var countryLocal: CountryPersistenceProtocolRequest?
-    var countryMapper: CountryModelMapperDelegate?
     
-    func getCountriesData(success: @escaping ([CountryModel]) -> Void, failure: @escaping (CustomError) -> Void) {
+    func getCountriesData(success: @escaping ([Country]) -> Void, failure: @escaping (CustomError) -> Void) {
         
         if let localCountriesData = countryLocal?.getLocalCountryDataDTO() {
-            if let localCountries = countryMapper?.mapToCountryModelArray(countries: localCountriesData) {
-                success(localCountries)
-            } else {
-                LOGE("No local countries data found")
-                let customError = CustomError()
-                customError.errorMessage = "No local countries data found"
-                customError.localizedErrorMessage = NSLocalizedString("country_mapper_error", comment: "")
-                failure(customError)
-            }
+            let localCountries = CountryDTOMapper.map(countries: localCountriesData)
+            success(localCountries)
         } else {
             LOGE("CountryLocalProtocolRequest returned nil object")
             let customError = CustomError()
@@ -35,19 +27,12 @@ class CountryRepository: CountryRepositoryDelegate {
         }
     }
     
-    func getCountryData(by countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping ([CountryModel]) -> Void, failure: @escaping (CustomError) -> Void) {
+    func getCountryData(by countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping ([Country]) -> Void, failure: @escaping (CustomError) -> Void) {
         
-        countryNetwork?.getByCountryByStatus(countrySlug: countrySlug, status: status, from: from, to: to, success: { (response: [Country]) in
+        countryNetwork?.getByCountryByStatus(countrySlug: countrySlug, status: status, from: from, to: to, success: { (response: [CountryDTO]) in
             LOGI("Data received")
-            if let countries = self.countryMapper?.mapToCountryModelArray(countries: response) {
-                success(countries)
-            } else {
-                LOGE("Countries model mapper or response is nil")
-                let customError = CustomError()
-                customError.errorMessage = "CountryModelMapper or response is nil"
-                customError.localizedErrorMessage = NSLocalizedString("country_mapper_error", comment: "")
-                failure(customError)
-            }
+            let countries = CountryDTOMapper.map(countries: response)
+            success(countries)
         }, failure: { (response: CustomError) in
             failure(response)
         })

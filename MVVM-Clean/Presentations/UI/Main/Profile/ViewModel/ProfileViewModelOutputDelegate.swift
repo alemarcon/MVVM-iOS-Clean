@@ -12,5 +12,5 @@ import Bond
 protocol ProfileViewModelOutputDelegate {
     var status: Observable<ProfileViewModelStatus> { get set }
     var error: CustomError? { get set }
-    var currentUser: UserModel? { get set }
+    var currentUser: User? { get set }
 }

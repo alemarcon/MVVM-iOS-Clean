@@ -21,7 +21,6 @@ extension Assembler {
             ViewModelAssembly(),
             RepositoryAssembly(),
             UseCaseAssembly(),
-            MapperAssembly(),
             NetworkAssembly(),
             PersistenceAssembly()
         ], container: container)

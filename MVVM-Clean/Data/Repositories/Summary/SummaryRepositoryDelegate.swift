@@ -15,10 +15,6 @@ protocol SummaryRepositoryDelegate {
     var summaryLocal: SummaryPersistenceProtocolRequest? { get set }
     var countryLocal: CountryPersistenceProtocolRequest? { get set }
     
-    //MARK: - Mapper objects
-    var summaryMapper: SummaryModelMapperDelegate? { get set }
-    var countryMapper: CountryModelMapperDelegate? { get set }
-    
     //MARK: - Test variable
     var isRunningFromTest: Bool? { get set }
     
@@ -28,5 +24,5 @@ protocol SummaryRepositoryDelegate {
     /// - Parameters:
     ///   - success: Success event
     ///   - failure: Failure event
-    func getSummaryData(success: @escaping (SummaryModel)->Void, failure: @escaping (CustomError)->Void)
+    func getSummaryData(success: @escaping (Summary)->Void, failure: @escaping (CustomError)->Void)
 }
