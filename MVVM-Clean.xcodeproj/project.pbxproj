@@ -11,6 +11,7 @@
 		2D0ABD26253EF3FA00A89F60 /* SummaryIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD25253EF3FA00A89F60 /* SummaryIntegrationTest.swift */; };
 		2D0ABD34253EF79400A89F60 /* SummaryDataRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD33253EF79400A89F60 /* SummaryDataRequestTest.swift */; };
 		2D0ABD37253EF79800A89F60 /* summary_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D0ABD2D253EF5BA00A89F60 /* summary_data.json */; };
+		2D137122256DC76000969B7F /* MVVM_CleanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D137121256DC76000969B7F /* MVVM_CleanUITests.swift */; };
 		2D14A916252CF2E60056FF76 /* CountryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D14A915252CF2E60056FF76 /* CountryUseCase.swift */; };
 		2D14A918252CF2FE0056FF76 /* CountryUseCaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D14A917252CF2FE0056FF76 /* CountryUseCaseDelegate.swift */; };
 		2D14A91A252CF3280056FF76 /* CountryUseCaseResponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D14A919252CF3280056FF76 /* CountryUseCaseResponseDelegate.swift */; };
@@ -111,6 +112,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2D137124256DC76000969B7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DB7070624D94547003B2151 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DB7070D24D94547003B2151;
+			remoteInfo = "MVVM-Clean";
+		};
 		2DB7072524D9454A003B2151 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2DB7070624D94547003B2151 /* Project object */;
@@ -125,6 +133,9 @@
 		2D0ABD25253EF3FA00A89F60 /* SummaryIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryIntegrationTest.swift; sourceTree = "<group>"; };
 		2D0ABD2D253EF5BA00A89F60 /* summary_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summary_data.json; sourceTree = "<group>"; };
 		2D0ABD33253EF79400A89F60 /* SummaryDataRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDataRequestTest.swift; sourceTree = "<group>"; };
+		2D13711F256DC76000969B7F /* MVVM-CleanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-CleanUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D137121256DC76000969B7F /* MVVM_CleanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_CleanUITests.swift; sourceTree = "<group>"; };
+		2D137123256DC76000969B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D14A915252CF2E60056FF76 /* CountryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUseCase.swift; sourceTree = "<group>"; };
 		2D14A917252CF2FE0056FF76 /* CountryUseCaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUseCaseDelegate.swift; sourceTree = "<group>"; };
 		2D14A919252CF3280056FF76 /* CountryUseCaseResponseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUseCaseResponseDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +243,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2D13711C256DC76000969B7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DB7070B24D94547003B2151 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +302,15 @@
 				2D0ABD2D253EF5BA00A89F60 /* summary_data.json */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		2D137120256DC76000969B7F /* MVVM-CleanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2D137121256DC76000969B7F /* MVVM_CleanUITests.swift */,
+				2D137123256DC76000969B7F /* Info.plist */,
+			);
+			path = "MVVM-CleanUITests";
 			sourceTree = "<group>";
 		};
 		2D14A914252CF2CC0056FF76 /* Country */ = {
@@ -504,6 +531,7 @@
 			children = (
 				2DB7071024D94547003B2151 /* MVVM-Clean */,
 				2DB7072724D9454A003B2151 /* MVVM-CleanTests */,
+				2D137120256DC76000969B7F /* MVVM-CleanUITests */,
 				2DB7070F24D94547003B2151 /* Products */,
 				D1B12B297F22C0BD556F816E /* Pods */,
 				12E24E3003149E60720179F6 /* Frameworks */,
@@ -515,6 +543,7 @@
 			children = (
 				2DB7070E24D94547003B2151 /* MVVM-Clean.app */,
 				2DB7072424D9454A003B2151 /* MVVM-CleanTests.xctest */,
+				2D13711F256DC76000969B7F /* MVVM-CleanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -903,6 +932,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2D13711E256DC76000969B7F /* MVVM-CleanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D137128256DC76000969B7F /* Build configuration list for PBXNativeTarget "MVVM-CleanUITests" */;
+			buildPhases = (
+				2D13711B256DC76000969B7F /* Sources */,
+				2D13711C256DC76000969B7F /* Frameworks */,
+				2D13711D256DC76000969B7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D137125256DC76000969B7F /* PBXTargetDependency */,
+			);
+			name = "MVVM-CleanUITests";
+			productName = "MVVM-CleanUITests";
+			productReference = 2D13711F256DC76000969B7F /* MVVM-CleanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		2DB7070D24D94547003B2151 /* MVVM-Clean */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DB7072D24D9454A003B2151 /* Build configuration list for PBXNativeTarget "MVVM-Clean" */;
@@ -947,10 +994,14 @@
 		2DB7070624D94547003B2151 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Alessandro Marcon";
 				TargetAttributes = {
+					2D13711E256DC76000969B7F = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 2DB7070D24D94547003B2151;
+					};
 					2DB7070D24D94547003B2151 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -976,11 +1027,19 @@
 			targets = (
 				2DB7070D24D94547003B2151 /* MVVM-Clean */,
 				2DB7072324D9454A003B2151 /* MVVM-CleanTests */,
+				2D13711E256DC76000969B7F /* MVVM-CleanUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2D13711D256DC76000969B7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DB7070C24D94547003B2151 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1071,6 +1130,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D13711B256DC76000969B7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D137122256DC76000969B7F /* MVVM_CleanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DB7070A24D94547003B2151 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1178,6 +1245,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2D137125256DC76000969B7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DB7070D24D94547003B2151 /* MVVM-Clean */;
+			targetProxy = 2D137124256DC76000969B7F /* PBXContainerItemProxy */;
+		};
 		2DB7072624D9454A003B2151 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2DB7070D24D94547003B2151 /* MVVM-Clean */;
@@ -1206,6 +1278,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2D137126256DC76000969B7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GB5KHBW76F;
+				INFOPLIST_FILE = "MVVM-CleanUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcon.MVVM-CleanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MVVM-Clean";
+			};
+			name = Debug;
+		};
+		2D137127256DC76000969B7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GB5KHBW76F;
+				INFOPLIST_FILE = "MVVM-CleanUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcon.MVVM-CleanUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MVVM-Clean";
+			};
+			name = Release;
+		};
 		2DB7072B24D9454A003B2151 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DD6D41924FBF068008EE378 /* Config.xcconfig */;
@@ -1411,6 +1525,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2D137128256DC76000969B7F /* Build configuration list for PBXNativeTarget "MVVM-CleanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D137126256DC76000969B7F /* Debug */,
+				2D137127256DC76000969B7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2DB7070924D94547003B2151 /* Build configuration list for PBXProject "MVVM-Clean" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

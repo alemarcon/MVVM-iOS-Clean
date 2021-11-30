@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jcU-Xh-vfG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jcU-Xh-vfG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,9 +23,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nac-sJ-Fi4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nac-sJ-Fi4">
                                 <rect key="frame" x="157" y="364" width="100" height="45"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="bNo-Xy-b9s"/>
                                     <constraint firstAttribute="height" constant="45" id="f2I-p9-ayy"/>
@@ -54,7 +55,9 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dlV-vE-oDi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="loginViewController"/>
                         <constraints>
                             <constraint firstItem="ERa-jY-RzL" firstAttribute="top" secondItem="6JP-BF-BB3" secondAttribute="bottom" constant="40" id="2Vt-D4-DKl"/>
                             <constraint firstItem="6JP-BF-BB3" firstAttribute="top" secondItem="NbG-kA-JOn" secondAttribute="bottom" constant="30" id="KbW-YB-2ZP"/>
@@ -71,7 +74,6 @@
                             <constraint firstItem="NbG-kA-JOn" firstAttribute="top" secondItem="dlV-vE-oDi" secondAttribute="top" constant="50" id="vTP-df-9CG"/>
                             <constraint firstItem="mXO-vp-KkZ" firstAttribute="centerX" secondItem="NpF-6s-shJ" secondAttribute="centerX" id="w4T-YI-hE1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dlV-vE-oDi"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="nac-sJ-Fi4" id="GSL-Qg-erK"/>
@@ -86,4 +88,12 @@
             <point key="canvasLocation" x="154" y="121"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

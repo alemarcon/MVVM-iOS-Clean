@@ -42,7 +42,7 @@ class SummaryIntegrationTest {
 
 extension SummaryIntegrationTest: SummaryUseCaseResponseDelegate {
     
-    func onSummaryDataReceived(summary: SummaryModel) {
+    func onSummaryDataReceived(summary: Summary) {
         expectation.fulfill()
     }
     

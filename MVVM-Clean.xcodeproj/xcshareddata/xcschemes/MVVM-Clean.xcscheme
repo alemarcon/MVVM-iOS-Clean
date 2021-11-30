@@ -26,7 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2DB7070D24D94547003B2151"
+            BuildableName = "MVVM-Clean.app"
+            BlueprintName = "MVVM-Clean"
+            ReferencedContainer = "container:MVVM-Clean.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +46,16 @@
                BlueprintIdentifier = "2DB7072324D9454A003B2151"
                BuildableName = "MVVM-CleanTests.xctest"
                BlueprintName = "MVVM-CleanTests"
+               ReferencedContainer = "container:MVVM-Clean.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2D13711E256DC76000969B7F"
+               BuildableName = "MVVM-CleanUITests.xctest"
+               BlueprintName = "MVVM-CleanUITests"
                ReferencedContainer = "container:MVVM-Clean.xcodeproj">
             </BuildableReference>
          </TestableReference>
