@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 enum LoginViewModelStatus {
     case none
@@ -22,11 +22,11 @@ class LoginViewModel: LoginViewModelDelegate {
 
     var error: CustomError?
     var loginUseCase: LoginUseCaseDelegate?
-    var status: Observable<LoginViewModelStatus> = Observable(.none)
+    var status: CurrentValueSubject<LoginViewModelStatus, Never> = .init(.none)
     
     func executeLogin(username: String, password: String) {
         print("Execute login")
-        status.value = .loginInProgress
+        status.send(.loginInProgress)
         error = nil
         loginUseCase?.responseDelegate = self
         loginUseCase?.startLogin(username: username, password: password)
@@ -38,11 +38,11 @@ class LoginViewModel: LoginViewModelDelegate {
 extension LoginViewModel: LoginUseCaseResponseDelegate {
     
     func onLoginSuccess(user: User) {
-        status.value = .loginSuccess
+        status.send(.loginSuccess)
     }
     
     func onLoginFailure(error: CustomError) {
         self.error = error
-        status.value = .loginError
+        status.send(.loginError)
     }
 }

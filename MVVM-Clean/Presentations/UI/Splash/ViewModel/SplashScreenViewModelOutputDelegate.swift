@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 protocol SplashScreenViewModelOutputDelegate {
-    var status: Observable<SplashScreenViewModelStatus> { get }
+    var status: CurrentValueSubject<SplashScreenViewModelStatus, Never> { get set }
     var profileUseCase: ProfileUseCaseDelegate? { get }
 }

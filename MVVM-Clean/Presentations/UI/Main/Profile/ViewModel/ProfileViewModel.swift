@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 //MARK: - ProfileViewModel Status
 enum ProfileViewModelStatus {
@@ -27,7 +27,7 @@ protocol ProfileViewModelDelegate: ProfileViewModelInputDelegate, ProfileViewMod
 class ProfileViewModel: ProfileViewModelDelegate {
     var currentUser: User?
     var profileUseCase: ProfileUseCaseDelegate?
-    var status: Observable<ProfileViewModelStatus> = Observable(.none)
+    var status: CurrentValueSubject<ProfileViewModelStatus, Never> = .init(.none)
     var error: CustomError?
     
     func logoutUser() {
@@ -49,7 +49,7 @@ extension ProfileViewModel: ProfileUseCaseResponseDelegate {
     //MARK: - Logout response
     func onLogoutSuccess() {
         currentUser = nil
-        status.value = .logoutProcessSuccess
+        status.send(.logoutProcessSuccess)
     }
     
     func onLogoutFailure(error: CustomError) {
@@ -60,11 +60,11 @@ extension ProfileViewModel: ProfileUseCaseResponseDelegate {
     //MARK: - Userdata response
     func gettingUserDataSuccess(currentUser: User) {
         self.currentUser = currentUser
-        status.value = .gettingUserDataSuccess
+        status.send(.gettingUserDataSuccess)
     }
     
     func gettingUserDataFailure(error: CustomError) {
         self.error = error
-        status.value = .gettingUserDataFailure
+        status.send(.gettingUserDataFailure)
     }
 }

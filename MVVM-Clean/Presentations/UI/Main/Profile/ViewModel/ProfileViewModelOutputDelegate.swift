@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 protocol ProfileViewModelOutputDelegate {
-    var status: Observable<ProfileViewModelStatus> { get set }
+    var status: CurrentValueSubject<ProfileViewModelStatus, Never> { get set }
     var error: CustomError? { get set }
     var currentUser: User? { get set }
 }

@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 protocol LoginViewModelOutputDelegate {
-    var status: Observable<LoginViewModelStatus> { get }
+    var status: CurrentValueSubject<LoginViewModelStatus, Never> { get set }
     var error: CustomError? { get }
 }

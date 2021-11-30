@@ -8,6 +8,7 @@
 
 import UIKit
 import Swinject
+import Combine
 
 class LoginViewController: BaseViewController {
     
@@ -18,6 +19,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet var loginButton: UIButton!
     
     var loginViewModel: LoginViewModelDelegate?
+    var subscriptions: Set<AnyCancellable> = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,26 +36,25 @@ class LoginViewController: BaseViewController {
     }
     
     private func bind() {
-        loginViewModel?.status.bind(to: view) { [weak self] view, _ in
-            if let viewModel = self?.loginViewModel {
-                switch viewModel.status.value {
-                case .none:
-                    print("No action in progress")
-                case .loginInProgress:
-                    print("Login process begin")
-                    self?.showLoading()
-                case .loginSuccess:
-                    print("Login success. Go to home")
-                    self?.hideLoading()
-                    self?.goestToHomeViewController()
-                case .loginError:
-                    print("Login error")
-                    self?.hideLoading()
-                    let alertTitle = NSLocalizedString("alert_error_title", comment: "")
-                    self?.showCancelAlert(title: alertTitle, message: viewModel.error?.localizedErrorMessage ?? "Unknow error")
-                }
+        loginViewModel?.status.sink { state in
+            switch state {
+            case .none:
+                print("No action in progress")
+            case .loginInProgress:
+                print("Login process begin")
+                self.showLoading()
+            case .loginSuccess:
+                print("Login success. Go to home")
+                self.hideLoading()
+                self.goestToHomeViewController()
+            case .loginError:
+                print("Login error")
+                self.hideLoading()
+                let alertTitle = NSLocalizedString("alert_error_title", comment: "")
+                self.showCancelAlert(title: alertTitle, message: self.loginViewModel?.error?.localizedErrorMessage ?? "Unknow error")
             }
-        }
+        }.store(in: &subscriptions)
+
     }
     
     

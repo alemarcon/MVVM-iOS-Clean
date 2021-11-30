@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 protocol SummaryCovidViewModelOutputDelegate {
-    var status: Observable<SummaryCovidViewModelStatus> { get }
+    var status: CurrentValueSubject<SummaryCovidViewModelStatus, Never> { get set }
     var error: CustomError? { get }
     var summary: Summary? { get set }
 }

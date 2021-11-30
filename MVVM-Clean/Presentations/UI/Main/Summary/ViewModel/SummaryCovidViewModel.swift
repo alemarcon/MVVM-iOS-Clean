@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 //MARK: - SummaryCovidViewModel Status
 enum SummaryCovidViewModelStatus {
@@ -22,13 +22,13 @@ protocol SummaryCovidViewModelDelegate: SummaryCovidViewModelInputDelegate, Summ
 class SummaryCovidViewModel: SummaryCovidViewModelDelegate {
     
     var summaryUseCase: SummaryUseCaseDelegate?
-    var status: Observable<SummaryCovidViewModelStatus> = Observable(.none)
+    var status: CurrentValueSubject<SummaryCovidViewModelStatus, Never> = .init(.none)
     var summary: Summary?
     var error: CustomError?
 
     func summaryData() {
         LOGI("Begin recover summary data")
-        status.value = .gettingSummaryData
+        status.send(.gettingSummaryData)
         summaryUseCase?.getSummaryData()
     }
     
@@ -40,14 +40,14 @@ extension SummaryCovidViewModel: SummaryUseCaseResponseDelegate {
     func onSummaryDataReceived(summary: Summary) {
         LOGI("Summary data received")
         self.summary = summary
-        status.value = .summaryDataSuccess
+        status.send(.summaryDataSuccess)
     }
     
     func onSummaryDataFailure(error: CustomError) {
         LOGI("Summary data not received")
         self.summary = nil
         self.error = error
-        status.value = .summaryDataError
+        status.send(.summaryDataError)
     }
     
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 //MARK: - CountryCovidViewModel Status
 enum CountryCovidViewModelStatus {
@@ -22,7 +22,7 @@ protocol CountryCovidViewModelDelegate: CountryCovidViewModelInputDelegate, Coun
 class CountryCovidViewModel: CountryCovidViewModelDelegate {
     
     var countryUseCase: CountryUseCaseDelegate?
-    var status: Observable<CountryCovidViewModelStatus> = Observable(.none)
+    var status: CurrentValueSubject<CountryCovidViewModelStatus, Never> = .init(.none)
     var error: CustomError?
     var countries: [Country]?
     
@@ -39,14 +39,14 @@ extension CountryCovidViewModel: CountryUseCaseResponseDelegate {
     func onCountryDataReceived(countries: [Country]) {
         LOGI("Country data received")
         self.countries = countries
-        status.value = .countriesDataSuccess
+        status.send(.countriesDataSuccess)
     }
     
     func onCountryDataFailure(error: CustomError) {
         LOGI("Country data received")
         self.countries = nil
         self.error = error
-        status.value = .countriesDataError
+        status.send(.countriesDataError)
     }
 
 }

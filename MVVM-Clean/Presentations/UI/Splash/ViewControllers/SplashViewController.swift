@@ -7,13 +7,14 @@
 //
 
 import UIKit
-import Bond
+import Combine
 import Swinject
 
 class SplashViewController: UIViewController {
     
     @IBOutlet var welcomeMessage: UILabel!
     
+    var subscriptions: Set<AnyCancellable> = .init()
     var splashViewModel: SplashScreenViewModelDelegate?
     
     override func viewDidLoad() {
@@ -44,18 +45,18 @@ class SplashViewController: UIViewController {
     /// <#Description#>
     private func bind() {
         if let viewModel = splashViewModel {
-            viewModel.status.bind(to: view) { [weak self] view, _ in
+            viewModel.status.sink { state in
                 switch viewModel.status.value {
                 case .none:
                     print("Nothing to do")
                 case .loggedIn:
                     print("Goes to home view")
-                    self?.goestToHomeViewController()
+                    self.goestToHomeViewController()
                 case .notLoggedIn:
                     print("Goes to login view")
-                    self?.goestToLoginViewController()
+                    self.goestToLoginViewController()
                 }
-            }
+            }.store(in: &subscriptions)
         }
     }
     

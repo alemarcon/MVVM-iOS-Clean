@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Bond
+import Combine
 
 enum SplashScreenViewModelStatus {
     case none
@@ -20,7 +20,7 @@ protocol SplashScreenViewModelDelegate: SplashScreenViewModelInputDelegate, Spla
 class SplashScreenViewModel: SplashScreenViewModelDelegate {
         
     var profileUseCase: ProfileUseCaseDelegate?
-    var status: Observable<SplashScreenViewModelStatus> = Observable(.none)
+    var status: CurrentValueSubject<SplashScreenViewModelStatus, Never> = .init(.none)
     
     func checkUserState() {
         profileUseCase?.getCurrentUserData()
@@ -30,12 +30,11 @@ class SplashScreenViewModel: SplashScreenViewModelDelegate {
 extension SplashScreenViewModel: ProfileUseCaseResponseDelegate {
     
     func gettingUserDataSuccess(currentUser: User) {
-        self.status.value = .loggedIn
+        status.send(.loggedIn)
     }
     
     func gettingUserDataFailure(error: CustomError) {
-        self.status.value = .notLoggedIn
+        status.send(.notLoggedIn)
     }
-    
     
 }

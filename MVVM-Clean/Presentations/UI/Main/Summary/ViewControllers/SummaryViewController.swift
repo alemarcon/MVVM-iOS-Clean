@@ -8,6 +8,7 @@
 
 import UIKit
 import Swinject
+import Combine
 
 class SummaryViewController: BaseViewController {
 
@@ -28,6 +29,7 @@ class SummaryViewController: BaseViewController {
     @IBOutlet var countriesButton: UIBarButtonItem!
     
     var mainViewModel: SummaryCovidViewModelDelegate?
+    var subscriptions: Set<AnyCancellable> = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,25 +55,23 @@ class SummaryViewController: BaseViewController {
     
     private func bind() {
         
-        mainViewModel?.status.bind(to: view) { [weak self] view, _ in
-            if let viewModel = self?.mainViewModel {
-                switch viewModel.status.value {
-                case .none:
-                    LOGD("No action")
-                case .gettingSummaryData:
-                    LOGD("Loading summary data")
-                case.summaryDataSuccess:
-                    LOGD("Summary data success")
-                    if let summary = viewModel.summary {
-                        self?.updateSummary(withData: summary)
-                    }
-                case .summaryDataError:
-                    LOGD("Summary data error")
-                    self?.showCancelAlert(title: "Error", message: viewModel.error?.localizedErrorMessage ?? "")
+        mainViewModel?.status.sink { state in
+            switch state {
+            case .none:
+                LOGD("No action")
+            case .gettingSummaryData:
+                LOGD("Loading summary data")
+            case.summaryDataSuccess:
+                LOGD("Summary data success")
+                if let summary = self.mainViewModel?.summary {
+                    self.updateSummary(withData: summary)
                 }
+            case .summaryDataError:
+                LOGD("Summary data error")
+                self.showCancelAlert(title: "Error", message: self.mainViewModel?.error?.localizedErrorMessage ?? "")
             }
-        }
-        
+        }.store(in: &subscriptions)
+
         loadSummaryData()
     }
     

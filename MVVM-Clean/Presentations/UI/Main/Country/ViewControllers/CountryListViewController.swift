@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Combine
 
 class CountryListViewController: UIViewController {
-
+    
     @IBOutlet var countryTableView: UITableView!
     
     var countryViewModel: CountryCovidViewModelDelegate?
+    var subscriptions: Set<AnyCancellable> = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,23 +29,20 @@ class CountryListViewController: UIViewController {
     
     /// Bind view model with view
     private func bind() {
-        
-        countryViewModel?.status.bind(to: view) { [weak self] view, _ in
-            if let viewModel = self?.countryViewModel {
-                switch viewModel.status.value {
-                case .none:
-                    LOGD("No action")
-                case .gettingCountryData:
-                    LOGD("Loading country data")
-                case .countriesDataSuccess:
-                    LOGD("Country data success")
-                    self?.countryTableView.reloadData()
-                case .countriesDataError:
-                    LOGD("Country data error")
-                    self?.showCancelAlert(title: "Error", message: viewModel.error?.localizedErrorMessage ?? "")
-                }
+        countryViewModel?.status.sink { state in
+            switch state {
+            case .none:
+                LOGD("No action")
+            case .gettingCountryData:
+                LOGD("Loading country data")
+            case .countriesDataSuccess:
+                LOGD("Country data success")
+                self.countryTableView.reloadData()
+            case .countriesDataError:
+                LOGD("Country data error")
+                self.showCancelAlert(title: "Error", message: self.countryViewModel?.error?.localizedErrorMessage ?? "")
             }
-        }
+        }.store(in: &subscriptions)
         
         loadCountryListData()
     }
@@ -84,5 +83,5 @@ extension CountryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CountryTableViewCell.DEFAULT_HEIGHT
     }
-
+    
 }
