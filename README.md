@@ -2,7 +2,7 @@
 
 ![platform](https://img.shields.io/badge/platform-iOS-lightgrey) 
 ![swift](https://img.shields.io/badge/Swift-5.0-red)  
-![target-ios](https://img.shields.io/badge/Target-iOS%20%7C%2012.1-blue)
+![target-ios](https://img.shields.io/badge/Target-iOS%20%7C%2013.4-blue)
 ![cocoapods-version](https://img.shields.io/badge/Cocoapods-v.%201.8.4-green)
 
 This is a clean iOS project structured as follow:
