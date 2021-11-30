@@ -13,6 +13,7 @@ This is a clean iOS project structured as follow:
 - Cocoapods for dependency manager
 - Full use of Dependency Injection
 - Alamofire for easy and fast network request
+- Combine for view model and view controller binding
 - Localized, just 2 languages for demo porpouse
 - Storyboard for interfaces
 - Unit Test
@@ -60,7 +61,6 @@ These are the libraries used in project with github url and a very short descrip
  -------- | --- | -----------
  Swinject | https://github.com/Swinject/Swinject | Dependency injection framework
  Alamofire | https://github.com/Alamofire/Alamofire | An easy-to-use HTTP networking library
- Bond | https://github.com/SwiftBond/Bond | Swift binding Framework, easy-to-use, type-safe and multi-paradigma
 
  # External resource
 
