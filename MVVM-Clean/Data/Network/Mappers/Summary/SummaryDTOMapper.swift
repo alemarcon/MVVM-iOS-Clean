@@ -19,29 +19,46 @@ struct SummaryDTOMapper {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
         
+        var confirmed = SummaryConfirmed()
+        
         if let newConfirmedCasesValue = summary.global?.newConfirmed {
-            summaryModel.newConfirmedCases = nf.string(from: NSNumber(value: newConfirmedCasesValue)) ?? "0"
+            confirmed.newConfirmedCases = nf.string(from: NSNumber(value: newConfirmedCasesValue)) ?? "0"
+//            summaryModel.newConfirmedCases = nf.string(from: NSNumber(value: newConfirmedCasesValue)) ?? "0"
         }
         
         if let confirmedTotalCasesValue = summary.global?.totalConfirmed {
-            summaryModel.totalConfirmedCases = nf.string(from: NSNumber(value: confirmedTotalCasesValue)) ?? "0"
+            confirmed.totalConfirmedCases = nf.string(from: NSNumber(value: confirmedTotalCasesValue)) ?? "0"
+//            summaryModel.totalConfirmedCases = nf.string(from: NSNumber(value: confirmedTotalCasesValue)) ?? "0"
         }
         
+        summaryModel.summaryConfirmed = confirmed
+        
+        var death = SummaryDeath()
+        
         if let newDeathValue = summary.global?.newDeaths {
-            summaryModel.newDeath = nf.string(from: NSNumber(value: newDeathValue)) ?? "0"
+            death.newDeath = nf.string(from: NSNumber(value: newDeathValue)) ?? "0"
+//            summaryModel.newDeath = nf.string(from: NSNumber(value: newDeathValue)) ?? "0"
         }
         
         if let totalDeathsValue = summary.global?.totalDeaths {
-            summaryModel.totalDeaths = nf.string(from: NSNumber(value: totalDeathsValue)) ?? "0"
+            death.totalDeaths = nf.string(from: NSNumber(value: totalDeathsValue)) ?? "0"
+//            summaryModel.totalDeaths = nf.string(from: NSNumber(value: totalDeathsValue)) ?? "0"
         }
         
+        summaryModel.summaryDeath = death
+        
+        var recovered = SummaryRecovered()
+        
         if let newRecoveredValue = summary.global?.newRecovered {
-            summaryModel.newRecoveredCases = nf.string(from: NSNumber(value: newRecoveredValue)) ?? "0"
+            recovered.newRecoveredCases = nf.string(from: NSNumber(value: newRecoveredValue)) ?? "0"
+//            summaryModel.newRecoveredCases = nf.string(from: NSNumber(value: newRecoveredValue)) ?? "0"
         }
         
         if let totalRecoveredValue = summary.global?.totalRecovered {
-            summaryModel.totalRecovered = nf.string(from: NSNumber(value: totalRecoveredValue)) ?? "0"
+            recovered.totalRecovered = nf.string(from: NSNumber(value: totalRecoveredValue)) ?? "0"
+//            summaryModel.totalRecovered = nf.string(from: NSNumber(value: totalRecoveredValue)) ?? "0"
         }
+        summaryModel.summaryRecovered = recovered
         
         return summaryModel
     }

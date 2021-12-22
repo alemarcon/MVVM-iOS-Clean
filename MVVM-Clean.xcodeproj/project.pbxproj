@@ -85,6 +85,8 @@
 		2DB7078324D9A5A3003B2151 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7078224D9A5A3003B2151 /* LoginUseCase.swift */; };
 		2DB7078524D9A5BD003B2151 /* LoginUseCaseResponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7078424D9A5BD003B2151 /* LoginUseCaseResponseDelegate.swift */; };
 		2DB7078724D9A5CD003B2151 /* LoginUseCaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB7078624D9A5CD003B2151 /* LoginUseCaseDelegate.swift */; };
+		2DC082B227564CAA0071643E /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC082B027564CAA0071643E /* SummaryTableViewCell.swift */; };
+		2DC082B327564CAA0071643E /* SummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC082B127564CAA0071643E /* SummaryTableViewCell.xib */; };
 		2DD4B67E2528A7F00065B563 /* CustomConsoleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B67D2528A7F00065B563 /* CustomConsoleLog.swift */; };
 		2DD4B6822528A8770065B563 /* CustomDateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6812528A8770065B563 /* CustomDateUtils.swift */; };
 		2DD4B6862528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4B6852528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift */; };
@@ -214,6 +216,8 @@
 		2DB7078224D9A5A3003B2151 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		2DB7078424D9A5BD003B2151 /* LoginUseCaseResponseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseResponseDelegate.swift; sourceTree = "<group>"; };
 		2DB7078624D9A5CD003B2151 /* LoginUseCaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseDelegate.swift; sourceTree = "<group>"; };
+		2DC082B027564CAA0071643E /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
+		2DC082B127564CAA0071643E /* SummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableViewCell.xib; sourceTree = "<group>"; };
 		2DD4B67D2528A7F00065B563 /* CustomConsoleLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConsoleLog.swift; sourceTree = "<group>"; };
 		2DD4B6812528A8770065B563 /* CustomDateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateUtils.swift; sourceTree = "<group>"; };
 		2DD4B6852528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryNetworkProtocolRequest.swift; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 		2D1DE748252A74130039E298 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				2DC082AF27564C8E0071643E /* Cell */,
 				2D2E0A9424DA0C2C00874A97 /* ViewModel */,
 				2D2E0A8724DA03C300874A97 /* ViewControllers */,
 			);
@@ -807,6 +812,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		2DC082AF27564C8E0071643E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2DC082B027564CAA0071643E /* SummaryTableViewCell.swift */,
+				2DC082B127564CAA0071643E /* SummaryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2DD4B67C2528A7BF0065B563 /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -1046,6 +1060,7 @@
 			files = (
 				2D2E0A8324DA027000874A97 /* Main.storyboard in Resources */,
 				2DB7074624D94C97003B2151 /* Localizable.strings in Resources */,
+				2DC082B327564CAA0071643E /* SummaryTableViewCell.xib in Resources */,
 				2DB7073724D94A67003B2151 /* Auth.storyboard in Resources */,
 				2DB7071E24D9454A003B2151 /* LaunchScreen.storyboard in Resources */,
 				2D14A92B252D0EDB0056FF76 /* CountryCell.xib in Resources */,
@@ -1188,6 +1203,7 @@
 				2DD4B6862528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift in Sources */,
 				2DD6D40E24FBE198008EE378 /* APIConfiguration.swift in Sources */,
 				2DB7071424D94548003B2151 /* SceneDelegate.swift in Sources */,
+				2DC082B227564CAA0071643E /* SummaryTableViewCell.swift in Sources */,
 				2DB7074024D94ADB003B2151 /* SplashViewController.swift in Sources */,
 				2D1DE74C252A74660039E298 /* CountryListViewController.swift in Sources */,
 				2DB7076724D95307003B2151 /* ProfileRepositoryDelegate.swift in Sources */,

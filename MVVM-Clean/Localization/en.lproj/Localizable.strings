@@ -21,11 +21,11 @@
 "generic_localized_net_error_message" = "This will be the localized message from the server.";
 "nil_data" = "Data is nil";
 "nil_data_msg" = "No data found on server";
-"new_confirmed_cases" = "New confirmed cases";
+"new_confirmed_cases" = "Confirmed cases";
 "total_cases" = "Total cases";
-"new_deaths_cases" = "New deaths cases";
+"new_deaths_cases" = "Deaths cases";
 "total_deaths" = "Total deaths cases";
-"new_recovered" = "New recovered cases";
+"new_recovered" = "Recovered cases";
 "total_recovered" = "Total recovered cases";
 "summary_mapper_error" = "SummaryModelMapper or HTTP response is nil and DTO could not be mapped.";
 "countries_label" = "Countries";
@@ -38,3 +38,5 @@
 "total_deaths_cell" = "Total deaths cases: %@";
 "no_local_user_found" = "No user data found in local storage";
 "unable_logout" = "Unable to delete user data. Operation failed. Please, try again later.";
+"new" = "New";
+"total" = "Total";

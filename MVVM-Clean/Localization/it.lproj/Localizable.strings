@@ -21,9 +21,9 @@
 "generic_localized_net_error_message" = "Questo sarà il messaggio localizzato del server.";
 "nil_data" = "Data è nil";
 "nil_data_msg" = "Nessun dato ricevuto dal server";
-"new_confirmed_cases" = "Nuovi casi confermati";
+"new_confirmed_cases" = "Casi confermati";
 "total_cases" = "Casi totali";
-"new_deaths_cases" = "Nuovi casi di morte";
+"new_deaths_cases" = "Casi di morte";
 "total_deaths" = "Morti totali";
 "new_recovered" = "Nuovi ricoveri";
 "total_recovered" = "Ricoveri totali";
@@ -38,3 +38,5 @@
 "total_deaths_cell" = "Morti totali: %@";
 "no_local_user_found" = "Non è stato trovato l'utente nei dati locali";
 "unable_logout" = "Impossibile cancellare i dati utente. Operazione fallita. Per favore, prova più tardi.";
+"new" = "Nuovi";
+"total" = "Totali";
