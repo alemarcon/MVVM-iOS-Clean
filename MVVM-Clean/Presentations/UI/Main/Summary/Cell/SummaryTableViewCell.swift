@@ -36,31 +36,31 @@ class SummaryTableViewCell: UITableViewCell {
         rightSectionData.text = ""
     }
     
-    func setupDeath(summery: SummaryDeath) {
-        cellTitle.text = summery.title
+    func setupDeath(summary: SummaryDeath) {
+        cellTitle.text = summary.title
         leftSectionTitle.text = NSLocalizedString("new", comment: "")
-        leftSectionData.text = summery.newDeath
+        leftSectionData.text = summary.newDeath
         
         rightSectionTitle.text = NSLocalizedString("total", comment: "")
-        rightSectionData.text = summery.totalDeaths
+        rightSectionData.text = summary.totalDeaths
     }
     
-    func setupConfirmed(summery: SummaryConfirmed) {
-        cellTitle.text = summery.title
+    func setupConfirmed(summary: SummaryConfirmed) {
+        cellTitle.text = summary.title
         leftSectionTitle.text = NSLocalizedString("new", comment: "")
-        leftSectionData.text = summery.newConfirmedCases
+        leftSectionData.text = summary.newConfirmedCases
         
         rightSectionTitle.text = NSLocalizedString("total", comment: "")
-        rightSectionData.text = summery.totalConfirmedCases
+        rightSectionData.text = summary.totalConfirmedCases
     }
     
-    func setupConfirmed(summery: SummaryRecovered) {
-        cellTitle.text = summery.title
+    func setupConfirmed(summary: SummaryRecovered) {
+        cellTitle.text = summary.title
         leftSectionTitle.text = NSLocalizedString("new", comment: "")
-        leftSectionData.text = summery.newRecoveredCases
+        leftSectionData.text = summary.newRecoveredCases
         
         rightSectionTitle.text = NSLocalizedString("total", comment: "")
-        rightSectionData.text = summery.totalRecovered
+        rightSectionData.text = summary.totalRecovered
     }
     
 }

@@ -95,21 +95,21 @@ extension SummaryViewController: UITableViewDataSource {
         if let cell = summaryTableView.dequeueReusableCell(withIdentifier: SummaryTableViewCell.IDENTIFIER, for: indexPath) as? SummaryTableViewCell {
             if( indexPath.row == 0 ) {
                 if let confirmed = mainViewModel?.summary?.summaryConfirmed {
-                    cell.setupConfirmed(summery: confirmed)
+                    cell.setupConfirmed(summary: confirmed)
                     return cell
                 } else {
                     return UITableViewCell()
                 }
             } else if( indexPath.row == 1 ) {
                 if let recovery = mainViewModel?.summary?.summaryRecovered {
-                    cell.setupConfirmed(summery: recovery)
+                    cell.setupConfirmed(summary: recovery)
                     return cell
                 } else {
                     return UITableViewCell()
                 }
             } else if( indexPath.row == 2 ) {
                 if let death = mainViewModel?.summary?.summaryDeath {
-                    cell.setupDeath(summery: death)
+                    cell.setupDeath(summary: death)
                     return cell
                 } else {
                     return UITableViewCell()

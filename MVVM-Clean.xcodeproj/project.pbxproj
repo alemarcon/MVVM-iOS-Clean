@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF7422527B2791F00186EF8 /* Colors.xcassets */; };
 		2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD20253EF27000A89F60 /* SummaryTest.swift */; };
 		2D0ABD26253EF3FA00A89F60 /* SummaryIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD25253EF3FA00A89F60 /* SummaryIntegrationTest.swift */; };
 		2D0ABD34253EF79400A89F60 /* SummaryDataRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD33253EF79400A89F60 /* SummaryDataRequestTest.swift */; };
@@ -131,6 +132,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CF7422527B2791F00186EF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2D0ABD20253EF27000A89F60 /* SummaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTest.swift; sourceTree = "<group>"; };
 		2D0ABD25253EF3FA00A89F60 /* SummaryIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryIntegrationTest.swift; sourceTree = "<group>"; };
 		2D0ABD2D253EF5BA00A89F60 /* summary_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summary_data.json; sourceTree = "<group>"; };
@@ -280,6 +282,15 @@
 				5B4A030BF9347454A47F5AA4 /* Pods_MVVM_CleanTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CF7422427B2790C00186EF8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2DB7071A24D9454A003B2151 /* Assets.xcassets */,
+				1CF7422527B2791F00186EF8 /* Colors.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		2D0ABD24253EF2B600A89F60 /* SummaryTest */ = {
@@ -556,6 +567,7 @@
 		2DB7071024D94547003B2151 /* MVVM-Clean */ = {
 			isa = PBXGroup;
 			children = (
+				1CF7422427B2790C00186EF8 /* Assets */,
 				2DB7074124D94AF2003B2151 /* AppDelegate */,
 				2DB7074C24D94F01003B2151 /* Application */,
 				2DB7074224D94BB4003B2151 /* Localization */,
@@ -563,7 +575,6 @@
 				2DB7076324D952E5003B2151 /* Data */,
 				2DB7075C24D95059003B2151 /* Extensions */,
 				2D2E0A7324D9F2DD00874A97 /* Utility */,
-				2DB7071A24D9454A003B2151 /* Assets.xcassets */,
 				2DB7071C24D9454A003B2151 /* LaunchScreen.storyboard */,
 				2DB7071F24D9454A003B2151 /* Info.plist */,
 			);
@@ -1060,6 +1071,7 @@
 			files = (
 				2D2E0A8324DA027000874A97 /* Main.storyboard in Resources */,
 				2DB7074624D94C97003B2151 /* Localizable.strings in Resources */,
+				1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */,
 				2DC082B327564CAA0071643E /* SummaryTableViewCell.xib in Resources */,
 				2DB7073724D94A67003B2151 /* Auth.storyboard in Resources */,
 				2DB7071E24D9454A003B2151 /* LaunchScreen.storyboard in Resources */,
