@@ -14,18 +14,8 @@ class SummaryViewController: BaseViewController {
 
     @IBOutlet var welcomeMessageLabel: UILabel!
     @IBOutlet var lastUpdateLabel: UILabel!
-    @IBOutlet var newConfirmedCasesLabel: UILabel!
-    @IBOutlet var newConfirmedCasesValueLabel: UILabel!
-    @IBOutlet var totalCasesLabel: UILabel!
-    @IBOutlet var totalCasesValueLabel: UILabel!
-    @IBOutlet var newDeathsLabel: UILabel!
-    @IBOutlet var newDeathValueLabel: UILabel!
-    @IBOutlet var totalDeathsLabel: UILabel!
-    @IBOutlet var totalDeathsValueLabel: UILabel!
-    @IBOutlet var newRecoveredLabel: UILabel!
-    @IBOutlet var newRecoveredValueLabel: UILabel!
-    @IBOutlet var totalRecoveredLabel: UILabel!
-    @IBOutlet var totalRecoveredValueLabel: UILabel!
+    @IBOutlet weak var summaryTableView: UITableView!
+    
     @IBOutlet var countriesButton: UIBarButtonItem!
     
     var mainViewModel: SummaryCovidViewModelDelegate?
@@ -33,8 +23,9 @@ class SummaryViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         localizeUI()
+        summaryTableView.register(UINib(nibName: SummaryTableViewCell.XIB_NAME, bundle: nil), forCellReuseIdentifier: SummaryTableViewCell.IDENTIFIER)
+        summaryTableView.dataSource = self
         bind()
     }
     
@@ -42,14 +33,6 @@ class SummaryViewController: BaseViewController {
         welcomeMessageLabel.text = NSLocalizedString("welcome_message", comment: "")
         let lastUpdate = NSLocalizedString("last_summary_update", comment: "")
         lastUpdateLabel.text = String.localizedStringWithFormat(lastUpdate, "...")
-        
-        newConfirmedCasesLabel.text = NSLocalizedString("new_confirmed_cases", comment: "")
-        totalCasesLabel.text = NSLocalizedString("total_cases", comment: "")
-        newDeathsLabel.text = NSLocalizedString("new_deaths_cases", comment: "")
-        totalDeathsLabel.text = NSLocalizedString("total_deaths", comment: "")
-        newRecoveredLabel.text = NSLocalizedString("new_recovered", comment: "")
-        totalRecoveredLabel.text = NSLocalizedString("total_recovered", comment: "")
-        
         countriesButton.title = NSLocalizedString("countries_label", comment: "")
     }
     
@@ -78,13 +61,7 @@ class SummaryViewController: BaseViewController {
     private func updateSummary(withData: Summary) {
         let lastUpdate = NSLocalizedString("last_summary_update", comment: "")
         lastUpdateLabel.text = String.localizedStringWithFormat(lastUpdate, "\(withData.lastUpdate)")
-
-        newConfirmedCasesValueLabel.text = withData.newConfirmedCases
-        totalCasesValueLabel.text = withData.totalConfirmedCases
-        newDeathValueLabel.text = withData.newDeath
-        totalDeathsValueLabel.text = withData.totalDeaths
-        newRecoveredValueLabel.text = withData.newRecoveredCases
-        totalRecoveredValueLabel.text = withData.totalRecovered
+        summaryTableView.reloadData()
     }
     
     @IBAction func showProfileViewController(_ sender: UIBarButtonItem) {
@@ -102,6 +79,47 @@ class SummaryViewController: BaseViewController {
         LOGD("Show countries data view controller")
         if let countriesViewController = Assembler.sharedAssembler.resolver.resolve(CountryListViewController.self) {
             self.navigationController?.pushViewController(countriesViewController, animated: true)
+        }
+    }
+    
+    
+}
+
+extension SummaryViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mainViewModel == nil ? 0 : 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = summaryTableView.dequeueReusableCell(withIdentifier: SummaryTableViewCell.IDENTIFIER, for: indexPath) as? SummaryTableViewCell {
+            if( indexPath.row == 0 ) {
+                if let confirmed = mainViewModel?.summary?.summaryConfirmed {
+                    cell.setupConfirmed(summary: confirmed)
+                    return cell
+                } else {
+                    return UITableViewCell()
+                }
+            } else if( indexPath.row == 1 ) {
+                if let recovery = mainViewModel?.summary?.summaryRecovered {
+                    cell.setupConfirmed(summary: recovery)
+                    return cell
+                } else {
+                    return UITableViewCell()
+                }
+            } else if( indexPath.row == 2 ) {
+                if let death = mainViewModel?.summary?.summaryDeath {
+                    cell.setupDeath(summary: death)
+                    return cell
+                } else {
+                    return UITableViewCell()
+                }
+            } else {
+                return UITableViewCell()
+            }
+            
+        } else {
+            return UITableViewCell()
         }
     }
     

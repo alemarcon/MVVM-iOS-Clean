@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             resetState()
         }
         
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.Custom.primaryText
+        navigationBarAppearace.barTintColor = UIColor.Custom.primary
+        
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.Custom.primaryText]
+        
         return true
     }
     

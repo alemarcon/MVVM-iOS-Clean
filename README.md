@@ -5,6 +5,8 @@
 ![target-ios](https://img.shields.io/badge/Target-iOS%20%7C%2013.4-blue)
 ![cocoapods-version](https://img.shields.io/badge/Cocoapods-v.%201.8.4-green)
 
+![MVVM Clean iOS home view controller](home.png)
+
 This is a clean iOS project structured as follow:
 
 - MVVM
