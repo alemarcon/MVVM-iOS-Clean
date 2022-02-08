@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = .white
-        navigationBarAppearace.barTintColor = .black
+        navigationBarAppearace.tintColor = UIColor.Custom.primaryText
+        navigationBarAppearace.barTintColor = UIColor.Custom.primary
         
-        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.Custom.primaryText]
         
         return true
     }

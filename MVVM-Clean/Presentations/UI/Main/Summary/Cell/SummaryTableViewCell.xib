@@ -112,7 +112,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="Primary"/>
                 <constraints>
                     <constraint firstItem="JB6-Fu-7At" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6bC-vc-eyF"/>
                     <constraint firstAttribute="trailing" secondItem="JB6-Fu-7At" secondAttribute="trailing" constant="10" id="8kt-Oo-Smt"/>
@@ -133,6 +133,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="Primary">
+            <color red="0.098039215686274508" green="0.16470588235294117" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PrimaryText">
             <color red="0.86274509803921573" green="0.8666666666666667" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

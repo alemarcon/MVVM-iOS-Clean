@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF7422527B2791F00186EF8 /* Colors.xcassets */; };
+		1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */; };
 		2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD20253EF27000A89F60 /* SummaryTest.swift */; };
 		2D0ABD26253EF3FA00A89F60 /* SummaryIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD25253EF3FA00A89F60 /* SummaryIntegrationTest.swift */; };
 		2D0ABD34253EF79400A89F60 /* SummaryDataRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD33253EF79400A89F60 /* SummaryDataRequestTest.swift */; };
@@ -133,6 +134,7 @@
 
 /* Begin PBXFileReference section */
 		1CF7422527B2791F00186EF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2D0ABD20253EF27000A89F60 /* SummaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTest.swift; sourceTree = "<group>"; };
 		2D0ABD25253EF3FA00A89F60 /* SummaryIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryIntegrationTest.swift; sourceTree = "<group>"; };
 		2D0ABD2D253EF5BA00A89F60 /* summary_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summary_data.json; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 				2D2E0A7124D9F0AB00874A97 /* UIViewController+Extensions.swift */,
 				2D2E0A7B24D9F5E900874A97 /* UIView+Extensions.swift */,
 				2D2E0A7F24D9FA1500874A97 /* String+Extensions.swift */,
+				1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1217,6 +1220,7 @@
 				2DB7071424D94548003B2151 /* SceneDelegate.swift in Sources */,
 				2DC082B227564CAA0071643E /* SummaryTableViewCell.swift in Sources */,
 				2DB7074024D94ADB003B2151 /* SplashViewController.swift in Sources */,
+				1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */,
 				2D1DE74C252A74660039E298 /* CountryListViewController.swift in Sources */,
 				2DB7076724D95307003B2151 /* ProfileRepositoryDelegate.swift in Sources */,
 				2D14A916252CF2E60056FF76 /* CountryUseCase.swift in Sources */,
