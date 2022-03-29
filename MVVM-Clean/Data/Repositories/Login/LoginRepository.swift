@@ -24,10 +24,7 @@ class LoginRepository: LoginRepositoryDelegate {
             
             success(userModel)
         } else {
-            let error = CustomError()
-            error.errorMessage = "Unable to login"
-            error.localizedErrorMessage = NSLocalizedString("login_error_message", comment: "")
-            failure(error)
+            failure(CustomError.loginError)
         }
     }
 }

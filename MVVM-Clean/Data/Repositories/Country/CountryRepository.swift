@@ -20,10 +20,7 @@ class CountryRepository: CountryRepositoryDelegate {
             success(localCountries)
         } else {
             LOGE("CountryLocalProtocolRequest returned nil object")
-            let customError = CustomError()
-            customError.errorMessage = "CountryLocalProtocolRequest returned nil object"
-            customError.localizedErrorMessage = NSLocalizedString("country_mapper_error", comment: "")
-            failure(customError)
+            failure(CustomError.nilData)
         }
     }
     

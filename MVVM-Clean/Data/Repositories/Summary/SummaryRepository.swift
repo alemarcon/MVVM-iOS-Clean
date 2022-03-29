@@ -46,7 +46,7 @@ class SummaryRepository: SummaryRepositoryDelegate {
                 success(summmary)
                 
             }, failure: { (error: CustomError) in
-                LOGE("Error occurred. \(error.localizedErrorMessage)")
+                LOGE("Error occurred. \(error.errorDescription)")
                 failure(error)
             })
         } else {

@@ -40,3 +40,4 @@
 "unable_logout" = "Unable to delete user data. Operation failed. Please, try again later.";
 "new" = "New";
 "total" = "Total";
+"no_content_found" = "No content found on server.";

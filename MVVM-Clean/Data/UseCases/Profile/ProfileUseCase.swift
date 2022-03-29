@@ -21,10 +21,7 @@ class ProfileUseCase: NSObject, ProfileUseCaseDelegate {
             if( success ) {
                 self.responseDelegate?.onLogoutSuccess()
             } else {
-                let error = CustomError()
-                error.errorMessage = "Logout error"
-                error.localizedErrorMessage = NSLocalizedString("unable_logout", comment: "")
-                self.responseDelegate?.onLogoutFailure(error: error)
+                self.responseDelegate?.onLogoutFailure(error: CustomError.logoutError)
             }
         }, failure: { (error) in
             self.responseDelegate?.onLogoutFailure(error: error)

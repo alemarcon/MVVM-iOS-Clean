@@ -40,7 +40,7 @@ class CountryListViewController: UIViewController {
                 self.countryTableView.reloadData()
             case .countriesDataError:
                 LOGD("Country data error")
-                self.showCancelAlert(title: "Error", message: self.countryViewModel?.error?.localizedErrorMessage ?? "")
+                self.showCancelAlert(title: "Error", message: self.countryViewModel?.error?.errorDescription ?? "")
             }
         }.store(in: &subscriptions)
         

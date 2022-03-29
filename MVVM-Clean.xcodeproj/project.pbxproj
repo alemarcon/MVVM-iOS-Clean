@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C11507B27F34282004898BF /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C11507A27F34282004898BF /* Localized.swift */; };
 		1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF7422527B2791F00186EF8 /* Colors.xcassets */; };
 		1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */; };
 		2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD20253EF27000A89F60 /* SummaryTest.swift */; };
@@ -133,6 +134,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C11507A27F34282004898BF /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		1CF7422527B2791F00186EF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2D0ABD20253EF27000A89F60 /* SummaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTest.swift; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 			isa = PBXGroup;
 			children = (
 				2DB7074824D94C97003B2151 /* Localizable.strings */,
+				1C11507A27F34282004898BF /* Localized.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -1253,6 +1256,7 @@
 				2DD6D41224FBEA4C008EE378 /* NetworkConstant.swift in Sources */,
 				2D14B73C25290EE20079C7C3 /* SummaryPersistenceRequest.swift in Sources */,
 				2DB7077324D97DD6003B2151 /* LoginViewModelInputDelegate.swift in Sources */,
+				1C11507B27F34282004898BF /* Localized.swift in Sources */,
 				2DD4B69C2528AFDA0065B563 /* Summary.swift in Sources */,
 				2DD4B67E2528A7F00065B563 /* CustomConsoleLog.swift in Sources */,
 				2D14A928252D03FD0056FF76 /* CountryCovidViewModelOutputDelegate.swift in Sources */,
