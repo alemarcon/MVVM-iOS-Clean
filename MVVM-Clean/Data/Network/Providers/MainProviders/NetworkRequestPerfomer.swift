@@ -17,7 +17,8 @@ class NetworkRequestPerfomer {
     ///   - success: success operation
     ///   - failure: fail operation
     /// - Returns: Current network operation request
-    public static func performRequest<T:Decodable>(route: APIConfiguration, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void)) -> DataRequest {
+//    public static func performRequest<T:Decodable>(route: APIConfiguration, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void)) -> DataRequest {
+    public static func performRequest<T:Decodable>(route: APIConfiguration, success: @escaping SuccessCompletion<T>, failure: @escaping FailureCompletion) -> DataRequest {
         return AF.request(route)
             .responseJSON { response in
                 do {

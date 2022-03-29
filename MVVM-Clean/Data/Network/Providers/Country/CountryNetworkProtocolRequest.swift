@@ -26,5 +26,6 @@ protocol CountryNetworkProtocolRequest {
     ///   - to: Date to end collect data in format yyyy-mm-ddThh:MM:ssZ
     ///   - success: Success case
     ///   - failure: Failure case
-    func getByCountryByStatus<T: Decodable>(countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void))
+//    func getByCountryByStatus<T: Decodable>(countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void))
+    func getByCountryByStatus<T: Decodable>(countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping SuccessCompletion<T>, failure: @escaping FailureCompletion)
 }

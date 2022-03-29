@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C86B16B27BD5C12001F129D /* CustomTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86B16A27BD5C12001F129D /* CustomTypealias.swift */; };
 		1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF7422527B2791F00186EF8 /* Colors.xcassets */; };
 		1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */; };
 		2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD20253EF27000A89F60 /* SummaryTest.swift */; };
@@ -133,6 +134,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C86B16A27BD5C12001F129D /* CustomTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypealias.swift; sourceTree = "<group>"; };
 		1CF7422527B2791F00186EF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2D0ABD20253EF27000A89F60 /* SummaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTest.swift; sourceTree = "<group>"; };
@@ -713,6 +715,7 @@
 				2D2E0A7B24D9F5E900874A97 /* UIView+Extensions.swift */,
 				2D2E0A7F24D9FA1500874A97 /* String+Extensions.swift */,
 				1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */,
+				1C86B16A27BD5C12001F129D /* CustomTypealias.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1179,6 +1182,7 @@
 				2D1DE73D252A66D20039E298 /* CountryDTOMapper.swift in Sources */,
 				2D14A921252CF3D00056FF76 /* CountryNetworkRequest.swift in Sources */,
 				2D14B73A25290E750079C7C3 /* SummaryPersistenceProtocolRequest.swift in Sources */,
+				1C86B16B27BD5C12001F129D /* CustomTypealias.swift in Sources */,
 				2D2E0A7224D9F0AB00874A97 /* UIViewController+Extensions.swift in Sources */,
 				2DB7077D24D98825003B2151 /* User.swift in Sources */,
 				2D2E0A9624DA0C3B00874A97 /* SummaryCovidViewModel.swift in Sources */,
