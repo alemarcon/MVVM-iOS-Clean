@@ -29,10 +29,7 @@ class ProfileRepository: ProfileRepositoryDelegate {
         if let currentUser = profileLocalData?.getLocalUserData() {
             success(currentUser)
         } else {
-            let error = CustomError()
-            error.errorMessage = "User not found"
-            error.localizedErrorMessage = NSLocalizedString("no_local_user_found", comment: "")
-            failure(error)
+            failure(CustomError.userNotFound)
         }
     }
     

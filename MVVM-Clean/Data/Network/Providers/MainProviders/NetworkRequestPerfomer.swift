@@ -31,14 +31,7 @@ class NetworkRequestPerfomer {
                             print("Error: \(localizedDesctiptionError)")
                         }
                         if let statusCode = response.response?.statusCode {
-                            
-                            let customError = CustomError()
-                            let genericErrorMessage = NSLocalizedString("welcome_message", comment: "")
-                            let genericErrorMessageWithFormat = String.localizedStringWithFormat(genericErrorMessage, "\(statusCode)")
-                            
-                            customError.errorMessage = genericErrorMessageWithFormat
-                            customError.localizedErrorMessage = NSLocalizedString("generic_localized_net_error_message", comment: "")
-                            failure(customError)
+                            failure(CustomError.unknow(code: "\(statusCode)"))
                         }
                         
                     } else {
@@ -52,110 +45,27 @@ class NetworkRequestPerfomer {
                                     statusCode = response.response?.statusCode
                                 }
                                 
-                                if let statusCode = statusCode {
-                                    
-                                    switch statusCode {
-                                        
-                                    case NetworkStatusCode.success.rawValue:
-                                        // 200 network status code reached
-                                        success(try JSONDecoder().decode(T.self, from: responseData))
-                                        
-                                    case NetworkStatusCode.noContent.rawValue:
-                                        // Manage 204 code.
-                                        LOGE("\(NetworkStatusCode.noContent.rawValue)")
-                                        let customError = CustomError()
-                                        let genericErrorMessage = NSLocalizedString("generic_net_error_message", comment: "")
-                                        let genericErrorMessageWithFormat = String.localizedStringWithFormat(genericErrorMessage, NetworkStatusCode.noContent.rawValue)
-                                        
-                                        customError.errorMessage = genericErrorMessageWithFormat
-                                        customError.localizedErrorMessage = NSLocalizedString("generic_localized_net_error_message", comment: "")
-                                        failure(customError)
-                                        
-                                    case NetworkStatusCode.unauthorized.rawValue:
-                                        // Manage 401 erorr code.
-                                        LOGE("\(NetworkStatusCode.unauthorized.rawValue)")
-                                        let customError = CustomError()
-                                        let genericErrorMessage = NSLocalizedString("generic_net_error_message", comment: "")
-                                        let genericErrorMessageWithFormat = String.localizedStringWithFormat(genericErrorMessage, NetworkStatusCode.unauthorized.rawValue)
-                                        
-                                        customError.errorMessage = genericErrorMessageWithFormat
-                                        customError.localizedErrorMessage = NSLocalizedString("generic_localized_net_error_message", comment: "")
-                                        failure(customError)
-                                        
-                                    case NetworkStatusCode.badRequest.rawValue:
-                                        // Manage 400 erorr code.
-                                        let customError = CustomError()
-                                        let genericErrorMessage = NSLocalizedString("generic_net_error_message", comment: "")
-                                        let genericErrorMessageWithFormat = String.localizedStringWithFormat(genericErrorMessage, NetworkStatusCode.badRequest.rawValue)
-                                        
-                                        customError.errorMessage = genericErrorMessageWithFormat
-                                        customError.localizedErrorMessage = NSLocalizedString("generic_localized_net_error_message", comment: "")
-                                        failure(customError)
-                                        
-                                    case NetworkStatusCode.notFound.rawValue:
-                                        // Manage 404 error.
-                                        let customError = CustomError()
-                                        let genericErrorMessage = NSLocalizedString("generic_net_error_message", comment: "")
-                                        let genericErrorMessageWithFormat = String.localizedStringWithFormat(genericErrorMessage, NetworkStatusCode.notFound.rawValue)
-                                        
-                                        customError.errorMessage = genericErrorMessageWithFormat
-                                        customError.localizedErrorMessage = NSLocalizedString("generic_localized_net_error_message", comment: "")
-                                        failure(customError)
-                                        
-                                    case NetworkStatusCode.forbidden.rawValue:
-                                        // Manage 403 forbidden error.
-                                        LOGE("\(NetworkStatusCode.forbidden.rawValue)")
-                                        let customError = CustomError()
-                                        let genericErrorMessage = NSLocalizedString("generic_net_error_message", comment: "")
-                                        let genericErrorMessageWithFormat = String.localizedStringWithFormat(genericErrorMessage, NetworkStatusCode.forbidden.rawValue)
-                                        
-                                        customError.errorMessage = genericErrorMessageWithFormat
-                                        customError.localizedErrorMessage = NSLocalizedString("generic_localized_net_error_message", comment: "")
-                                        failure(customError)
-                                        
-                                    default:
-                                        // Manage unknow erorr code.
-                                        failure(getGenericError())
-                                    }
+                                if( statusCode == NetworkStatusCode.success.rawValue ) {
+                                    success(try JSONDecoder().decode(T.self, from: responseData))
+                                } else {
+                                    failure( CustomError(errorCode: statusCode!))
                                 }
-                                else {
-                                    failure(getGenericError())
-                                }
-                            }
-                            else {
+                            } else {
                                 failure(getGenericError())
                             }
-                            
-                            
                         } else {
-                            let error = CustomError()
-                            error.errorMessage = NSLocalizedString("nil_data", comment: "")
-                            error.localizedErrorMessage = NSLocalizedString("nil_data_msg", comment: "")
-                            failure(error)
+                            failure(CustomError.nilData)
                         }
                     }
                 } catch {
-                    let localizedErrorDescription: String = error.localizedDescription
-                    LOGE("\(error)")
-                    let statusCode = NetworkStatusCode(rawValue: response.response?.statusCode ?? 0) ?? NetworkStatusCode.undefined
-                    
-                    let error = CustomError()
-                    let genericErrorMessage = NSLocalizedString("generic_net_error_message", comment: "")
-                    let genericErrorMessageWithFormat = String.localizedStringWithFormat(genericErrorMessage, "\(statusCode)")
-                    error.errorMessage = genericErrorMessageWithFormat
-                    error.localizedErrorMessage = localizedErrorDescription
-                    failure(error)
+                    failure(CustomError.generic)
                 }
         }
     }
     
     
     private static func getGenericError() -> CustomError {
-        
-        let customError = CustomError()
-        customError.errorMessage = ""
-        customError.localizedErrorMessage = ""
-        return customError
+        return CustomError.generic
     }
     
 }

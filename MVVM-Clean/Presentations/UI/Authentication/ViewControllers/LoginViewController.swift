@@ -51,7 +51,7 @@ class LoginViewController: BaseViewController {
                 print("Login error")
                 self.hideLoading()
                 let alertTitle = NSLocalizedString("alert_error_title", comment: "")
-                self.showCancelAlert(title: alertTitle, message: self.loginViewModel?.error?.localizedErrorMessage ?? "Unknow error")
+                self.showCancelAlert(title: alertTitle, message: self.loginViewModel?.error?.errorDescription ?? "Unknow error")
             }
         }.store(in: &subscriptions)
 

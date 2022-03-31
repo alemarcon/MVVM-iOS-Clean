@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
                 }
             case .gettingUserDataFailure:
                 LOGE("User data failed")
-                self.showCancelAlert(title: "Error", message: self.profileViewModel?.error?.localizedErrorMessage ?? "")
+                self.showCancelAlert(title: "Error", message: self.profileViewModel?.error?.errorDescription ?? "")
                 self.usernameLabel.text = "-"
                 
             case .loggeoutProcessBegin:
@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
                 self.backToLoginViewController()
                 
             case .logoutProcessFailure:
-                self.showCancelAlert(title: "Error", message: self.profileViewModel?.error?.localizedErrorMessage ?? "")
+                self.showCancelAlert(title: "Error", message: self.profileViewModel?.error?.errorDescription ?? "")
                 LOGE("Logout failed!")
             }
         }.store(in: &subscriptions)

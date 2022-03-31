@@ -51,7 +51,7 @@ class SummaryViewController: BaseViewController {
                 }
             case .summaryDataError:
                 LOGD("Summary data error")
-                self.showCancelAlert(title: "Error", message: self.mainViewModel?.error?.localizedErrorMessage ?? "")
+                self.showCancelAlert(title: "Error", message: self.mainViewModel?.error?.errorDescription ?? "")
             }
         }.store(in: &subscriptions)
 

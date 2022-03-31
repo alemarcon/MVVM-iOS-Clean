@@ -40,3 +40,11 @@
 "unable_logout" = "Impossibile cancellare i dati utente. Operazione fallita. Per favore, prova più tardi.";
 "new" = "Nuovi";
 "total" = "Totali";
+"no_content_found" = "Nessun contenuto trovato.";
+"unauthorized_message" = "Utente non autorizzato";
+"badRequest_message" = "Richiesta mal formattata.";
+"not_found_message" = "Risorsa non trovata";
+"forbidden_message" = "Accesso non consentito";
+"user_not_found_message" = "Utente non trovato.";
+"logout_error_message" = "Problemi in fase di logout";
+"login_error_message" = "Problemi in fase di logout login";
