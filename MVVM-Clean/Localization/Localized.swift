@@ -21,4 +21,5 @@ enum Localized: String, CaseIterable {
     case user_not_found_message
     case logout_error_message
     case login_error_message
+    case no_connection_error_message
 }

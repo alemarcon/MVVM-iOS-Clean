@@ -20,6 +20,7 @@ enum CustomError: Error {
     case logoutError
     case loginError
     case generic
+    case noConnection
     
     init(errorCode: Int) {
         switch errorCode {
@@ -64,6 +65,8 @@ extension CustomError: LocalizedError {
             return NSLocalizedString(Localized.logout_error_message.rawValue, comment: "")
         case .loginError:
             return NSLocalizedString(Localized.login_error_message.rawValue, comment: "")
+        case .noConnection:
+            return NSLocalizedString(Localized.no_connection_error_message.rawValue, comment: "")
         case .generic:
             return NSLocalizedString(Localized.generic_error_message.rawValue, comment: "")
         }
