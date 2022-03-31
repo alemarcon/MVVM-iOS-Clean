@@ -14,4 +14,11 @@ enum Localized: String, CaseIterable {
     case generic_localized_net_error_message
     case generic_error_message
     case no_content_found
+    case unauthorized_message
+    case badRequest_message
+    case not_found_message
+    case forbidden_message
+    case user_not_found_message
+    case logout_error_message
+    case login_error_message
 }

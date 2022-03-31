@@ -51,19 +51,19 @@ extension CustomError: LocalizedError {
         case .nilData:
             return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
         case .unauthorized:
-            return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
+            return NSLocalizedString(Localized.unauthorized_message.rawValue, comment: "")
         case .badRequest:
-            return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
+            return NSLocalizedString(Localized.badRequest_message.rawValue, comment: "")
         case .notFound:
-            return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
+            return NSLocalizedString(Localized.not_found_message.rawValue, comment: "")
         case .forbidden:
-            return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
+            return NSLocalizedString(Localized.forbidden_message.rawValue, comment: "")
         case .userNotFound:
-            return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
+            return NSLocalizedString(Localized.user_not_found_message.rawValue, comment: "")
         case .logoutError:
-            return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
+            return NSLocalizedString(Localized.logout_error_message.rawValue, comment: "")
         case .loginError:
-            return NSLocalizedString(Localized.nil_data_msg.rawValue, comment: "")
+            return NSLocalizedString(Localized.login_error_message.rawValue, comment: "")
         case .generic:
             return NSLocalizedString(Localized.generic_error_message.rawValue, comment: "")
         }

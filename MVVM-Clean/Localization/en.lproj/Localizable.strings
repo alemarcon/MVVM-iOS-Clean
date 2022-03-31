@@ -41,3 +41,10 @@
 "new" = "New";
 "total" = "Total";
 "no_content_found" = "No content found on server.";
+"unauthorized_message" = "User not authorized";
+"badRequest_message" = "Bad request error!";
+"not_found_message" = "Resource not found";
+"forbidden_message" = "Forbidden access";
+"user_not_found_message" = "User not found!";
+"logout_error_message" = "Error on logout";
+"login_error_message" = "Error on login";
