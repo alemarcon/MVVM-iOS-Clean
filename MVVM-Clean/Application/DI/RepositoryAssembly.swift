@@ -34,27 +34,6 @@ class RepositoryAssembly: Assembly {
             return loginRepo
         }.inObjectScope(.transient)
         
-        container.register(SummaryRepositoryDelegate.self) { resolver in
-            let covidRepo = SummaryRepository()
-            
-            guard let summaryNetwork = resolver.resolve(SummaryNetworkProtocolRequest.self) else {
-                fatalError("Assembler was unable to resolve SummaryNetworkProtocolRequest")
-            }
-            covidRepo.covidNetwork = summaryNetwork
-            
-            guard let summaryLocal = resolver.resolve(SummaryPersistenceProtocolRequest.self) else {
-                fatalError("Assembler was unable to resolve SummaryLocalProtocolRequest")
-            }
-            covidRepo.summaryLocal = summaryLocal
-            
-            guard let countryLocal = resolver.resolve(CountryPersistenceProtocolRequest.self) else {
-                fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
-            }
-            covidRepo.countryLocal = countryLocal
-            
-            return covidRepo
-        }.inObjectScope(.transient)
-        
         container.register(CountryRepositoryDelegate.self) { resolver in
             let countryRepo = CountryRepository()
             
@@ -71,6 +50,28 @@ class RepositoryAssembly: Assembly {
             return countryRepo
         }.inObjectScope(.transient)
         
+        
+        //MARK: - Async
+        container.register(SummaryRepositoryAsyncDelegate.self) { resolver in
+            let covidRepo = SummaryRepositoryAsync()
+            
+            guard let summaryNetwork = resolver.resolve(SummaryNetworkProtocolAsyncRequest.self) else {
+                fatalError("Assembler was unable to resolve SummaryNetworkProtocolAsyncRequest")
+            }
+            covidRepo.covidNetwork = summaryNetwork
+            
+            guard let summaryLocal = resolver.resolve(SummaryPersistenceProtocolRequest.self) else {
+                fatalError("Assembler was unable to resolve SummaryLocalProtocolRequest")
+            }
+            covidRepo.summaryLocal = summaryLocal
+            
+            guard let countryLocal = resolver.resolve(CountryPersistenceProtocolRequest.self) else {
+                fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
+            }
+            covidRepo.countryLocal = countryLocal
+            
+            return covidRepo
+        }.inObjectScope(.transient)
     }
 }
 

@@ -40,12 +40,10 @@ class ViewModelAssembly: Assembly {
         
         container.register(SummaryCovidViewModelDelegate.self) { resolver in
             let mainViewModel = SummaryCovidViewModel()
-            
-            guard let summaryUseCase = resolver.resolve(SummaryUseCaseDelegate.self) else {
-                fatalError("Assembler was unable to resolve SummaryUseCaseDelegate")
+            guard let summaryUseCaseAsync = resolver.resolve(SummaryUseCaseDelegateAsync.self) else {
+                fatalError("Assembler was unable to resolve SummaryUseCaseDelegateAsync")
             }
-            mainViewModel.summaryUseCase = summaryUseCase
-            mainViewModel.summaryUseCase?.responseDelegate = mainViewModel
+            mainViewModel.summaryUseCaseAsync = summaryUseCaseAsync
             
             return mainViewModel
         }.inObjectScope(.transient)

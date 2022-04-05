@@ -58,7 +58,7 @@ class CustomDateUtils: NSObject {
         let currentDate = CustomDateUtils.currentDate()
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         guard let lastUpdateDate = formatter.date(from: lastUpdate) else {
             return true

@@ -20,34 +20,22 @@ enum SummaryCovidViewModelStatus {
 protocol SummaryCovidViewModelDelegate: SummaryCovidViewModelInputDelegate, SummaryCovidViewModelOutputDelegate { }
 
 class SummaryCovidViewModel: SummaryCovidViewModelDelegate {
-    
-    var summaryUseCase: SummaryUseCaseDelegate?
+
+    internal var summaryUseCaseAsync: SummaryUseCaseDelegateAsync?
     var status: CurrentValueSubject<SummaryCovidViewModelStatus, Never> = .init(.none)
     var summary: Summary?
     var error: CustomError?
-
-    func summaryData() {
-        LOGI("Begin recover summary data")
+    
+    func summaryDataAsync() {
+        LOGI("Begin recover summary data async")
         status.send(.gettingSummaryData)
-        summaryUseCase?.getSummaryData()
+        Task {
+            guard let data = try await summaryUseCaseAsync?.getAsyncSummaryData() else {
+                status.send(.summaryDataError)
+                return
+            }
+            self.summary = data
+            status.send(.summaryDataSuccess)
+        }
     }
-    
-}
-
-// MARK: - Logout Use Case Response Delegate
-extension SummaryCovidViewModel: SummaryUseCaseResponseDelegate {
-    
-    func onSummaryDataReceived(summary: Summary) {
-        LOGI("Summary data received")
-        self.summary = summary
-        status.send(.summaryDataSuccess)
-    }
-    
-    func onSummaryDataFailure(error: CustomError) {
-        LOGI("Summary data not received")
-        self.summary = nil
-        self.error = error
-        status.send(.summaryDataError)
-    }
-    
 }

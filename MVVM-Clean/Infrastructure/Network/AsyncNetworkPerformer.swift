@@ -10,40 +10,30 @@ import Foundation
 
 class AsyncNetworkPerformer {
     
-    public static func sendRequest<T: Decodable>(route: APIConfigurationSwift, responseModel: T.Type) async -> Result<T, CustomError> {
-        guard let url = URL(string: route.baseURL + route.path) else {
-            return .failure(.generic)
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = route.method.rawValue
-        request.allHTTPHeaderFields = route.header
-
-        if let body = route.body {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        }
-        
+    /// Send HTTP request using asyncronous function
+    /// - Returns: Decodable generics object
+    public static func sendRequest<T: Decodable>(route: APIConfigurationSwift, responseDTO: T.Type) async throws -> T {
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: route.asURLRequest())
             guard let response = response as? HTTPURLResponse else {
-                return .failure(.nilData)
+                throw CustomError.nilData
             }
             
             if( response.statusCode >= 200 || response.statusCode <= 299 ) {
-                guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
-                    return .failure(.nilData)
+                guard let decodedResponse = try? JSONDecoder().decode(responseDTO, from: data) else {
+                    throw CustomError.nilData
                 }
-                return .success(decodedResponse)
+                return decodedResponse
             } else {
-                return .failure(CustomError(errorCode: response.statusCode))
+                throw CustomError(errorCode: response.statusCode)
             }
         } catch let error {
             let code = URLError.Code(rawValue: (error as NSError).code)
             switch code {
             case .notConnectedToInternet:
-                return .failure(.noConnection)
+                throw CustomError.noConnection
             default:
-                return .failure(.unknow(code: "\(code.rawValue)"))
+                throw CustomError.unknow(code: "\(code.rawValue)")
             }
         }
     }

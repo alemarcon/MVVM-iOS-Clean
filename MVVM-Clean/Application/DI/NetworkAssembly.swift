@@ -29,6 +29,18 @@ class NetworkAssembly: Assembly {
             return request
         }.inObjectScope(.transient)
         
+        //MARK: - Async
+        container.register(SummaryNetworkProtocolAsyncRequest.self) { resolver in
+            
+//            if( Assembler.type == .SummaryTest ) {
+//                let summaryDataReuqest = SummaryDataRequestTest()
+//                return summaryDataReuqest
+//            } else {
+                return SummaryNetworkAsyncReqeust()
+//            }
+
+        }.inObjectScope(.transient)
+        
     }
     
 }

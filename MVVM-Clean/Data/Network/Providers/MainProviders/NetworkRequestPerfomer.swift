@@ -17,6 +17,7 @@ class NetworkRequestPerfomer {
     ///   - success: success operation
     ///   - failure: fail operation
     /// - Returns: Current network operation request
+    @available(*, deprecated, message: "Will be substituted", renamed: "AsyncNetworkPerformer.sendReqeust()")
     public static func performRequest<T:Decodable>(route: APIConfiguration, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void)) -> DataRequest {
         return AF.request(route)
             .responseJSON { response in

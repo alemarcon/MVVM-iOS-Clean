@@ -60,8 +60,10 @@ class SummaryViewController: BaseViewController {
     
     private func updateSummary(withData: Summary) {
         let lastUpdate = NSLocalizedString("last_summary_update", comment: "")
-        lastUpdateLabel.text = String.localizedStringWithFormat(lastUpdate, "\(withData.lastUpdate)")
-        summaryTableView.reloadData()
+        DispatchQueue.main.async {
+            self.lastUpdateLabel.text = String.localizedStringWithFormat(lastUpdate, "\(withData.lastUpdate)")
+            self.summaryTableView.reloadData()
+        }
     }
     
     @IBAction func showProfileViewController(_ sender: UIBarButtonItem) {
@@ -72,7 +74,7 @@ class SummaryViewController: BaseViewController {
     
     private func loadSummaryData() {
         LOGD("Load summary data")
-        mainViewModel?.summaryData()
+        mainViewModel?.summaryDataAsync()
     }
     
     @IBAction func showCountriesDataController(_ sender: UIBarButtonItem) {

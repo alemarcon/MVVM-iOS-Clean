@@ -15,3 +15,13 @@ class SummaryNetworkReqeust: SummaryNetworkProtocolRequest {
         _ = NetworkRequestPerfomer.performRequest(route: covidRouter, success: success, failure: failure)
     }
 }
+
+//MARK: - Async
+class SummaryNetworkAsyncReqeust: SummaryNetworkProtocolAsyncRequest {
+    
+    func getSummaryData() async throws -> SummaryDTO {
+        let covidAsyncRouter = SummaryRouterSwift.getSummaryData
+        return try await AsyncNetworkPerformer.sendRequest(route: covidAsyncRouter, responseDTO: SummaryDTO.self)
+    }
+    
+}

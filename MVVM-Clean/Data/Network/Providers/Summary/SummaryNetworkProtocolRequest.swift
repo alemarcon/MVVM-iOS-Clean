@@ -18,3 +18,11 @@ protocol SummaryNetworkProtocolRequest {
     ///   - failure: <#failure description#>
     func getSummaryData<T: Decodable>(success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void))
 }
+
+//MARK: - Async version
+protocol SummaryNetworkProtocolAsyncRequest {
+    
+    /// Collect summary data from COVID19 API with async request
+    /// - Returns: <#description#>
+    func getSummaryData() async throws -> SummaryDTO
+}

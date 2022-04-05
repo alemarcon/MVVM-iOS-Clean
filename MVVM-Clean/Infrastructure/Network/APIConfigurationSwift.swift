@@ -23,6 +23,7 @@ protocol APIConfigurationSwift {
 }
 
 extension APIConfigurationSwift {
+    
     func asURLRequest() throws -> URLRequest {
         var urlRequest: URLRequest?
         
@@ -49,10 +50,12 @@ extension APIConfigurationSwift {
             default:
                 throw CustomError.generic
             }
+        } else {
+            urlRequest = URLRequest(url: URL(string: "\(url)\(pathWithEncoding)")!)
         }
         
         guard var request = urlRequest else {
-            throw CustomError.nilData
+            throw CustomError.urlRequestNil
         }
         
         // HTTP Method

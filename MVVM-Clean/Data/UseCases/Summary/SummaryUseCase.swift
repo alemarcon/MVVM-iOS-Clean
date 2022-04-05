@@ -8,18 +8,15 @@
 
 import Foundation
 
-class SummaryUseCase: SummaryUseCaseDelegate {
+class SummaryUseCaseAsync: SummaryUseCaseDelegateAsync {
     
-    var responseDelegate: SummaryUseCaseResponseDelegate?
-    var summaryRepository: SummaryRepositoryDelegate?
+    var summaryRepository: SummaryRepositoryAsyncDelegate?
     
-    /// Using covid19 repository call summary data and get response with delegate
-    func getSummaryData() {
-        summaryRepository?.getSummaryData(success: { (summaryModel) in
-            self.responseDelegate?.onSummaryDataReceived(summary: summaryModel)
-        }, failure: { (error) in
-            self.responseDelegate?.onSummaryDataFailure(error: error)
-        })
+    func getAsyncSummaryData() async throws -> Summary {
+        guard let summary = try await summaryRepository?.getSummaryData() else {
+            throw CustomError.nilData
+        }
+        return summary
     }
     
 }
