@@ -22,6 +22,7 @@ protocol CountryCovidViewModelDelegate: CountryCovidViewModelInputDelegate, Coun
 class CountryCovidViewModel: CountryCovidViewModelDelegate {
     
     var countryUseCase: CountryUseCaseDelegate?
+    var countryAsyncUseCase: CountryUseCaseAsyncDelegate?
     var status: CurrentValueSubject<CountryCovidViewModelStatus, Never> = .init(.none)
     var error: CustomError?
     var countries: [Country]?
@@ -49,4 +50,26 @@ extension CountryCovidViewModel: CountryUseCaseResponseDelegate {
         status.send(.countriesDataError)
     }
 
+}
+
+//MARK: - Async
+extension CountryCovidViewModel {
+    
+    func countryList() {
+        status.value = .gettingCountryData
+        Task {
+            do {
+                guard let countries = try await countryAsyncUseCase?.getCountryList() else {
+                    self.error = CustomError.nilData
+                    status.send(.countriesDataError)
+                    return
+                }
+                self.countries = countries
+                status.send(.countriesDataSuccess)
+            } catch(let error) {
+                self.error = error as? CustomError
+                status.send(.countriesDataError)
+            }
+        }
+    }
 }

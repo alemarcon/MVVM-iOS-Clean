@@ -50,3 +50,5 @@
 "login_error_message" = "Problemi in fase di logout login";
 "no_connection_error_message" = "Sembra che tu sia offline!";
 "url_request_nil" = "Impossibile creare l'oggetto URL Request";
+"no_local_data_found" = "Non sono stati trovati dati locali di riassunto.";
+"json_decode_error" = "Errore durante il decode del JSON.";

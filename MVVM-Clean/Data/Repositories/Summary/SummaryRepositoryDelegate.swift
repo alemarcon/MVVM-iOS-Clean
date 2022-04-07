@@ -11,9 +11,9 @@ import Foundation
 protocol SummaryRepositoryAsyncDelegate {
     
     //MARK: - Data object
-    var covidNetwork: SummaryNetworkProtocolAsyncRequest? { get set }
-    var summaryLocal: SummaryPersistenceProtocolRequest? { get set }
-    var countryLocal: CountryPersistenceProtocolRequest? { get set }
+    var covidNetwork: SummaryNetworkProtocolAsyncRequest? { get }
+    var summaryLocal: SummaryPersistenceProtocolRequest? { get }
+    var countryLocal: CountryPersistenceProtocolRequest? { get }
     
     //MARK: - Test variable
     var isRunningFromTest: Bool? { get set }

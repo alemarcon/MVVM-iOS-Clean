@@ -50,3 +50,5 @@
 "login_error_message" = "Error on login";
 "no_connection_error_message" = "You seems to be offline";
 "url_request_nil" = "Unable to create url request object";
+"no_local_data_found" = "No local summary data found";
+"json_decode_error" = "Error during json decoding";

@@ -597,11 +597,11 @@
 		2DB7071024D94547003B2151 /* MVVM-Clean */ = {
 			isa = PBXGroup;
 			children = (
-				1C950B8B27F5C28C001B1DDA /* Infrastructure */,
 				1CF7422427B2790C00186EF8 /* Assets */,
 				2DB7074124D94AF2003B2151 /* AppDelegate */,
 				2DB7074C24D94F01003B2151 /* Application */,
 				2DB7074224D94BB4003B2151 /* Localization */,
+				1C950B8B27F5C28C001B1DDA /* Infrastructure */,
 				2DB7073424D94A50003B2151 /* Presentations */,
 				2DB7076324D952E5003B2151 /* Data */,
 				2DB7075C24D95059003B2151 /* Extensions */,

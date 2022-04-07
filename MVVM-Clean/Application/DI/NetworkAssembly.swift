@@ -41,6 +41,11 @@ class NetworkAssembly: Assembly {
 
         }.inObjectScope(.transient)
         
+        container.register(CountryNetworkProtocolAsyncRequest.self) { resolver in
+            let request = CountryNetworkAsyncRequest()
+            return request
+        }.inObjectScope(.transient)
+        
     }
     
 }

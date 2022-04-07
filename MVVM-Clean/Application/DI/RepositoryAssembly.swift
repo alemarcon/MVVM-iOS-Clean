@@ -72,6 +72,22 @@ class RepositoryAssembly: Assembly {
             
             return covidRepo
         }.inObjectScope(.transient)
+        
+        container.register(CountryRepositoryAsyncDelegate.self) { resolver in
+            let countryRepo = CountryAsyncRepository()
+            
+            guard let countryLocalData = resolver.resolve(CountryPersistenceProtocolRequest.self) else {
+                fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
+            }
+            countryRepo.countryLocal = countryLocalData
+            
+            guard let countryNetwork = resolver.resolve(CountryNetworkProtocolAsyncRequest.self) else {
+                fatalError("Assembler was unable to resolve CountryNetworkProtocolAsyncRequest")
+            }
+            countryRepo.countryAsyncNetwork = countryNetwork
+            
+            return countryRepo
+        }.inObjectScope(.transient)
     }
 }
 

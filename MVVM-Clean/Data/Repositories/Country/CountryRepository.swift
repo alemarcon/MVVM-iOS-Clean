@@ -9,7 +9,6 @@
 import Foundation
 
 class CountryRepository: CountryRepositoryDelegate {
-    
     var countryNetwork: CountryNetworkProtocolRequest?
     var countryLocal: CountryPersistenceProtocolRequest?
     
@@ -33,6 +32,33 @@ class CountryRepository: CountryRepositoryDelegate {
         }, failure: { (response: CustomError) in
             failure(response)
         })
+    }
+    
+}
+
+
+//MARK: - Async
+class CountryAsyncRepository: CountryRepositoryAsyncDelegate {
+    
+    var countryLocal: CountryPersistenceProtocolRequest?
+    var countryAsyncNetwork: CountryNetworkProtocolAsyncRequest?
+    
+    func getCountriesAsyncData() async throws -> [Country] {
+        if let localCountriesData = countryLocal?.getLocalCountryDataDTO() {
+            let localCountries = CountryDTOMapper.map(countries: localCountriesData)
+            return localCountries
+        } else {
+            LOGE("CountryLocalProtocolRequest returned nil object")
+            throw CustomError.nilData
+        }
+    }
+    
+    func getCountryAsyncData(by countrySlug: String, status: Covid19Status, from: String, to: String) async throws -> [Country] {
+        guard let data = try await countryAsyncNetwork?.getByCountryByStatus(countrySlug: countrySlug, status: status, from: from, to: to) else {
+            throw CustomError.nilData
+        }
+        let countries = CountryDTOMapper.map(countries: data)
+        return countries
     }
     
 }

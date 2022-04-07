@@ -45,7 +45,7 @@ class SummaryRepositoryAsync: SummaryRepositoryAsyncDelegate {
         } else {
             
             guard let localData = localSummaryDTO else {
-                throw CustomError.nilData
+                throw CustomError.noLocalDataFound
             }
             
             let summaryModel = SummaryDTOMapper.map(summary: localData)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SummaryUseCaseDelegateAsync {
+protocol SummaryUseCaseAsyncDelegate {
     
     //MARK: - Protocol properties
     var summaryRepository: SummaryRepositoryAsyncDelegate? { get }

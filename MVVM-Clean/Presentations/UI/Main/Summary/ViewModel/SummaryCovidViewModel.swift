@@ -21,7 +21,7 @@ protocol SummaryCovidViewModelDelegate: SummaryCovidViewModelInputDelegate, Summ
 
 class SummaryCovidViewModel: SummaryCovidViewModelDelegate {
 
-    internal var summaryUseCaseAsync: SummaryUseCaseDelegateAsync?
+    internal var summaryUseCaseAsync: SummaryUseCaseAsyncDelegate?
     var status: CurrentValueSubject<SummaryCovidViewModelStatus, Never> = .init(.none)
     var summary: Summary?
     var error: CustomError?
@@ -30,12 +30,19 @@ class SummaryCovidViewModel: SummaryCovidViewModelDelegate {
         LOGI("Begin recover summary data async")
         status.send(.gettingSummaryData)
         Task {
-            guard let data = try await summaryUseCaseAsync?.getAsyncSummaryData() else {
+            do {
+                guard let data = try await summaryUseCaseAsync?.getAsyncSummaryData() else {
+                    status.send(.summaryDataError)
+                    return
+                }
+                
+                self.summary = data
+                status.send(.summaryDataSuccess)
+                
+            } catch(let error) {
+                self.error = error as? CustomError
                 status.send(.summaryDataError)
-                return
             }
-            self.summary = data
-            status.send(.summaryDataSuccess)
         }
     }
 }

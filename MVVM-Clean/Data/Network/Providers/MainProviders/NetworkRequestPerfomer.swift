@@ -17,7 +17,7 @@ class NetworkRequestPerfomer {
     ///   - success: success operation
     ///   - failure: fail operation
     /// - Returns: Current network operation request
-    @available(*, deprecated, message: "Will be substituted", renamed: "AsyncNetworkPerformer.sendReqeust()")
+    @available(iOS, deprecated, message: "Will be replaced", renamed: "AsyncNetworkPerformer.sendReqeust()")
     public static func performRequest<T:Decodable>(route: APIConfiguration, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void)) -> DataRequest {
         return AF.request(route)
             .responseJSON { response in
@@ -39,7 +39,7 @@ class NetworkRequestPerfomer {
                         if let responseData = response.data {
                             LOGI("Data response: \(responseData)")
                             
-                            if let jsonArray = try JSONSerialization.jsonObject(with: responseData, options : .allowFragments) as?  [String:Any] {
+                            if let jsonArray = try JSONSerialization.jsonObject(with: responseData, options : .allowFragments) as? [String:Any] {
                                 
                                 var statusCode: Int? = (jsonArray["statusCode"] as? Int)
                                 if (statusCode == nil) {

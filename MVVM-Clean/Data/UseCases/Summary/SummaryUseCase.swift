@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SummaryUseCaseAsync: SummaryUseCaseDelegateAsync {
+class SummaryAsyncUseCase: SummaryUseCaseAsyncDelegate {
     
     var summaryRepository: SummaryRepositoryAsyncDelegate?
     

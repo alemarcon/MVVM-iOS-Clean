@@ -10,7 +10,7 @@ import Foundation
 
 protocol SummaryCovidViewModelInputDelegate {
     
-    var summaryUseCaseAsync: SummaryUseCaseDelegateAsync? { get }
+    var summaryUseCaseAsync: SummaryUseCaseAsyncDelegate? { get }
     
     /// Get COVID 19 summary data
     func summaryDataAsync()

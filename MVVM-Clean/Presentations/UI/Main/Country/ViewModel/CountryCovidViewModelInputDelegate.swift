@@ -11,8 +11,10 @@ import Foundation
 protocol CountryCovidViewModelInputDelegate {
     
     var countryUseCase: CountryUseCaseDelegate? { get }
+    var countryAsyncUseCase: CountryUseCaseAsyncDelegate? { get }
     
     /// Get COVID 19 country list data
     func getCountryList()
+    func countryList()
     
 }

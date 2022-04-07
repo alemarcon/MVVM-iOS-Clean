@@ -33,3 +33,26 @@ protocol CountryRepositoryDelegate {
     func getCountryData(by countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping ([Country])->Void, failure: @escaping (CustomError)->Void)
     
 }
+
+
+//MARK: - Async
+protocol CountryRepositoryAsyncDelegate {
+    
+    //MARK: - Data object
+    var countryLocal: CountryPersistenceProtocolRequest? { get set }
+    var countryAsyncNetwork: CountryNetworkProtocolAsyncRequest? { get }
+    
+    /// Used to get all countries data.
+    /// - Returns: <#description#>
+    func getCountriesAsyncData() async throws -> [Country]
+    
+    /// Used to get country data filtered by various data.
+    /// - Parameters:
+    ///   - countrySlug: Country slug
+    ///   - status: Covid status
+    ///   - from: Date from
+    ///   - to: Date to
+    /// - Returns: <#description#>
+    func getCountryAsyncData(by countrySlug: String, status: Covid19Status, from: String, to: String) async throws -> [Country]
+    
+}

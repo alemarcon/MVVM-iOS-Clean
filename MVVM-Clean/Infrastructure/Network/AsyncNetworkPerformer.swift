@@ -21,7 +21,7 @@ class AsyncNetworkPerformer {
             
             if( response.statusCode >= 200 || response.statusCode <= 299 ) {
                 guard let decodedResponse = try? JSONDecoder().decode(responseDTO, from: data) else {
-                    throw CustomError.nilData
+                    throw CustomError.jsonDecodeError
                 }
                 return decodedResponse
             } else {
@@ -33,7 +33,7 @@ class AsyncNetworkPerformer {
             case .notConnectedToInternet:
                 throw CustomError.noConnection
             default:
-                throw CustomError.unknow(code: "\(code.rawValue)")
+                throw CustomError.unknow(code: "\(error.localizedDescription)")
             }
         }
     }

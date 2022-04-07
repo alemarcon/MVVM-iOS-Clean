@@ -37,20 +37,33 @@ class CountryListViewController: UIViewController {
                 LOGD("Loading country data")
             case .countriesDataSuccess:
                 LOGD("Country data success")
-                self.countryTableView.reloadData()
+                self.reloadData()
             case .countriesDataError:
                 LOGD("Country data error")
-                self.showCancelAlert(title: "Error", message: self.countryViewModel?.error?.errorDescription ?? "")
+                DispatchQueue.main.async {
+                    self.showCancelAlert(title: "Error", message: self.countryViewModel?.error?.errorDescription ?? "")
+                }
             }
         }.store(in: &subscriptions)
         
-        loadCountryListData()
+//        loadCountryListData()
+        loadAsyncCountryListData()
     }
     
     
     /// Load country list data
     private func loadCountryListData() {
         countryViewModel?.getCountryList()
+    }
+    
+    private func loadAsyncCountryListData() {
+        countryViewModel?.countryList()
+    }
+    
+    private func reloadData() {
+        DispatchQueue.main.async {
+            self.countryTableView.reloadData()
+        }
     }
 }
 
