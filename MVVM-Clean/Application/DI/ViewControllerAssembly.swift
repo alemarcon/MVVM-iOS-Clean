@@ -31,6 +31,8 @@ class ViewControllerAssembly: Assembly {
             }
             controller.splashViewModel = model
             
+            controller.router = SplashRouter()
+            
             return controller
         }.inObjectScope(.transient)
         

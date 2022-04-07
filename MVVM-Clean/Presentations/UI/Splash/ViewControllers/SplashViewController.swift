@@ -16,6 +16,7 @@ class SplashViewController: UIViewController {
     
     var subscriptions: Set<AnyCancellable> = .init()
     var splashViewModel: SplashScreenViewModelDelegate?
+    var router: SplashRouterInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class SplashViewController: UIViewController {
         }
         
         splashViewModel = viewModel
+        router = SplashRouter()
         
         bind()
         
@@ -63,20 +65,22 @@ class SplashViewController: UIViewController {
     
     /// Get HomeViewCotroller and set as main window
     private func goestToHomeViewController() {
-        if let mainViewController = Assembler.sharedAssembler.resolver.resolve(SummaryViewController.self) {
-            let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-            nvc.setNavigationBarHidden(false, animated: false)
-            UIApplication.shared.keyWindow?.rootViewController = nvc
-        }
+//        if let mainViewController = Assembler.sharedAssembler.resolver.resolve(SummaryViewController.self) {
+//            let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+//            nvc.setNavigationBarHidden(false, animated: false)
+//            UIApplication.shared.keyWindow?.rootViewController = nvc
+//        }
+        router?.navigateToHomeView()
     }
     
     /// Get LoginViewController and set as main window
     private func goestToLoginViewController() {
-        if let loginViewController = Assembler.sharedAssembler.resolver.resolve(LoginViewController.self) {
-            let nvc: UINavigationController = UINavigationController(rootViewController: loginViewController)
-            nvc.setNavigationBarHidden(false, animated: false)
-            UIApplication.shared.keyWindow?.rootViewController = nvc
-        }
+//        if let loginViewController = Assembler.sharedAssembler.resolver.resolve(LoginViewController.self) {
+//            let nvc: UINavigationController = UINavigationController(rootViewController: loginViewController)
+//            nvc.setNavigationBarHidden(false, animated: false)
+//            UIApplication.shared.keyWindow?.rootViewController = nvc
+//        }
+        router?.navigateToLoginView()
     }
     
 }

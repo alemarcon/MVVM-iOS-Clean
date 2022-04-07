@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1C11507B27F34282004898BF /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C11507A27F34282004898BF /* Localized.swift */; };
+		1CE7BEEB27FEF2CF004B75F5 /* SplashRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEEA27FEF2CF004B75F5 /* SplashRouterInput.swift */; };
+		1CE7BEED27FEF324004B75F5 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEEC27FEF324004B75F5 /* SplashRouter.swift */; };
+		1CE7BEEF27FEF3E1004B75F5 /* SplashConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEEE27FEF3E1004B75F5 /* SplashConfigurator.swift */; };
 		1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF7422527B2791F00186EF8 /* Colors.xcassets */; };
 		1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */; };
 		2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD20253EF27000A89F60 /* SummaryTest.swift */; };
@@ -135,6 +138,9 @@
 
 /* Begin PBXFileReference section */
 		1C11507A27F34282004898BF /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		1CE7BEEA27FEF2CF004B75F5 /* SplashRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouterInput.swift; sourceTree = "<group>"; };
+		1CE7BEEC27FEF324004B75F5 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		1CE7BEEE27FEF3E1004B75F5 /* SplashConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashConfigurator.swift; sourceTree = "<group>"; };
 		1CF7422527B2791F00186EF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2D0ABD20253EF27000A89F60 /* SummaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTest.swift; sourceTree = "<group>"; };
@@ -286,6 +292,24 @@
 				5B4A030BF9347454A47F5AA4 /* Pods_MVVM_CleanTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1CE7BEE827FEF282004B75F5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1CE7BEE927FEF2B9004B75F5 /* Splash */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1CE7BEE927FEF2B9004B75F5 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1CE7BEEA27FEF2CF004B75F5 /* SplashRouterInput.swift */,
+				1CE7BEEC27FEF324004B75F5 /* SplashRouter.swift */,
+				1CE7BEEE27FEF3E1004B75F5 /* SplashConfigurator.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		1CF7422427B2790C00186EF8 /* Assets */ = {
@@ -609,6 +633,7 @@
 		2DB7073424D94A50003B2151 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				1CE7BEE827FEF282004B75F5 /* Router */,
 				2DB7074B24D94EB8003B2151 /* Storyboard */,
 				2DB7073324D94A3E003B2151 /* UI */,
 			);
@@ -1178,6 +1203,7 @@
 				2D14A91A252CF3280056FF76 /* CountryUseCaseResponseDelegate.swift in Sources */,
 				2DB7073A24D94A8E003B2151 /* LoginViewController.swift in Sources */,
 				2DB7078724D9A5CD003B2151 /* LoginUseCaseDelegate.swift in Sources */,
+				1CE7BEEB27FEF2CF004B75F5 /* SplashRouterInput.swift in Sources */,
 				2D2E0A9824DA0C8200874A97 /* SummaryCovidViewModelInputDelegate.swift in Sources */,
 				2D1DE73D252A66D20039E298 /* CountryDTOMapper.swift in Sources */,
 				2D14A921252CF3D00056FF76 /* CountryNetworkRequest.swift in Sources */,
@@ -1199,6 +1225,7 @@
 				2D2E0A8F24DA09D100874A97 /* ProfileUseCase.swift in Sources */,
 				2D14A924252D03B20056FF76 /* CountryCovidViewModel.swift in Sources */,
 				2DB7071224D94548003B2151 /* AppDelegate.swift in Sources */,
+				1CE7BEED27FEF324004B75F5 /* SplashRouter.swift in Sources */,
 				2DB7076224D9523F003B2151 /* LoginViewModel.swift in Sources */,
 				2DD6D41824FBF01E008EE378 /* Configurations.swift in Sources */,
 				2DB7075724D94F9A003B2151 /* ViewModelAssembly.swift in Sources */,
@@ -1225,6 +1252,7 @@
 				2DB7074024D94ADB003B2151 /* SplashViewController.swift in Sources */,
 				1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */,
 				2D1DE74C252A74660039E298 /* CountryListViewController.swift in Sources */,
+				1CE7BEEF27FEF3E1004B75F5 /* SplashConfigurator.swift in Sources */,
 				2DB7076724D95307003B2151 /* ProfileRepositoryDelegate.swift in Sources */,
 				2D14A916252CF2E60056FF76 /* CountryUseCase.swift in Sources */,
 				2DD6D41024FBE286008EE378 /* NetworkRequestPerfomer.swift in Sources */,
