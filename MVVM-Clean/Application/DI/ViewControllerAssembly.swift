@@ -47,6 +47,10 @@ class ViewControllerAssembly: Assembly {
             }
             controller.loginViewModel = loginViewModel
             
+            let router = AuthNavigationRouter(vc: controller)
+            controller.router = router
+            router.vc = controller
+            
             return controller
         }.inObjectScope(.transient)
         
@@ -60,6 +64,10 @@ class ViewControllerAssembly: Assembly {
                 fatalError("Assembler was unable to resolve MainViewModelDelegate")
             }
             controller.mainViewModel = mainViewModel
+            
+            let navigationRouter = SummaryNavigationRouter(vc: controller)
+            controller.navigationRouter = navigationRouter
+            
             return controller
         }.inObjectScope(.transient)
         
@@ -87,6 +95,9 @@ class ViewControllerAssembly: Assembly {
                 fatalError("Assembler was unable to resolve ProfileViewModelDelegate")
             }
             controller.profileViewModel = profileViewModel
+            
+            let router = ProfileNavigationRouter(vc: controller)
+            controller.router = router
             
             return controller
         }.inObjectScope(.transient)

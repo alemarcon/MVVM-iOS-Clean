@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swinject
 import Combine
 
 class SummaryViewController: BaseViewController {
@@ -18,6 +17,7 @@ class SummaryViewController: BaseViewController {
     
     @IBOutlet var countriesButton: UIBarButtonItem!
     
+    var navigationRouter: SummaryNavigationRouterInput?
     var mainViewModel: SummaryCovidViewModelDelegate?
     var subscriptions: Set<AnyCancellable> = .init()
     
@@ -65,9 +65,7 @@ class SummaryViewController: BaseViewController {
     }
     
     @IBAction func showProfileViewController(_ sender: UIBarButtonItem) {
-        if let profileViewController = Assembler.sharedAssembler.resolver.resolve(ProfileViewController.self) {
-            self.navigationController?.pushViewController(profileViewController, animated: true)
-        }
+        navigationRouter?.navigateToProfileView()
     }
     
     private func loadSummaryData() {
@@ -77,9 +75,7 @@ class SummaryViewController: BaseViewController {
     
     @IBAction func showCountriesDataController(_ sender: UIBarButtonItem) {
         LOGD("Show countries data view controller")
-        if let countriesViewController = Assembler.sharedAssembler.resolver.resolve(CountryListViewController.self) {
-            self.navigationController?.pushViewController(countriesViewController, animated: true)
-        }
+        navigationRouter?.navigateToCountryView()
     }
     
     

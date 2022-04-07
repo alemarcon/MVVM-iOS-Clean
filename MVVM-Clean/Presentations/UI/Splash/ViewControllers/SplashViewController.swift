@@ -8,7 +8,6 @@
 
 import UIKit
 import Combine
-import Swinject
 
 class SplashViewController: UIViewController {
     
@@ -22,14 +21,6 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         localizeUI()
-        
-        guard let viewModel = Assembler.sharedAssembler.resolver.resolve(SplashScreenViewModelDelegate.self) else {
-            fatalError("Assembler was unable to resolve SplashScreenViewModel")
-        }
-        
-        splashViewModel = viewModel
-        router = SplashRouter()
-        
         bind()
         
         // Add 0.5 second in case we would like to show some graphic content for few seconds.
@@ -65,21 +56,11 @@ class SplashViewController: UIViewController {
     
     /// Get HomeViewCotroller and set as main window
     private func goestToHomeViewController() {
-//        if let mainViewController = Assembler.sharedAssembler.resolver.resolve(SummaryViewController.self) {
-//            let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-//            nvc.setNavigationBarHidden(false, animated: false)
-//            UIApplication.shared.keyWindow?.rootViewController = nvc
-//        }
         router?.navigateToHomeView()
     }
     
     /// Get LoginViewController and set as main window
     private func goestToLoginViewController() {
-//        if let loginViewController = Assembler.sharedAssembler.resolver.resolve(LoginViewController.self) {
-//            let nvc: UINavigationController = UINavigationController(rootViewController: loginViewController)
-//            nvc.setNavigationBarHidden(false, animated: false)
-//            UIApplication.shared.keyWindow?.rootViewController = nvc
-//        }
         router?.navigateToLoginView()
     }
     

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swinject
 import Combine
 
 class LoginViewController: BaseViewController {
@@ -18,6 +17,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet var passwordTextfield: UITextField!
     @IBOutlet var loginButton: UIButton!
     
+    var router: AuthNavigationRouterInput?
     var loginViewModel: LoginViewModelDelegate?
     var subscriptions: Set<AnyCancellable> = .init()
     
@@ -73,11 +73,7 @@ class LoginViewController: BaseViewController {
     
     /// Get HomeViewCotroller and set as main window
     private func goestToHomeViewController() {
-        if let mainViewController = Assembler.sharedAssembler.resolver.resolve(SummaryViewController.self) {
-            let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-            nvc.setNavigationBarHidden(false, animated: false)
-            UIApplication.shared.keyWindow?.rootViewController = nvc
-        }
+        router?.navigateToHomeView()
     }
     
 }

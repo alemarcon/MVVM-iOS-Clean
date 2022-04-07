@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swinject
 import Combine
 
 class ProfileViewController: UIViewController {
@@ -15,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
     
+    var router: ProfileNavigationRouterInput?
     var profileViewModel: ProfileViewModelDelegate?
     var subscriptions: Set<AnyCancellable> = .init()
 
@@ -71,10 +71,6 @@ class ProfileViewController: UIViewController {
     
     
     private func backToLoginViewController() {
-        if let loginViewController = Assembler.sharedAssembler.resolver.resolve(LoginViewController.self) {
-            let nvc: UINavigationController = UINavigationController(rootViewController: loginViewController)
-            nvc.setNavigationBarHidden(true, animated: false)
-            UIApplication.shared.keyWindow?.rootViewController = nvc
-        }
+        router?.navigateToLoginView()
     }
 }
