@@ -12,6 +12,7 @@ This is a clean iOS project structured as follow:
 - MVVM
 - Clean architecture
 - Repository pattern
+- Navigation router pattern
 - Cocoapods for dependency manager
 - Full use of Dependency Injection
 - Alamofire for easy and fast network request

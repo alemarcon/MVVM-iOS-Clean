@@ -13,6 +13,7 @@ class CountryListViewController: UIViewController {
     
     @IBOutlet var countryTableView: UITableView!
     
+    var router: CountryNavigationRouterInput?
     var countryViewModel: CountryCovidViewModelDelegate?
     var subscriptions: Set<AnyCancellable> = .init()
     

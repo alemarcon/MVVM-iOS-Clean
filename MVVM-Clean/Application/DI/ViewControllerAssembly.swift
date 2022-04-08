@@ -82,6 +82,9 @@ class ViewControllerAssembly: Assembly {
             }
             controller.countryViewModel = countryViewModel
             
+            let navigationRouter = CountryNavigationRouter(vc: controller)
+            controller.router = navigationRouter
+            
             return controller
         }.inObjectScope(.transient)
         

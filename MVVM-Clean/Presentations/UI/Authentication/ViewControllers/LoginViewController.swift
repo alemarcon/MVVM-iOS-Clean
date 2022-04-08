@@ -39,16 +39,16 @@ class LoginViewController: BaseViewController {
         loginViewModel?.status.sink { state in
             switch state {
             case .none:
-                print("No action in progress")
+                LOGP("No action in progress")
             case .loginInProgress:
-                print("Login process begin")
+                LOGP("Login process begin")
                 self.showLoading()
             case .loginSuccess:
-                print("Login success. Go to home")
+                LOGP("Login success. Go to home")
                 self.hideLoading()
                 self.goestToHomeViewController()
             case .loginError:
-                print("Login error")
+                LOGP("Login error")
                 self.hideLoading()
                 let alertTitle = NSLocalizedString("alert_error_title", comment: "")
                 self.showCancelAlert(title: alertTitle, message: self.loginViewModel?.error?.errorDescription ?? "Unknow error")

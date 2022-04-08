@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0F8C4028001C04005E6B87 /* CountryNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F8C3F28001C04005E6B87 /* CountryNavigationConfigurator.swift */; };
+		1C0F8C4228001C13005E6B87 /* CountryNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F8C4128001C13005E6B87 /* CountryNavigationRouter.swift */; };
 		1C11507B27F34282004898BF /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C11507A27F34282004898BF /* Localized.swift */; };
 		1CE7BEED27FEF324004B75F5 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEEC27FEF324004B75F5 /* SplashRouter.swift */; };
 		1CE7BEEF27FEF3E1004B75F5 /* SplashConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEEE27FEF3E1004B75F5 /* SplashConfigurator.swift */; };
@@ -142,6 +144,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C0F8C3F28001C04005E6B87 /* CountryNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNavigationConfigurator.swift; sourceTree = "<group>"; };
+		1C0F8C4128001C13005E6B87 /* CountryNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNavigationRouter.swift; sourceTree = "<group>"; };
 		1C11507A27F34282004898BF /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		1CE7BEEC27FEF324004B75F5 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		1CE7BEEE27FEF3E1004B75F5 /* SplashConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashConfigurator.swift; sourceTree = "<group>"; };
@@ -302,6 +306,15 @@
 				5B4A030BF9347454A47F5AA4 /* Pods_MVVM_CleanTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C0F8C3E28001BE5005E6B87 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F8C3F28001C04005E6B87 /* CountryNavigationConfigurator.swift */,
+				1C0F8C4128001C13005E6B87 /* CountryNavigationRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		1CE7BEF527FF213C004B75F5 /* Router */ = {
@@ -482,6 +495,7 @@
 		2D1DE749252A74290039E298 /* Country */ = {
 			isa = PBXGroup;
 			children = (
+				1C0F8C3E28001BE5005E6B87 /* Router */,
 				2D14A929252D0EC90056FF76 /* Cell */,
 				2D14A922252D03950056FF76 /* ViewModel */,
 				2D1DE74A252A74340039E298 /* ViewControllers */,
@@ -1234,6 +1248,7 @@
 				1CE7BEF927FF228C004B75F5 /* AuthNavigationConfigurator.swift in Sources */,
 				2D14A91A252CF3280056FF76 /* CountryUseCaseResponseDelegate.swift in Sources */,
 				2DB7073A24D94A8E003B2151 /* LoginViewController.swift in Sources */,
+				1C0F8C4228001C13005E6B87 /* CountryNavigationRouter.swift in Sources */,
 				2DB7078724D9A5CD003B2151 /* LoginUseCaseDelegate.swift in Sources */,
 				1CE7BEFB27FF230F004B75F5 /* AuthNavigationRouter.swift in Sources */,
 				2D2E0A9824DA0C8200874A97 /* SummaryCovidViewModelInputDelegate.swift in Sources */,
@@ -1324,6 +1339,7 @@
 				2DD4B69C2528AFDA0065B563 /* Summary.swift in Sources */,
 				2DD4B67E2528A7F00065B563 /* CustomConsoleLog.swift in Sources */,
 				2D14A928252D03FD0056FF76 /* CountryCovidViewModelOutputDelegate.swift in Sources */,
+				1C0F8C4028001C04005E6B87 /* CountryNavigationConfigurator.swift in Sources */,
 				2D1DE740252A6C340039E298 /* CountryPersistenceProtocolRequest.swift in Sources */,
 				2D14A91F252CF3C40056FF76 /* CountryNetworkProtocolRequest.swift in Sources */,
 				2D1E5063253B030200D00EC6 /* ProfilePersistenceData.swift in Sources */,

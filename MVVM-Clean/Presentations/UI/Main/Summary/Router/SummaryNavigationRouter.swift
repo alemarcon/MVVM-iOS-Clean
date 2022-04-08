@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Swinject
 
 //MARK: - Protocol
 protocol SummaryNavigationRouterInput {
@@ -26,15 +25,13 @@ class SummaryNavigationRouter: SummaryNavigationRouterInput {
     }
     
     func navigateToProfileView() {
-        if let profileViewController = Assembler.sharedAssembler.resolver.resolve(ProfileViewController.self) {
-            vc.navigationController?.pushViewController(profileViewController, animated: true)
-        }
+        let profileVC = ProfileNavigationConfigurator().configure()
+        vc.navigationController?.pushViewController(profileVC, animated: true)
     }
     
     func navigateToCountryView() {
-        if let countriesViewController = Assembler.sharedAssembler.resolver.resolve(CountryListViewController.self) {
-            vc.navigationController?.pushViewController(countriesViewController, animated: true)
-        }
+        let countryVC = CountryNavigationConfigurator().configure()
+        vc.navigationController?.pushViewController(countryVC, animated: true)
     }
     
 }
