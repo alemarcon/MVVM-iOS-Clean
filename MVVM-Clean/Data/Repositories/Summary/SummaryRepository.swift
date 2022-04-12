@@ -8,15 +8,14 @@
 
 import Foundation
 
-class SummaryRepository: SummaryRepositoryDelegate {
+class SummaryRepositoryAsync: SummaryRepositoryAsyncDelegate {
     
-    var covidNetwork: SummaryNetworkProtocolRequest?
+    var covidNetwork: SummaryNetworkProtocolAsyncRequest?
     var summaryLocal: SummaryPersistenceProtocolRequest?
     var countryLocal: CountryPersistenceProtocolRequest?
-    
     var isRunningFromTest: Bool?
     
-    func getSummaryData(success: @escaping (Summary) -> Void, failure: @escaping (CustomError) -> Void) {
+    func getSummaryData() async throws -> Summary {
         var needDataFromNetwork = true
         
         let localSummaryDTO = summaryLocal?.getLocalSummaryDataDTO()
@@ -28,33 +27,31 @@ class SummaryRepository: SummaryRepositoryDelegate {
         // This is a flag that force collecting data from network if a unit test is running.
         // In case of test, data are collected on a JSON file and not really on network
         if let _isRunningFromTest = isRunningFromTest {
-            if( _isRunningFromTest ) {
-                needDataFromNetwork = true
-            }
+            needDataFromNetwork = _isRunningFromTest
         }
         
         if( needDataFromNetwork ) {
-            LOGD("Local summary data is nil or older than delta, new network update needed")
-            covidNetwork?.getSummaryData( success: { (response: SummaryDTO ) in
-                LOGI("Data received")
-                
-                self.summaryLocal?.saveLocalSummaryDTO(data: response)
-                let summmary = SummaryDTOMapper.map(summary: response)
-                if let countries = response.countries {
-                    self.countryLocal?.saveLocalCountryDataDTO(data: countries)
-                }
-                success(summmary)
-                
-            }, failure: { (error: CustomError) in
-                LOGE("Error occurred. \(error.errorDescription)")
-                failure(error)
-            })
-        } else {
-            if let localData = localSummaryDTO {
-                let summaryModel = SummaryDTOMapper.map(summary: localData)
-                LOGD("Success sent with localData")
-                success(summaryModel)
+            
+            guard let summary = try await covidNetwork?.getSummaryData() else {
+                throw CustomError.nilData
             }
+            
+            summaryLocal?.saveLocalSummaryDTO(data: summary)
+            if let countries = summary.countries {
+                self.countryLocal?.saveLocalCountryDataDTO(data: countries)
+            }
+            
+            return SummaryDTOMapper.map(summary: summary)
+        } else {
+            
+            guard let localData = localSummaryDTO else {
+                throw CustomError.noLocalDataFound
+            }
+            
+            let summaryModel = SummaryDTOMapper.map(summary: localData)
+            LOGD("Success sent with localData")
+            return summaryModel
+
         }
     }
     

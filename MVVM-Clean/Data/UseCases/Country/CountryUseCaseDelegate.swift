@@ -8,11 +8,10 @@
 
 import Foundation
 
-protocol CountryUseCaseDelegate {
+protocol CountryUseCaseAsyncDelegate {
     
     //MARK: - Protocol properties
-    var responseDelegate: CountryUseCaseResponseDelegate? { get set }
-    var countryRepository: CountryRepositoryDelegate? { get set }
+    var countryRepository: CountryRepositoryAsyncDelegate? { get }
     
     /// Get country data based on various parameters
     /// - Parameters:
@@ -20,9 +19,9 @@ protocol CountryUseCaseDelegate {
     ///   - covidStatus: Covid status
     ///   - dateFrom: Date from
     ///   - dateTo: Date to
-    func getCountryData(by countrySlug: String, covidStatus: Covid19Status, dateFrom: String, dateTo: String)
+    func getCountryData(by countrySlug: String, covidStatus: Covid19Status, dateFrom: String, dateTo: String) async throws -> [Country]
     
     /// Get all countries data
-    func getCountryList()
+    func getCountryList() async throws -> [Country]
     
 }

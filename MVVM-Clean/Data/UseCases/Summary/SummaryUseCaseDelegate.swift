@@ -8,13 +8,12 @@
 
 import Foundation
 
-protocol SummaryUseCaseDelegate {
+protocol SummaryUseCaseAsyncDelegate {
     
     //MARK: - Protocol properties
-    var responseDelegate: SummaryUseCaseResponseDelegate? { get set }
-    var summaryRepository: SummaryRepositoryDelegate? { get set }
+    var summaryRepository: SummaryRepositoryAsyncDelegate? { get set }
     
     /// Get summary data
-    func getSummaryData()
-    
+    /// - Returns: Return Summary object
+    func getAsyncSummaryData() async throws -> Summary
 }

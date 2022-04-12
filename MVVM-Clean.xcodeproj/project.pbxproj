@@ -18,6 +18,10 @@
 		1CE7BEFB27FF230F004B75F5 /* AuthNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEFA27FF230F004B75F5 /* AuthNavigationRouter.swift */; };
 		1CE7BEFE27FF271B004B75F5 /* ProfileNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEFD27FF271B004B75F5 /* ProfileNavigationConfigurator.swift */; };
 		1CE7BF0027FF274E004B75F5 /* ProfileNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEFF27FF274E004B75F5 /* ProfileNavigationRouter.swift */; };
+		1C950B8E27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */; };
+		1C950B9027F5F2F3001B1DDA /* APIConfigurationSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */; };
+		1C950B9227F5FA69001B1DDA /* HTTPMethodSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */; };
+		1C950B9427F5FF91001B1DDA /* SummaryRouterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B9327F5FF91001B1DDA /* SummaryRouterSwift.swift */; };
 		1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF7422527B2791F00186EF8 /* Colors.xcassets */; };
 		1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */; };
 		2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD20253EF27000A89F60 /* SummaryTest.swift */; };
@@ -155,6 +159,10 @@
 		1CE7BEFA27FF230F004B75F5 /* AuthNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationRouter.swift; sourceTree = "<group>"; };
 		1CE7BEFD27FF271B004B75F5 /* ProfileNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationConfigurator.swift; sourceTree = "<group>"; };
 		1CE7BEFF27FF274E004B75F5 /* ProfileNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationRouter.swift; sourceTree = "<group>"; };
+		1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncNetworkPerformer.swift; sourceTree = "<group>"; };
+		1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationSwift.swift; sourceTree = "<group>"; };
+		1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodSwift.swift; sourceTree = "<group>"; };
+		1C950B9327F5FF91001B1DDA /* SummaryRouterSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRouterSwift.swift; sourceTree = "<group>"; };
 		1CF7422527B2791F00186EF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2D0ABD20253EF27000A89F60 /* SummaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTest.swift; sourceTree = "<group>"; };
@@ -351,6 +359,22 @@
 				1CE7BEFF27FF274E004B75F5 /* ProfileNavigationRouter.swift */,
 			);
 			path = Router;
+		1C950B8B27F5C28C001B1DDA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				1C950B8C27F5C29B001B1DDA /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		1C950B8C27F5C29B001B1DDA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */,
+				1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */,
+				1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		1CF7422427B2790C00186EF8 /* Assets */ = {
@@ -643,6 +667,7 @@
 				2DB7074124D94AF2003B2151 /* AppDelegate */,
 				2DB7074C24D94F01003B2151 /* Application */,
 				2DB7074224D94BB4003B2151 /* Localization */,
+				1C950B8B27F5C28C001B1DDA /* Infrastructure */,
 				2DB7073424D94A50003B2151 /* Presentations */,
 				2DB7076324D952E5003B2151 /* Data */,
 				2DB7075C24D95059003B2151 /* Extensions */,
@@ -930,6 +955,7 @@
 				2DD4B6852528A9AC0065B563 /* SummaryNetworkProtocolRequest.swift */,
 				2DD4B6882528AA6B0065B563 /* SummaryNetworkRequest.swift */,
 				2DD4B68B2528AACF0065B563 /* SummaryRouter.swift */,
+				1C950B9327F5FF91001B1DDA /* SummaryRouterSwift.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -1263,6 +1289,7 @@
 				2DD4B6952528AEC00065B563 /* GlobalDTO.swift in Sources */,
 				2D14B73E252911AB0079C7C3 /* NetworkAssembly.swift in Sources */,
 				2D1DE742252A6C800039E298 /* CountryPersistenceRequest.swift in Sources */,
+				1C950B9427F5FF91001B1DDA /* SummaryRouterSwift.swift in Sources */,
 				2D2E0A7E24D9F69000874A97 /* BaseViewController.swift in Sources */,
 				2D14A918252CF2FE0056FF76 /* CountryUseCaseDelegate.swift in Sources */,
 				2D2E0A9A24DA0C9C00874A97 /* SummaryCovidViewModelOutputDelegate.swift in Sources */,
@@ -1271,6 +1298,7 @@
 				2DD4B68F2528AE240065B563 /* SummaryDTO.swift in Sources */,
 				2D2E0A8F24DA09D100874A97 /* ProfileUseCase.swift in Sources */,
 				2D14A924252D03B20056FF76 /* CountryCovidViewModel.swift in Sources */,
+				1C950B8E27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift in Sources */,
 				2DB7071224D94548003B2151 /* AppDelegate.swift in Sources */,
 				1CE7BF0027FF274E004B75F5 /* ProfileNavigationRouter.swift in Sources */,
 				1CE7BEED27FEF324004B75F5 /* SplashRouter.swift in Sources */,
@@ -1298,6 +1326,7 @@
 				2DD6D40E24FBE198008EE378 /* APIConfiguration.swift in Sources */,
 				2DB7071424D94548003B2151 /* SceneDelegate.swift in Sources */,
 				2DC082B227564CAA0071643E /* SummaryTableViewCell.swift in Sources */,
+				1C950B9227F5FA69001B1DDA /* HTTPMethodSwift.swift in Sources */,
 				2DB7074024D94ADB003B2151 /* SplashViewController.swift in Sources */,
 				1CE7BEF227FF18E6004B75F5 /* SummaryNavigatorConfigurator.swift in Sources */,
 				1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */,
@@ -1332,6 +1361,7 @@
 				2D2E0A8024D9FA1500874A97 /* String+Extensions.swift in Sources */,
 				2DB7075024D94F26003B2151 /* Assembler+Extensions.swift in Sources */,
 				2D1E5050253AFDA500D00EC6 /* ProfileViewModelInputDelegate.swift in Sources */,
+				1C950B9027F5F2F3001B1DDA /* APIConfigurationSwift.swift in Sources */,
 				2DD6D41224FBEA4C008EE378 /* NetworkConstant.swift in Sources */,
 				2D14B73C25290EE20079C7C3 /* SummaryPersistenceRequest.swift in Sources */,
 				2DB7077324D97DD6003B2151 /* LoginViewModelInputDelegate.swift in Sources */,
@@ -1401,7 +1431,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GB5KHBW76F;
 				INFOPLIST_FILE = "MVVM-CleanUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1422,7 +1452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GB5KHBW76F;
 				INFOPLIST_FILE = "MVVM-CleanUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1488,7 +1518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1544,7 +1574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1561,7 +1591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MVVM-Clean/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1581,7 +1611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MVVM-Clean/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1602,7 +1632,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MVVM-CleanTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1624,7 +1654,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "MVVM-CleanTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

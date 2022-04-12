@@ -31,22 +31,22 @@ class UseCaseAssembly: Assembly {
             profileUseCase.profileRepository = profileRepository
             return profileUseCase
         }.inObjectScope(.transient)
-        
-        
-        container.register(SummaryUseCaseDelegate.self) { resolver in
-            let covidUseCase = SummaryUseCase()
-            guard let summaryRepository = resolver.resolve(SummaryRepositoryDelegate.self) else {
-                fatalError("Assembler was unable to resolve Covid19RepositoryDelegate")
+
+        //MARK: - Async
+        container.register(SummaryUseCaseAsyncDelegate.self) { resolver in
+            let covidUseCase = SummaryAsyncUseCase()
+            guard let summaryRepository = resolver.resolve(SummaryRepositoryAsyncDelegate.self) else {
+                fatalError("Assembler was unable to resolve Covid19RepositoryAsyncDelegate")
             }
             covidUseCase.summaryRepository = summaryRepository
             
             return covidUseCase
         }.inObjectScope(.transient)
         
-        container.register(CountryUseCaseDelegate.self) { resolver in
-            let countryUseCase = CountryUseCase()
-            guard let countryRepository = resolver.resolve(CountryRepositoryDelegate.self) else {
-                fatalError("Assembler was unable to resolve CountryRepositoryDelegate")
+        container.register(CountryUseCaseAsyncDelegate.self) { resolver in
+            let countryUseCase = CountryAsyncUseCase()
+            guard let countryRepository = resolver.resolve(CountryRepositoryAsyncDelegate.self) else {
+                fatalError("Assembler was unable to resolve CountryRepositoryAsyncDelegate")
             }
             countryUseCase.countryRepository = countryRepository
             

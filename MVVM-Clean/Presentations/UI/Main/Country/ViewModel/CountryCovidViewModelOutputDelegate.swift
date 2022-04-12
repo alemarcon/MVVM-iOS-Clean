@@ -12,5 +12,5 @@ import Combine
 protocol CountryCovidViewModelOutputDelegate {
     var status: CurrentValueSubject<CountryCovidViewModelStatus, Never> { get set }
     var error: CustomError? { get }
-    var countries: [Country]? { get set }
+    var countries: [Country]? { get }
 }

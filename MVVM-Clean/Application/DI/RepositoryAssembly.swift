@@ -34,11 +34,12 @@ class RepositoryAssembly: Assembly {
             return loginRepo
         }.inObjectScope(.transient)
         
-        container.register(SummaryRepositoryDelegate.self) { resolver in
-            let covidRepo = SummaryRepository()
+        //MARK: - Async
+        container.register(SummaryRepositoryAsyncDelegate.self) { resolver in
+            let covidRepo = SummaryRepositoryAsync()
             
-            guard let summaryNetwork = resolver.resolve(SummaryNetworkProtocolRequest.self) else {
-                fatalError("Assembler was unable to resolve SummaryNetworkProtocolRequest")
+            guard let summaryNetwork = resolver.resolve(SummaryNetworkProtocolAsyncRequest.self) else {
+                fatalError("Assembler was unable to resolve SummaryNetworkProtocolAsyncRequest")
             }
             covidRepo.covidNetwork = summaryNetwork
             
@@ -55,22 +56,21 @@ class RepositoryAssembly: Assembly {
             return covidRepo
         }.inObjectScope(.transient)
         
-        container.register(CountryRepositoryDelegate.self) { resolver in
-            let countryRepo = CountryRepository()
+        container.register(CountryRepositoryAsyncDelegate.self) { resolver in
+            let countryRepo = CountryAsyncRepository()
             
             guard let countryLocalData = resolver.resolve(CountryPersistenceProtocolRequest.self) else {
                 fatalError("Assembler was unable to resolve CountryLocalProtocolRequest")
             }
             countryRepo.countryLocal = countryLocalData
             
-            guard let countryNetwork = resolver.resolve(CountryNetworkProtocolRequest.self) else {
-                fatalError("Assembler was unable to resolve CountryNetworkProtocolRequest")
+            guard let countryNetwork = resolver.resolve(CountryNetworkProtocolAsyncRequest.self) else {
+                fatalError("Assembler was unable to resolve CountryNetworkProtocolAsyncRequest")
             }
-            countryRepo.countryNetwork = countryNetwork
+            countryRepo.countryAsyncNetwork = countryNetwork
             
             return countryRepo
         }.inObjectScope(.transient)
-        
     }
 }
 

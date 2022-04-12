@@ -15,8 +15,7 @@ class SummaryIntegrationTest {
     
     private var expectation: XCTestExpectation
     private var xcTestCase: XCTestCase
-    
-    private var summaryUseCase: SummaryUseCaseDelegate?
+    private var summaryUseCase: SummaryUseCaseAsyncDelegate?
     
     init(xcTestCase: XCTestCase) {
         
@@ -30,24 +29,17 @@ class SummaryIntegrationTest {
     func runSummaryDataTest() {
         Assembler.type = .SummaryTest
         
-        summaryUseCase = Assembler.sharedAssembler.resolver.resolve(SummaryUseCaseDelegate.self)
-        summaryUseCase?.responseDelegate = self
+        summaryUseCase = Assembler.sharedAssembler.resolver.resolve(SummaryUseCaseAsyncDelegate.self)
         summaryUseCase?.summaryRepository?.isRunningFromTest = true
-        summaryUseCase?.getSummaryData()
-        
-        xcTestCase.wait(for: [expectation], timeout: 10.0)
+        Task {
+            do {
+                let _ = try await summaryUseCase?.getAsyncSummaryData()
+                expectation.fulfill()
+            } catch(_) {
+                expectation.fulfill()
+                XCTFail()
+            }
+        }
     }
     
-}
-
-extension SummaryIntegrationTest: SummaryUseCaseResponseDelegate {
-    
-    func onSummaryDataReceived(summary: Summary) {
-        expectation.fulfill()
-    }
-    
-    func onSummaryDataFailure(error: CustomError) {
-        expectation.fulfill()
-        XCTFail()
-    }
 }

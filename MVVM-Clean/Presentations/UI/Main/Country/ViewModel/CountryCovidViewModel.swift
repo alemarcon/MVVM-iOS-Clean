@@ -21,32 +21,27 @@ protocol CountryCovidViewModelDelegate: CountryCovidViewModelInputDelegate, Coun
 
 class CountryCovidViewModel: CountryCovidViewModelDelegate {
     
-    var countryUseCase: CountryUseCaseDelegate?
+    var countryAsyncUseCase: CountryUseCaseAsyncDelegate?
     var status: CurrentValueSubject<CountryCovidViewModelStatus, Never> = .init(.none)
     var error: CustomError?
     var countries: [Country]?
     
-    func getCountryList() {
-        LOGI("Begin recover country list data")
+    func countryList() {
         status.value = .gettingCountryData
-        countryUseCase?.getCountryList()
+        Task {
+            do {
+                guard let countries = try await countryAsyncUseCase?.getCountryList() else {
+                    self.error = CustomError.nilData
+                    status.send(.countriesDataError)
+                    return
+                }
+                self.countries = countries
+                status.send(.countriesDataSuccess)
+            } catch(let error) {
+                self.error = error as? CustomError
+                status.send(.countriesDataError)
+            }
+        }
     }
     
-}
-
-extension CountryCovidViewModel: CountryUseCaseResponseDelegate {
-    
-    func onCountryDataReceived(countries: [Country]) {
-        LOGI("Country data received")
-        self.countries = countries
-        status.send(.countriesDataSuccess)
-    }
-    
-    func onCountryDataFailure(error: CustomError) {
-        LOGI("Country data received")
-        self.countries = nil
-        self.error = error
-        status.send(.countriesDataError)
-    }
-
 }

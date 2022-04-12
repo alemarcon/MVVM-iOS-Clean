@@ -8,21 +8,18 @@
 
 import Foundation
 
-protocol SummaryRepositoryDelegate {
+protocol SummaryRepositoryAsyncDelegate {
     
     //MARK: - Data object
-    var covidNetwork: SummaryNetworkProtocolRequest? { get set }
-    var summaryLocal: SummaryPersistenceProtocolRequest? { get set }
-    var countryLocal: CountryPersistenceProtocolRequest? { get set }
+    var covidNetwork: SummaryNetworkProtocolAsyncRequest? { get }
+    var summaryLocal: SummaryPersistenceProtocolRequest? { get }
+    var countryLocal: CountryPersistenceProtocolRequest? { get }
     
     //MARK: - Test variable
     var isRunningFromTest: Bool? { get set }
     
     //MARK: - Methods
-    
     /// Get COVID19 summary data. Implementation could get data or from HTTP network call, or if present, from local data.
-    /// - Parameters:
-    ///   - success: Success event
-    ///   - failure: Failure event
-    func getSummaryData(success: @escaping (Summary)->Void, failure: @escaping (CustomError)->Void)
+    /// - Returns: <#description#>
+    func getSummaryData() async throws -> Summary
 }
