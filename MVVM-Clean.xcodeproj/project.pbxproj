@@ -10,6 +10,10 @@
 		1C0F8C4028001C04005E6B87 /* CountryNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F8C3F28001C04005E6B87 /* CountryNavigationConfigurator.swift */; };
 		1C0F8C4228001C13005E6B87 /* CountryNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F8C4128001C13005E6B87 /* CountryNavigationRouter.swift */; };
 		1C11507B27F34282004898BF /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C11507A27F34282004898BF /* Localized.swift */; };
+		1C950B8E27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */; };
+		1C950B9027F5F2F3001B1DDA /* APIConfigurationSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */; };
+		1C950B9227F5FA69001B1DDA /* HTTPMethodSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */; };
+		1C950B9427F5FF91001B1DDA /* SummaryRouterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B9327F5FF91001B1DDA /* SummaryRouterSwift.swift */; };
 		1CE7BEED27FEF324004B75F5 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEEC27FEF324004B75F5 /* SplashRouter.swift */; };
 		1CE7BEEF27FEF3E1004B75F5 /* SplashConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEEE27FEF3E1004B75F5 /* SplashConfigurator.swift */; };
 		1CE7BEF227FF18E6004B75F5 /* SummaryNavigatorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEF127FF18E6004B75F5 /* SummaryNavigatorConfigurator.swift */; };
@@ -18,10 +22,6 @@
 		1CE7BEFB27FF230F004B75F5 /* AuthNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEFA27FF230F004B75F5 /* AuthNavigationRouter.swift */; };
 		1CE7BEFE27FF271B004B75F5 /* ProfileNavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEFD27FF271B004B75F5 /* ProfileNavigationConfigurator.swift */; };
 		1CE7BF0027FF274E004B75F5 /* ProfileNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7BEFF27FF274E004B75F5 /* ProfileNavigationRouter.swift */; };
-		1C950B8E27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */; };
-		1C950B9027F5F2F3001B1DDA /* APIConfigurationSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */; };
-		1C950B9227F5FA69001B1DDA /* HTTPMethodSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */; };
-		1C950B9427F5FF91001B1DDA /* SummaryRouterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C950B9327F5FF91001B1DDA /* SummaryRouterSwift.swift */; };
 		1CF7422627B2791F00186EF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF7422527B2791F00186EF8 /* Colors.xcassets */; };
 		1CF7422827B287DB00186EF8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */; };
 		2D0ABD21253EF27000A89F60 /* SummaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0ABD20253EF27000A89F60 /* SummaryTest.swift */; };
@@ -151,6 +151,10 @@
 		1C0F8C3F28001C04005E6B87 /* CountryNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNavigationConfigurator.swift; sourceTree = "<group>"; };
 		1C0F8C4128001C13005E6B87 /* CountryNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNavigationRouter.swift; sourceTree = "<group>"; };
 		1C11507A27F34282004898BF /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncNetworkPerformer.swift; sourceTree = "<group>"; };
+		1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationSwift.swift; sourceTree = "<group>"; };
+		1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodSwift.swift; sourceTree = "<group>"; };
+		1C950B9327F5FF91001B1DDA /* SummaryRouterSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRouterSwift.swift; sourceTree = "<group>"; };
 		1CE7BEEC27FEF324004B75F5 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		1CE7BEEE27FEF3E1004B75F5 /* SplashConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashConfigurator.swift; sourceTree = "<group>"; };
 		1CE7BEF127FF18E6004B75F5 /* SummaryNavigatorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryNavigatorConfigurator.swift; sourceTree = "<group>"; };
@@ -159,10 +163,6 @@
 		1CE7BEFA27FF230F004B75F5 /* AuthNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationRouter.swift; sourceTree = "<group>"; };
 		1CE7BEFD27FF271B004B75F5 /* ProfileNavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationConfigurator.swift; sourceTree = "<group>"; };
 		1CE7BEFF27FF274E004B75F5 /* ProfileNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationRouter.swift; sourceTree = "<group>"; };
-		1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncNetworkPerformer.swift; sourceTree = "<group>"; };
-		1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationSwift.swift; sourceTree = "<group>"; };
-		1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethodSwift.swift; sourceTree = "<group>"; };
-		1C950B9327F5FF91001B1DDA /* SummaryRouterSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRouterSwift.swift; sourceTree = "<group>"; };
 		1CF7422527B2791F00186EF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1CF7422727B287DB00186EF8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2D0ABD20253EF27000A89F60 /* SummaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTest.swift; sourceTree = "<group>"; };
@@ -325,6 +325,24 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		1C950B8B27F5C28C001B1DDA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				1C950B8C27F5C29B001B1DDA /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		1C950B8C27F5C29B001B1DDA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */,
+				1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */,
+				1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1CE7BEF527FF213C004B75F5 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,22 +377,6 @@
 				1CE7BEFF27FF274E004B75F5 /* ProfileNavigationRouter.swift */,
 			);
 			path = Router;
-		1C950B8B27F5C28C001B1DDA /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				1C950B8C27F5C29B001B1DDA /* Network */,
-			);
-			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		1C950B8C27F5C29B001B1DDA /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				1C950B8D27F5C2DA001B1DDA /* AsyncNetworkPerformer.swift */,
-				1C950B8F27F5F2F3001B1DDA /* APIConfigurationSwift.swift */,
-				1C950B9127F5FA69001B1DDA /* HTTPMethodSwift.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		1CF7422427B2790C00186EF8 /* Assets */ = {
@@ -1596,7 +1598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcon.MVVM-Clean";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1616,7 +1618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcon.MVVM-Clean";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
