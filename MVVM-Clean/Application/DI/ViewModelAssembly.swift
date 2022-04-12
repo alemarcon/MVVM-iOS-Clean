@@ -50,13 +50,7 @@ class ViewModelAssembly: Assembly {
         
         container.register(CountryCovidViewModelDelegate.self) { resolver in
             let countryViewModel = CountryCovidViewModel()
-            
-            guard let countryUseCase = resolver.resolve(CountryUseCaseDelegate.self) else {
-                fatalError("Assembler was unable to resolve CountryUseCaseDelegate")
-            }
-            countryViewModel.countryUseCase = countryUseCase
-            countryViewModel.countryUseCase?.responseDelegate = countryViewModel
-            
+
             guard let countryAsyncUseCase = resolver.resolve(CountryUseCaseAsyncDelegate.self) else {
                 fatalError("Assembler was unable to resolve CountryUseCaseAsyncDelegate")
             }

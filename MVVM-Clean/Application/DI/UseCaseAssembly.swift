@@ -32,16 +32,6 @@ class UseCaseAssembly: Assembly {
             return profileUseCase
         }.inObjectScope(.transient)
 
-        container.register(CountryUseCaseDelegate.self) { resolver in
-            let countryUseCase = CountryUseCase()
-            guard let countryRepository = resolver.resolve(CountryRepositoryDelegate.self) else {
-                fatalError("Assembler was unable to resolve CountryRepositoryDelegate")
-            }
-            countryUseCase.countryRepository = countryRepository
-            
-            return countryUseCase
-        }.inObjectScope(.transient)
-        
         //MARK: - Async
         container.register(SummaryUseCaseAsyncDelegate.self) { resolver in
             let covidUseCase = SummaryAsyncUseCase()

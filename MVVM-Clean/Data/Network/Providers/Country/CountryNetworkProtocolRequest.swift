@@ -16,20 +16,6 @@ enum Covid19Status {
 }
 
 /// Protocol for country request
-protocol CountryNetworkProtocolRequest {
-    
-    /// Get country data by status and date
-    /// - Parameters:
-    ///   - countrySlug: String rapresent country slug
-    ///   - status: Covid19 status choose from Covid19Status enum
-    ///   - from: Date to start collect data in format yyyy-mm-ddThh:MM:ssZ
-    ///   - to: Date to end collect data in format yyyy-mm-ddThh:MM:ssZ
-    ///   - success: Success case
-    ///   - failure: Failure case
-    func getByCountryByStatus<T: Decodable>(countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void))
-}
-
-//MARK: - Async version
 protocol CountryNetworkProtocolAsyncRequest {
     
     /// Get country data by status and date with async API

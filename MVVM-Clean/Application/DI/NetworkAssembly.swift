@@ -13,31 +13,15 @@ class NetworkAssembly: Assembly {
     
     func assemble(container: Container) {
         
-        container.register(SummaryNetworkProtocolRequest.self) { resolver in
+        //MARK: - Async
+        container.register(SummaryNetworkProtocolAsyncRequest.self) { resolver in
             
             if( Assembler.type == .SummaryTest ) {
                 let summaryDataReuqest = SummaryDataRequestTest()
                 return summaryDataReuqest
             } else {
-                return SummaryNetworkReqeust()
-            }
-
-        }.inObjectScope(.transient)
-        
-        container.register(CountryNetworkProtocolRequest.self) { resolver in
-            let request = CountryNetworkRequest()
-            return request
-        }.inObjectScope(.transient)
-        
-        //MARK: - Async
-        container.register(SummaryNetworkProtocolAsyncRequest.self) { resolver in
-            
-//            if( Assembler.type == .SummaryTest ) {
-//                let summaryDataReuqest = SummaryDataRequestTest()
-//                return summaryDataReuqest
-//            } else {
                 return SummaryNetworkAsyncReqeust()
-//            }
+            }
 
         }.inObjectScope(.transient)
         

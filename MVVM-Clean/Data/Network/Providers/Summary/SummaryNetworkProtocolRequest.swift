@@ -7,17 +7,17 @@
 //
 
 import Foundation
-import Alamofire
-
-/// Protocol
-protocol SummaryNetworkProtocolRequest {
-    
-    /// Collect summary data from COVID19 API
-    /// - Parameters:
-    ///   - success: <#success description#>
-    ///   - failure: <#failure description#>
-    func getSummaryData<T: Decodable>(success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void))
-}
+//import Alamofire
+//
+///// Protocol
+//protocol SummaryNetworkProtocolRequest {
+//    
+//    /// Collect summary data from COVID19 API
+//    /// - Parameters:
+//    ///   - success: <#success description#>
+//    ///   - failure: <#failure description#>
+//    func getSummaryData<T: Decodable>(success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void))
+//}
 
 //MARK: - Async version
 protocol SummaryNetworkProtocolAsyncRequest {

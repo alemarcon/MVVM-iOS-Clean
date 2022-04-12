@@ -8,16 +8,29 @@
 
 import Foundation
 
-class SummaryDataRequestTest: SummaryNetworkProtocolRequest {
+//class SummaryDataRequestTest: SummaryNetworkProtocolRequest {
+//    
+//    func getSummaryData<T>(success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void)) where T : Decodable {
+//        
+//        let filePath = Bundle.main.path(forResource: "summary_data", ofType: "json")!
+//        let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
+//        
+//        let decoder: JSONDecoder = JSONDecoder.init()
+//        let summary: SummaryDTO = try! decoder.decode(SummaryDTO.self, from: data)
+//        success(summary as! T)
+//    }
+//    
+//}
+
+class SummaryDataRequestTest: SummaryNetworkProtocolAsyncRequest {
     
-    func getSummaryData<T>(success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void)) where T : Decodable {
-        
+    func getSummaryData() async throws -> SummaryDTO {
         let filePath = Bundle.main.path(forResource: "summary_data", ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
         
         let decoder: JSONDecoder = JSONDecoder.init()
         let summary: SummaryDTO = try! decoder.decode(SummaryDTO.self, from: data)
-        success(summary as! T)
+        return summary
     }
     
 }

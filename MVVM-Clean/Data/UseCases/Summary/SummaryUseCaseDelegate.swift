@@ -11,7 +11,7 @@ import Foundation
 protocol SummaryUseCaseAsyncDelegate {
     
     //MARK: - Protocol properties
-    var summaryRepository: SummaryRepositoryAsyncDelegate? { get }
+    var summaryRepository: SummaryRepositoryAsyncDelegate? { get set }
     
     /// Get summary data
     /// - Returns: Return Summary object

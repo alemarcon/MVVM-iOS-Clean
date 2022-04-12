@@ -8,17 +8,6 @@
 
 import Foundation
 
-class CountryNetworkRequest: CountryNetworkProtocolRequest {
-    
-    func getByCountryByStatus<T>(countrySlug: String, status: Covid19Status, from: String, to: String, success: @escaping (T) -> Void, failure: @escaping ((CustomError) -> Void)) where T : Decodable {
-        let countryRouter = CountryRouter.getByCountryByStatus(countrySlug: countrySlug, status: status, from: from, to: to)
-        _ = NetworkRequestPerfomer.performRequest(route: countryRouter, success: success, failure: failure)
-    }
-    
-}
-
-
-//MARK: - Async
 class CountryNetworkAsyncRequest: CountryNetworkProtocolAsyncRequest {
 
     func getByCountryByStatus(countrySlug: String, status: Covid19Status, from: String, to: String) async throws -> [CountryDTO] {

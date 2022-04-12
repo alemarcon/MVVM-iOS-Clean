@@ -46,16 +46,11 @@ class CountryListViewController: UIViewController {
             }
         }.store(in: &subscriptions)
         
-//        loadCountryListData()
         loadAsyncCountryListData()
     }
     
     
     /// Load country list data
-    private func loadCountryListData() {
-        countryViewModel?.getCountryList()
-    }
-    
     private func loadAsyncCountryListData() {
         countryViewModel?.countryList()
     }
