@@ -2,7 +2,7 @@
 
 ![platform](https://img.shields.io/badge/platform-iOS-lightgrey) 
 ![swift](https://img.shields.io/badge/Swift-5.0-red)  
-![target-ios](https://img.shields.io/badge/Target-iOS%20%7C%2013.4-blue)
+![target-ios](https://img.shields.io/badge/Target-iOS%20%7C%2015.0-blue)
 ![cocoapods-version](https://img.shields.io/badge/Cocoapods-v.%201.8.4-green)
 
 ![MVVM Clean iOS home view controller](home.png)
@@ -15,7 +15,7 @@ This is a clean iOS project structured as follow:
 - Navigation router pattern
 - Cocoapods for dependency manager
 - Full use of Dependency Injection
-- Alamofire for easy and fast network request
+- Async Await for network request
 - Combine for view model and view controller binding
 - Localized, just 2 languages for demo porpouse
 - Storyboard for interfaces
@@ -60,10 +60,9 @@ double click on **MVVM-Clean.xcworkspace** file and Xcode will be opened.
 
 These are the libraries used in project with github url and a very short description.
 
- LIBRERIA | URL | DESCRIZIONE
+ SDK | URL | DESCRIPTION
  -------- | --- | -----------
  Swinject | https://github.com/Swinject/Swinject | Dependency injection framework
- Alamofire | https://github.com/Alamofire/Alamofire | An easy-to-use HTTP networking library
 
  # External resource
 
